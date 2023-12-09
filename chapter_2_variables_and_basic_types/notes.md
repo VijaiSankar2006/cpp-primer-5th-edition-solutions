@@ -229,3 +229,8 @@ it is an *error* to access the value of the variable which is undefined.
 >> 2) reference - a name alias for an existing object
 >> 3) pointer to const - pointer which points to const object, const is low level and integral part to the type
 >> 4) reference to const - reference which is binded to const object, const is low level and integral part to the type
+
+## auto
+    const string s = "keep out";
+    for( auto &ch : s ){ /* */ }
+    //  auto deduces the type of ch as 'const char', top level const is kept in reference initialisation
