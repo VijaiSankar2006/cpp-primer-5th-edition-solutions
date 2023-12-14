@@ -80,6 +80,7 @@
 
 ### Type Conversion
 #### Implicit type conversion
+        • type conversion is done from smaller to a wider type to preserve information
         • In most expressions, values of integral types smaller than int are first promoted to an appropriate larger      
           integral type.
         • In conditions, nonbool expressions are converted to bool.
