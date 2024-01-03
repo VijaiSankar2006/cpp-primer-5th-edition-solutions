@@ -30,8 +30,8 @@ int main(){
 
     print(strstrm);
     std::cout << "state of strstrm after clear all error states : \n";
-    std::cout << "strstrm.good() : " << strstrm.good() << "\ncin.rdstate() : " << strstrm.rdstate() 
-                << "\ncin.fail() :  " << strstrm.fail() << "\ncin.eof() : " << strstrm.eof() << std::endl;
+    std::cout << "strstrm.good() : " << strstrm.good() << "\nstrstrm.rdstate() : " << strstrm.rdstate() 
+                << "\nstrstrm.fail() :  " << strstrm.fail() << "\nstrstrm.eof() : " << strstrm.eof() << std::endl;
 
     //  code to check whether strstrm is operational            
     strstrm.str("hi there");
@@ -52,8 +52,8 @@ int main(){
 
 std::istringstream & print(std::istringstream &strstrm){
     std::cout << "condition of strstrm before input : \n";
-    std::cout << "strstrm.good() : " << strstrm.good() << "\ncin.rdstate() : " << strstrm.rdstate() 
-                << "\ncin.fail() :  " << strstrm.fail() << "\ncin.eof() : " << strstrm.eof() << std::endl;
+    std::cout << "strstrm.good() : " << strstrm.good() << "\nstrstrm.rdstate() : " << strstrm.rdstate() 
+                << "\nstrstrm.fail() :  " << strstrm.fail() << "\nstrstrm.eof() : " << strstrm.eof() << std::endl;
 
     strstrm.str("this line has five words");
     char ch;
@@ -62,8 +62,8 @@ std::istringstream & print(std::istringstream &strstrm){
     }
 
     std::cout << "state of strstrm after eof : \n";   
-    std::cout << "strstrm.good() : " << strstrm.good() << "\ncin.rdstate() : " << strstrm.rdstate() 
-                << "\ncin.fail() :  " << strstrm.fail() << "\ncin.eof() : " << strstrm.eof() << std::endl;
+    std::cout << "strstrm.good() : " << strstrm.good() << "\nstrstrm.rdstate() : " << strstrm.rdstate() 
+                << "\nstrstrm.fail() :  " << strstrm.fail() << "\nstrstrm.eof() : " << strstrm.eof() << std::endl;
 
     // code to check whether we can store a diff string in to strstrm bfr clearing error states
     strstrm.str("hello world");         //  works 
@@ -83,8 +83,8 @@ std::istringstream & print(std::istringstream &strstrm){
              */  
         }
     }
-    std::cout << "strstrm.good() : " << strstrm.good() << "\ncin.rdstate() : " << strstrm.rdstate() 
-                << "\ncin.fail() :  " << strstrm.fail() << "\ncin.eof() : " << strstrm.eof() << std::endl;
+    std::cout << "strstrm.good() : " << strstrm.good() << "\nstrstrm.rdstate() : " << strstrm.rdstate() 
+                << "\nstrstrm.fail() :  " << strstrm.fail() << "\nstrstrm.eof() : " << strstrm.eof() << std::endl;
     
     strstrm.clear();        //  clears the error states
     return strstrm;
