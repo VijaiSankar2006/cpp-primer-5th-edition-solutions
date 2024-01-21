@@ -11,12 +11,12 @@
     The result is undefined, even if the program works it is not guaranteed to work the same.
 
 # Undefined behaviour :
-    even if program compiles, it is guaranteed to work the same with compiler updates or other compilers. It is always in error
+    even if program compiles, it is not guaranteed to work the same with compiler updates or other compilers. It is always in error
 
 # Implementation defined :
-    using something that is implementation defined makes the program un-portable. For example sizeof(int) is not same across matchines. 
+    using something that is implementation defined makes the program un-portable. For example sizeof(int) is not same across machines, as compiler vendors can free in implementation
 
-*** Both *undefined behaviour* and *implementation defined* should be avoided in programs.
+- Both *undefined behaviour* and *implementation defined* should be avoided in programs.
 
 # Implicit type conversions
 when **signed** and **unsigned** is mixed in an expression, *signed* is always converted to *unsigned*      
@@ -29,10 +29,11 @@ when **signed** and **unsigned** is mixed in an expression, *signed* is always c
 ## integer literal 
      decimal, octal and hexadecimal literals.
      By default decimal literals are signed, it will be int < long < long long
-     By default octal and hexadecimal literals are signed or unsigned. so the value is 
+     octal and hexadecimal literals can be signed or unsigned. the types can be
      * int , unsigned int
      * long , unsigned long
      * long long, unsigned long long
+     in which ever the value fits
 
      there is no literal of short 
 ## floating point literal
@@ -125,7 +126,7 @@ it is an *error* to access the value of the variable which is undefined.
 > ***reference*** is a another name to an existing object, when we define a reference the declarator will be of the form 
 > &d, where '&' is a type modifier
 > when we *initialise* a reference we bind the reference to its initialiser, and there is no way we can rebind the  reference to another object, therefore a reference should be initialised.
-> reference is not an object, its just a name alias, so we cannot have a pointer to reference and no array of references has reference doesn't have a address.
+> reference is not an object, its just a name alias, so we cannot have a pointer to reference and no array of references, as reference doesn't have a address.
 
 ### Pointer 
 > ***pointer*** are types that point to another object. a pointer can point to
@@ -167,7 +168,7 @@ it is an *error* to access the value of the variable which is undefined.
 > for the pointer to be a constexpr, the address that it is initialised must be a **fixed address**
 > objects defined with in functions dont have address fixed, but variable defined ***outside all functions*** and defined as static have fixed address 
 > constexpr functions can be used to initialise.
-> const int *p, constexpr int *p, are not same as constexpr implies a top level const, so
+> const int *p, constexpr int *p, are not same as constexpr implies a top level const by default, so
 > - const int *p, p is pointer to const int, const is lowlevel
 > - constexpr int *p, p is const pointer to int       
 
@@ -177,7 +178,7 @@ it is an *error* to access the value of the variable which is undefined.
 
     typedef double rupees               here rupees is another name to double        
     typedef double price, *d_ptr        price is another name double,   
-                                        ptr is another name for double *, '*' is a typemodifier, it modifies the base type  
+                                        d_ptr is another name for double *, '*' is a typemodifier, it modifies the base type  
 > 2) **using**        
 
     using rupees = double         
@@ -231,6 +232,10 @@ it is an *error* to access the value of the variable which is undefined.
 >> 4) reference to const - reference which is binded to const object, const is low level and integral part to the type
 
 ## auto
+- deduces the type from the initialiser, 
+    int i, &r = i;
+    auto n = r  //  the type of n is int, as r is an alias for the i, so when we use reference as initialiser, the type of the object it refers is the type of the variable.
+
     const string s = "keep out";
     for( auto &ch : s ){ /* */ }
-    //  auto deduces the type of ch as 'const char', top level const is kept in reference initialisation
+    //  auto deduces the type of ch as 'const char', as reference to object which is const is low-level so the reference is binded to const char

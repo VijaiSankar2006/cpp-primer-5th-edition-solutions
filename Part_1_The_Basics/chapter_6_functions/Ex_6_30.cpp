@@ -20,7 +20,7 @@ bool str_subrange(const string &str1, const string &str2)
 int main(){
     std::string str1("hello"), str2("helloworld");
     std::cout << "before calling str_subrange" << std::endl;
-    std::cout << str_subrange(str1,str2) << std::endl;              //  got an output of 64 when there is no return statement, compiler only game warning
+    std::cout << str_subrange(str1,str2) << std::endl;              //  got an output of 64 when there is no return statement, compiler only gave warning
     std::cout << "This program's result is undefined" << std::endl;
     return 0;
 }

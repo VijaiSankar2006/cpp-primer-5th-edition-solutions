@@ -8,10 +8,10 @@
 >   if expression yeilds a lvalue, then the type is a reference as lvalue is nothing but a reference          
 >   but *decltype(variable)* is not a reference, as here decltype doesn't evaluate a variable so it just the type of the  
 >   variable. Only an **expression** is evaluted.     
->   if p is a int \*,      
-        decltype(*p) yields reference to the int object as '\*' yields lvalue.       
+>   if p is a int *,      
+        decltype(*p) yields reference to the int object as '*' yields lvalue.       
         decltype(p) yields int *, type of p is int *.          
-        decltype(&p) yields int **, as '&' yields an pointer to the object, here the pointer is pointer to int, so we get
+        decltype(&p) yields int **, as '&' yields an pointer to the object, here the object is pointer to int, so we get
         int **.    
 >   decltype(rvalue) yields the type of the rvalue.      
 
@@ -20,14 +20,16 @@
 >   **Precedence**, says to which operators the operands will grouped first, so here as per precedence the operands will be grouped as **( f() * g() ) + h() + i()**    
 
 >   **associativity**, says how to group when the operators are of *same precedence*, here '+' is left to right, start grouping from the left to right, so the expression becomes **( (f() * g()) + h() ) + i()**     
->   **order of evaluation**, says which operand will be evaluted first, but most of the operators doesn't say anything about *order of evaluation*, here '+' and '*' has no order of evalution defined. So any function may be evaluated first, same thing happens for variables too, there is not guarantee that which variable will be evaluated first. So the expression is in **error** if it contains two or more operands which refer and change the state of same variable and it results in undefined value, for example **i \* ++i**, here based on which 'i' or '++i' is evaluated first, we get different results, so this is in error      
+>   **order of evaluation**, says which operand will be evaluted first, but most of the operators doesn't say anything about *order of evaluation*, here '+' and '*' has no order of evalution defined. So any function may be evaluated first, same thing happens for variables too, there is not guarantee that which variable will be evaluated first. So the expression is in **error** if it contains two or more operands which refer and change the state of same variable and it results in undefined value, for example **i * ++i**, here based on which 'i' or '++i' is evaluated first, we get different results, so this is in error      
 >  **&&, ||, comma(,), conditional(?:)** are the only operators that guarantee order of evalation      
         && - left operand is evaluated first, only if it is 'true' the right operand is evaluated      
-        || - left operang is evaluated first, only if it is 'false' the right operand is evaluated     
+        || - left operand is evaluated first, only if it is 'false' the right operand is evaluated   
+        expr1 ? expr2 : expr3, either expr2 or expr3 is evaluated based on expr1 but not both
+        left-operand,right-operand - left-operand is evaluated but ignored, right operand is evaluated and returned  
 
 ### MODULUS %   (m/n)*n + m%n = m
         (-m % n) = -(m % n)
-        (m % -n) = m % n        //  that is how it is implemented in c++, there is no proper standard for this mathamatics
+        (m % -n) = m % n        //  that is how it is implemented in c++, there is no proper standard for this in mathamatics
         
 ### if(val == true)     // error
         in an expression involving bool type and non-bool type, the bool type is converted to whatever the other type 
@@ -46,26 +48,26 @@
         if condition is expression, then expr1 and expr2 should be same type as the expression in condition or they should be able to convert to a common type
         returns lvalue if expr1, expr2 are both lvalues or can be converted to lvalue otherwise an rvalue
         guaranties only expr1 or expr2 is evaluated.
-        condition operator form ; cond/expr ? expr : assignment_expression
-                so true_case - is whatever from '?' to ':' 
-                but fail_case - is up to first sequence point
+        condition operator form : cond/expr ? expr : assignment_expression
+                true_case - is whatever from '?' to ':' 
+                fail_case - is up to first sequence point
                 example : 
                 someValue ? --x, --y : ++x, ++y;
                 true_case = --x amd --y
                 false_case = ++x
-                ++y will be exucated regardless of the value of someValue as ++y is not part of conditional operator
+                ++y will be executed regardless of the value of someValue as ++y is not part of conditional operator
 [stackoverflow : how conditional operator works](https://stackoverflow.com/a/47539293/22415216)  
 ### Bitwise operators - use only unsigned type
-        takes integral type and use that as collection of bits to check and individual bit
+        takes integral type and use that as collection of bits to check individual bit
         if value is -ve, then how sign bit is handled is machine dependent, so left shifting a -ve value is undefined
 
 ### sizeof operator 
         sizeof (type)
         sizeof expr
         returns the size of expr or typename in bytes. 
-        it is a constant expression, compiled at runtime
+        it is a constant expression, executed at compile time
         it does not evaluate the operand
-        so int i, *p; int arr[10];
+        ex:- int i, *p; int arr[10];
         sizeof(int) or sizeof int
         sizeof(i) or sizeof i
         sizeof(p) or sizeof p
@@ -103,7 +105,7 @@
 #### Explicit type conversion
         • cast_name<type_name>(expr)
                 • static_cast<type_name>(expr) ===   static_cast<double>(i)/j, static_cast<int *>(ptr)  // ptr is a void * which was originaly pointing to int otherwise it will fail
-        • const_cast<char *>(ch), removes the low level const, it is used to convert ptr/ref to const to ptr/ref to non-const. It will convert to different type, it only casts away the const
+        • const_cast<char *>(ch), removes the low level const, it is used to convert ptr/ref to const to ptr/ref to non-const. It will not convert to different type, it only casts away the const
           using a const_cast to get write access is legal however writing to a const object is undefined
           (ie) T is non-const type, p is ptr/ref to const to T, q = const_cast<T>(p), as T is non-const *q = val is ok
           but if T const type, then *q = val is undefined      

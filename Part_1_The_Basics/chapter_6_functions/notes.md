@@ -1,5 +1,5 @@
 ### functions - a named block of code       
-*functions* definitions has a **return_type, function_name, list of zero or more parameters, statement block{funtion body enclosed in curlty braces } and a return type**.       
+*functions* definitions has a **return_type, function_name, list of zero or more parameters, statement block{funtion body enclosed in curly braces }**.       
 functions are called by using **() call operator**, a call operator takes an expression, which is a function_name or pointer to a function and inside the parantheses is a comma seperated list of arguments, the **type** of call operator is the return type of the function      
 a call operator does two things      
 - it initialises the function_parameters with the corresponding arguments and     
@@ -46,7 +46,7 @@ Return statements does two things
 -   creates a temporary object with the result which will be used to initialise the result of call expression    
 -   functions with **void** return type allows us to use return statement without value to exit at intermediate point    
 -   return statements can use initialiser_list to list initialise any container     
--   when there is no return statement provided for a function with return type, there are chances that compiler faile to point it as an error in that case what happens when calling such a function is undefined, refere Ex_6_30.cpp
+-   when there is no return statement provided for a function with return type, there are chances that compiler fails to point it as an error in that case what happens when calling such a function is undefined, refere Ex_6_30.cpp
 -   compiler will implicitly place a return statement if there is none in a function with void return type 
 
 ##  call operator     
@@ -165,8 +165,7 @@ constexpr function is allowed to return a non-constant type if it is called with
 
 ### Macros & pre-defined valiables
     pre-defined variable :-
-    __fun__  - function name, compiler implicitly defines the function name in every function, it is const char*
-    pre-processor variable
+    __fun__  - function name, compiler implicitly defines the function name in every function, it is const char* pre-processor variable
     __FILE__ - file name 
     __LINE__ - line no 
     __TIME__ - system time
@@ -197,7 +196,7 @@ constexpr function is allowed to return a non-constant type if it is called with
 
 ### 2nd step : VIABLE FUNCTION
     those functions from the set of candidate functions who can be called with the arguments in the given call.     
--   To be viable, a function must have same no of arguments as there are parameters,
+-   To be viable, a function must have same no of parameters as there are arguments,
 -   and the types of arguments either matches or can be convertible to the parameters types.
     so the viable functions to the call are,
     func(int);                      //  can be called as it takes one parameter of type int

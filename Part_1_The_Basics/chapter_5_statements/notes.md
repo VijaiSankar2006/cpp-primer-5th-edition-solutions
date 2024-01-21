@@ -27,8 +27,8 @@
         //...body
     }while(cond);
 
-    variable declaring is not allowed in condition, as it cannot be used in the body as it is out of scope
-    variable declared in the body is out of scope to while, as the scope ends with the end of the block '}'
+    variable declaration is not allowed in condition, as it cannot be used in the body as it is out of scope
+    variable declared in the body is out of scope to while, as the scope ends with the end of the block '}', closing braces
 
 ### for construct
     for( init-statement condition; expr)
@@ -64,9 +64,9 @@ exception handling in c++ consists of three concepts **throw,try-catch and excep
     c++ library defines several exception classes that it uses to report problems encountered in std lib functions, and we
     can also use these classes in our programs
 **Four headers**     
-    exception header - defines the most general kind of exception class exception, It provides only that exception occured but provides no further information
-    stdexcept header - defines several general purpose exception classes
-    new header - defines the bad_alloc exception type
-    type_info header - defines bad_cast exception type
+- exception header - defines the most general kind of exception class exception, It provides only that exception occured but provides no further information
+- stdexcept header - defines several general purpose exception classes
+- new header - defines the bad_alloc exception type
+- type_info header - defines bad_cast exception type
 
 ![stdexcept](../pic/stdexcept.png)
