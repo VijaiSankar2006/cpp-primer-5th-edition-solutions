@@ -62,7 +62,7 @@ smart pointers are pointer like library types, which takes care of deallocation 
 - wp.expired(), true if object is deleted, false if object is still valid
 
 ### Dynamic array
-- T *p = new T[sz], p points to the first element in the sz number of T
+- T *p = new T[sz], p points to the first element in the array of T objects of size sz
 - std::shared_ptr<T[]> sp(new T[sz]()), creates a shared_ptr to point an array of T, and new allocates memory to hold sz number of T and value initialises, default initialises in the absence of () and returns a pointer 
 - std::unique_ptr<T[]> up(new T[sz]()), same as above
 - since the type of the smart pointer is array, they use delete []T when they free memory
@@ -72,7 +72,7 @@ smart pointers are pointer like library types, which takes care of deallocation 
 ## allocator class
 allocator class offers independent allocation and construction of objects in the dynamic memory, and allocator is a template
 - std::allocator<T> al, al is a allocator object which can allocate memory to hold object of type T
-- al.allocate(n), allocates raw unconstructed memory to hold n objects of type T
+- al.allocate(n), allocates raw unconstructed memory to hold n objects of type T, and returns a pointer
 - al.deallocate(p,n), deallocates the memory that helds n objects of type T, p must be previously returned by allocate and n must be size requested during allocation
 - std::construct_at(q, args), q must point to the memory pointed by p, args must match a constructor of the type pointed by q,
 - std::destroy(q), destroys the objects pointed by q;  

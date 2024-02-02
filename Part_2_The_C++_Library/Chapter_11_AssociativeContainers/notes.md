@@ -1,5 +1,5 @@
 # <p style="text-align:center">ASSOCIATIVE CONTAINERS</p>
-    Associative containers stores the elements based on the values of keys, ordered types stores their elements in order by comparing the keys using '<' operator defined by key type. Unordered types uses hashes for the keys to store the elements in buckets faster average access time. There are totaly eight types
+    Associative containers stores the elements based on the values of keys, ordered types stores their elements in order by comparing the keys using '<' operator defined by key type. Unordered types uses hashes for the keys to store the elements in buckets for faster average access time. There are totaly eight types
 1. map  
 2. set
 3. multi_map
@@ -35,6 +35,7 @@
     * if the key is present it does nothing
     * key is added otherwise
 - map : insert takes an argument of pair type which should match with the pair type of the element in the map
+    * [key] returns the reference to the value associated with key, which can be used to change the value part, is key is not present, a new element is constructed with key as key_part and value value-initialised, returns the reference to the value
     * return a pair type consisting of iter, and a bool indicating result of insertion
     * if key is present, iter points to the element whose key matches with the key passed and bool type will be false to indicated insertion didn't happen as key is already present
     * if key is not present, a new element is constructed with key and value intialised with value-initialisation and inserted. iter will point to the new element and bool will be true indicating success
@@ -42,7 +43,7 @@
 ## multimap and multiset
 - keys can be repeated
 - no [] operator, as there may be many keys with same value
-- keys with same value are stord adjusent to each other, their order will be based on the insertion order
+- keys with same value are stored adjusent to each other, their order will be based on the insertion order
 - insert member always inserts the key even if key and value are same 
 
 # PAIR type : std::pair<T1, T2>
@@ -55,7 +56,7 @@
     * std::pair<T1,T2>(t1,t2) : t1, t2 are objects of T1, T2 type respectively
 
 ## unordered maps and unordered sets
-- elements are unordered,Unordered containers use the key type’s == operator and an object of type hash<key_type> to organizetheir elements.
+- elements are unordered,Unordered containers use the key type’s == operator and an object of type hash<key_type> to organize their elements.
 - elements are stored in different buckets, based on the hash codes and '==' operator is used for comparing keys
 - hash code is generated against the keys, key are accordingly stored in buckets
     * hash code should be same for keys with same value

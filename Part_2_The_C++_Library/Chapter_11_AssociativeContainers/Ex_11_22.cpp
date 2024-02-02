@@ -8,3 +8,5 @@
  * 
  *************************************************************************************************************************************************************/
 
+std::map<std::string, std::vector<int>>::iterator_type as first argument and return type
+std::pair<std::string, std::vector<int>>  as second argument

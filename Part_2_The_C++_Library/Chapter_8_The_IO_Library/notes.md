@@ -2,7 +2,7 @@
     The Input Output Library provides a set of classes to perform input and output operations
     HEADERS
         1. iostream - input from and output to standard(console) input and output stream 
-        2. fstream - input from and output to name files
+        2. fstream - input from and output to named files
         3. sstream - input from and output to in-memory string streams
 • istream (input stream) type, which provides input operations       
 • ostream (output stream) type, which provides output operations      
@@ -18,20 +18,20 @@
 
 > ifstream and istringstream inherits from istream, so we can use obj of ifstream and istringstream in place of cin    
 
-    cin << word;    ifstreamobj << word;     istringstreamobj << word
+    cin >> word;    ifstreamobj >> word;     istringstreamobj >> word
     getline(cin, line),     getline(ifstreamobj,line),      getline(istringstreamobj, line);       
 
 > ofstream and ostringstream inherits from ostream, so we can these types in place of cout               
 
     cout << word;   ostreamobj << word      ostringstreamobj << word
 
-### No Copy or Assign for IO Objects       
+### No Copy or Assign for IO Objects only References      
     ofstream out1, out2;
     out1 = out2                // error : can't assign stream objects
-    ofstream print(ofstream )  // error : can't initialise the ofstream parameter type  //  function call
+    ofstream print(ofstream )  // error : will be considered as function call, stream objects cannot be copied
     out2 = print(out2)         // error : cannot copy stream objects
 ### No Const
-    reading and writing changes the state of the subject, so const references
+    reading and writing changes the state of the subject, so no const references
 
 ### Condition State
     The state of a io stream(obj) can be accessed by strm::iostate type - machine dependent integral 
@@ -49,9 +49,10 @@
 ![FILE OPERATIONS](../../pictures/fstreamOperations.png)
 
 ### filemodes
-    'in' mode is implicit ifstream, it cannot be used ofstream
-    'out' and 'trunc' mode is implicit ofstream, so by default ofstream truncates the file opened unless 'app' mode is specified, if file not present a new file is created, 'out' cannot be specified with ifstream 
-![List of Modes](../../pictures/fileModes.png)
+    'in' mode is implicit in ifstream, it cannot be used ofstream
+    'out' and 'trunc' mode is implicit in ofstream, so by default ofstream truncates the file opened unless 'app' mode is specified, if file not present a new file is created, 'out' cannot be specified with ifstream 
+![List of Modes](../../pictures/fileModes.png)   
+    
     fstream should be close the file, before bound to other file, if not fstream will set failbit.
     modes are reset every time file is opened.
     file is implicitly closed when fstream obj gets destroyed at the end of the block

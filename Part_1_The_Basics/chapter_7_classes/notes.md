@@ -1,12 +1,12 @@
 # CLASSES     
 ## Abstraction and Encapsulation     
 **Abstraction** is the process of defining the **interface** and **implementation** seperately      
-*interface* of the class consists of the operations that users of that class can execute      
-*implementation* consists of data members, definitions of member functions and any functions needed to define the class that are not general use     
+*interface* of the class consists of the operations that users of that class can use to interact with the object      
+*implementation* consists of data members, definitions of member functions and any functions needed to define the class that are not for general use     
 **Encapsulation** enforses the *seperation* of interface and implementation. A class that is encapsulated *hides* its implementation, users of that class has no access to the implementation, only have access to interface     
 
 A class that uses data abstraction and encapsulation defines an abstract class.    
-In an abstract class, class designers worries abt the implementation      
+In an abstract class, class designers worries about the implementation      
 and the progammers who use the class does not need to know how the type works, instead they can think ***abstractly*** about
 how to use the class    
 
@@ -65,7 +65,7 @@ constructors are the mem-functions with class name as their name, they don't hav
 
     no const constructor :      
         a constructor may not be declared as const, as it writes to object      
-        when a const obect is created, its constness is assumed untill it is initialised, that untill the constructor 
+        when a const obect is created, its constness is not assumed untill it is initialised, that is untill the constructor 
         completes the object initialisation, thus constructors can write to the const object during their construction      
     
 ### Default constructor :
@@ -82,7 +82,7 @@ constructors are the mem-functions with class name as their name, they don't hav
         b. array initialisation with few initialisers than the size of the array
         c. T(), explicit call for value initialisation like std::string(), std::vector<T> tvec(10) - 10 elements of type 
            T will be value intialised
-
+        d. for value initialisation to work, there should be constructor which takes the value_type as its parameter or else it won't work.    
 ### constructor initialiser
     int num = 10;  -- initialisation of num, num is alloted memory, and value 10 is writen at the same moment
     int foo;       -- declaration of foo, foo is alloted memory, and default initialised
@@ -90,8 +90,9 @@ constructors are the mem-functions with class name as their name, they don't hav
     we can see that initialisation is effective than declaration and defining a variable;
     1. Constructor initialisers initialises the members when members are created, and form is
         struct bar{
-            bar(T val) : member1(val) {}
+            bar(T val1, P val2) : member1(val1), member2(val2) {}
             T member1;
+            P member2;
         };
     members are initialised by the initialisers before execution reaches the constructor body
     So if we don't provide initialiser, members are default initialised before constructor body is executed, so to initialise the members we have to use constructor initialisers rather than assigning values in constructor body, as the members would have been already initialised
@@ -115,10 +116,10 @@ constructors are the mem-functions with class name as their name, they don't hav
         members following private keyword up to any other access specifier can be accessed by only member funtions not the user code.
         They form the implementation part of the class
     friend : 
-        non-member functions which are part of the interface of the class doesn't have access to non-public members by default
-        For the code in the non-member functions to access non-public members they need to declared as 'friend' to the class
+        For the non-member functions to access non-public members of the class they need to declared as 'friend' to the class
         'friend' declarations should appear inside the class definition, 
         A class allows another class and functions to have access to its non-public members by making them its friend
+        friend declarations are not affected by access specifiers.
 
     --------------------------------example----------------------------------------------------------------------------------
 
@@ -129,7 +130,7 @@ constructors are the mem-functions with class name as their name, they don't hav
         foo( para_list ) : member1( param_1), member2( param_2) {}
         r_type memFunc1( para_list );
         r_type memFunc2( para_list );
-    private :
+    private : 
         member1;
         member2;
     };

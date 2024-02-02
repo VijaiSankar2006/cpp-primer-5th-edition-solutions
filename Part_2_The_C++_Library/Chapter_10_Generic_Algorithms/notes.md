@@ -39,10 +39,10 @@
     with a value indicated by val.
     assumes there are atleast n elements in the dest sequence, if not undefined
 
-### back_inserter(cont_ref)
+### back_inserter(container_ref)
     back_inserter(), takes a reference to a container and returns a insert iterator
     insert iterator is one which adds elements to the container through container operations
-    normaly algorithms uses iter - it writes to existing element, but when we assign a val to insert iterator, it is added as new element in the container
+    normaly algorithms uses iter - it writes to existing element, but when we assign a val to insert iterator, it is added as new element in the container by calling push_back().
     ex:- 
         vector<int> vec;  // empty vector
         auto beg = vec.begin();
@@ -76,7 +76,7 @@
     
 ### stable_sort(b, e, predicate)  or  stable_sort(b, e)
 
-    b,e : the range of elements in the sequence
+    b,e : the range of elements in the sequence0
     stable_sort() sorts the elements preserving the original order of the equal elements
 
     ex :- list of words in alphabetical order
@@ -100,7 +100,7 @@
 # LAMBDA    
 ## [CAPTURE_LIST](PARAM..)-> RETURN_TYPE {BODY}
     - LAMBDA's are callable objects, a callable object is a expression to which a call,() operator can be applied.
-    - lamda's can use a variable defined in the enclosing function only if it mentions it in the capture list.
+    - lamda's can use a variable defined in the enclosing function, only if it mentions it in the capture list.
     - parameters and body are same as any function, it's just lambda's are like inline functions
     - lamda's can use static variables and variables defined outside the enclosing function directly with out capturing
     - return type should be mentioned by a trailing return type or can be infered based on the return statements in the body
@@ -155,7 +155,7 @@
 ## bind(callable, args)
     - bind(), a function adapter that takes a callable and generates a new_callable.
     - when the new_callable is called, it calls the callable with its parameters as the arguments to the callable.
-    - args... normaly consists of placeholders _n, where n is the no of the parameter of new_callable.
+    - args... normaly consists of placeholders _n, where n is the place of the parameter int the parameter list of the new_callable.
             _1, represents the 1st parameter
             _2, reresents the 2nd parameter
 
@@ -188,7 +188,7 @@
         ex:- auto f_it = front_insertor(iter);
              *f_it = 45;  // calls push_front(45), f_it = *f_it
 
-    - insertor(iter) - returns a insert iterator which when assigned calls insert(iter,val) on a container, repeative        assignments will always call insert(iter, val), (ie) insert always before the same iter. 
+    - insertor(iter) - returns a insert iterator which when assigned calls insert(iter,val) on a container, repeative        assignments will always call insert(iter, val), (ie) inserts always before the same iter. 
         ex:- auto i_it = insertor(iter);
              *i_it = 45  // calls insert(iter, 45), i_it == *i_it
 
@@ -241,7 +241,7 @@
         - istream_iterator<T> i_iter(ostr_strm)
                 reads element of type T from the istream using '>>' operator defined by the type T, so the types should have the '>>' operator defined, or else it won't work
 
-                val = *i_iter++   //  increaments to read the next value and returns the old iterator to dereference the previous read value, -- won't work
+                val = *i_iter++   //  increaments to read the next value and returns the old iterator to dereference the previous read value, (--)decrement won't work
         - istream_iterator<T> end;  
                 default initialised, which indicates eof and invalid input
 
@@ -370,3 +370,4 @@
             
  
 
+0
