@@ -1,7 +1,5 @@
-![precedence](pic/precedence1.png)
+![Alt text](pictures/Table_4_12_Operator_Precedence.png) 
+![Alt text](pictures/Table_4_12_2_OperatorPrecedence.png) 
+![Alt text](pictures/Table_4_12_3_OperatorPrecedence.png) 
+![Alt text](pictures/Table_4_12_4_OperatorPrecedence.png)
 
-![precedence](pic/precedence2.png) 
-
-![precedence](pic/precedence3.png) 
-
-![precedence](pic/precedence4.png)

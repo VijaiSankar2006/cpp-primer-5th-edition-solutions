@@ -1,10 +1,8 @@
 /************************************************************************************************************************************************************
- * @file Ex_12_33.cpp
- * @brief Exercise 12.33: In Chapter 15 we’ll extend our query system and will need some additional members in the QueryResult
- * class. Add members named begin and end that return iterators into the set of line numbers returned by a given query, and a
- * member named get_file that returns a shared_ptr to the file in the QueryResult object.
- * @date 2024-01-19
-
+ * @file TextQuery.cpp
+ * @brief 
+ * @date 2024-02-07
+ * 
  * @copyright Copyright (c) 2024
  * 
  *************************************************************************************************************************************************************/
@@ -58,7 +56,7 @@ class TextQuery{
 };
 
 class QueryResult{
-    friend inline ostream & print(ostream &out, const QueryResult &qr);
+    friend inline std::ostream & operator<<(ostream &out, const QueryResult &qr);
     public :
         using index_type = TextQuery::index_type;
        
@@ -76,10 +74,30 @@ class QueryResult{
         shared_ptr<vector<string>> get_file(){
             return file;
         }
+
+        // specifies a left and right inclusive range(first,last), so << operator will only print if the line_no is in the range
+        QueryResult & range(index_type first_, index_type last_ ) {
+            if (first_ >= file->size()) {
+                first = 0;
+            } else {
+                first = first_;
+            }
+
+            if (last_ >= file->size() || last < first) {
+                last = file->size();
+            } else {
+                last = last_;
+            }
+            
+            return *this;
+        }
+
     private :   
         string word;
         shared_ptr<vector<string>> file;
-        shared_ptr<set<index_type>> lines;            
+        shared_ptr<set<index_type>> lines;   
+        index_type first = 0;
+        index_type last = 0;         
 };
 
 QueryResult TextQuery::query(const std::string &sought_word) const {
@@ -96,11 +114,20 @@ string make_plural(set<TextQuery::index_type>::size_type n){
     return n > 1 ? " times " : " time ";
 }
 
-ostream & print(ostream &out, const QueryResult &qr){
-    auto n = qr.lines->size();
-    out << qr.word << " appears " << n << make_plural(n) << "in the file" << endl; 
-    for(auto line_no : *qr.lines){
-        out << "[ " << line_no + 1 << " ]  " << *(qr.file->begin() + line_no) << endl;
+std::ostream & operator<<(ostream &out, const QueryResult &qr) {
+    size_t last = qr.last == 0 ? qr.file->size() : qr.last;
+    size_t first = qr.first;
+
+    auto count =  std::count_if(qr.lines->begin(), qr.lines->end(), [first, last](size_t line_no){ return (line_no >= first && line_no <= last);});
+    out << qr.word << " appears " << count << make_plural(count) << "in the file" << endl << endl; 
+    if (!count) {
+        return out;
+    }
+
+    for (auto line_no : *qr.lines) {
+        if( line_no >= first && line_no < last) {
+            out << "[ " << line_no + 1 << " ]  " << *(qr.file->begin() + line_no) << endl;
+        }    
     }
 
     return out;
@@ -113,18 +140,6 @@ void runQueries(ifstream& infile)
         cout << "enter word to look for, or q to quit: ";
         string s;
         if (!(cin >> s) || s == "q") break;
-        print(cout, tq.query(s)) << endl;
+        std::cout << (tq.query(s)) << endl;
     }
-}
-
-int main(){
-    std::ifstream ifile("text.txt");
-    if(!ifile){
-        std::cerr << "Unable to open file" << std::endl;
-        return -1;
-    }
-
-    runQueries(ifile);
-
-    return 0;
 }
