@@ -8,28 +8,32 @@
 > template : keyword used to declare or define template       
 > template_parameterlist : comma seperated list of template parameters representing **types or non-types** specified inside **angle brackets <>**    
 > template_name : name of the template       
-> template_definition : definition which will be either class or function definition in which template-parameters will be replaced with **template arguments**.      
+> template_definition : definition which will be either class or function definition.     
 
-### Function templates : 
-***Function templates*** are templates from which specific functions will be instantiated
-    template <template_parameter_list> template_name
+### Function templates :      
+***Function templates*** are templates from which specific functions will be instantiated 
+
+    template <template_parameter_list>
     ret_type template_name(function_parameter_list) {
         .../function body
     }
 
-**template_parameter_list**, a comma seperated list of one or more template parameters that can be either **type** or **non-type**     
-**type parameter**, is a name representing a *type* which will be used to declare *function parameter names* or *variables* in the function body. *Types* is declared with **typename** keyword.    
-**non-type**, is a name representing non-type (ie) a value which is a constant expression. *non-types* are declared by **specifiying type** of the value     
-*template parameters* are automatically deduced from the arguments of the call.
-**inline and constexpr** can be used in defining function template
+**template_parameter_list**, a comma seperated list of one or more template parameters that can be either **type** or **non-type**         
+**type parameter**, is a name representing a *type* which will be used to declare *function parameter names* or *variables* in the function body. *Types* is declared with **typename** keyword.        
+**non-type**, is a name representing non-type (ie) a value which is a constant expression. *non-types* are declared by **explicitly** specifiying type of the value         
+*template parameters* are automatically deduced from the arguments of the call.     
+**inline and constexpr** can be used in defining function template     
 ### typename 
 - **typename** keyword is used to declare a name which represents a type.
-- any no of typename parameters can be declared.
+- any no of typename parameters can be declared.    
+```c++
+
     ex 1 :- 
     template <typename T> 
     T bigger(T a, T b) {
         return a > b ? a : b;
     }
+```
 
     - typename is used to declare a name T, which represents a type. type name can be any un-qualified identifier
     - T is used to declare the ret-type, function parameters a and b
@@ -37,10 +41,10 @@
     - function with T replaced with corresponding type will be instantiated.
     - bigger<T> with T replaced with type is the name of the function instantiated, the word "bigger" is function template name. Type deduced is part of the function name.
 
-    bigger(34, 24)           ==  T is deduced as int             ==  int bigger<int>(int a, int b) { ... } is instantiated
-    bigger(3.4, 2.4)         ==  T is deduced as double          ==  double bigger<double>(double a, double b) { ... }
-    bigger('c', 'C')         ==  T is deduced as char            ==  char bigger<char>(char a, char b) { ... }
-    bigger("hello", "Hello") ==  T is deduced as const char *    ==  const char * bigger<const char *>(const char *a, const char *b) {...}
+    bigger(34, 24)           ==  T is deduced as int                      ==  int bigger<int>(int a, int b) { ... } is instantiated
+    bigger(3.4, 2.4)         ==  T is deduced as double               ==  double bigger<double>(double a, double b) { ... }
+    bigger('c', 'C')         ==  T is deduced as char                      ==  char bigger<char>(char a, char b) { ... }
+    bigger("hello", "Hello") ==  T is deduced as const char *  ==  const char * bigger<const char *>(const char *a, const char *b) {...}
     T can be any type that can passed and returned from a function, like class type, containers etc
     
     ex 2 :-
@@ -59,66 +63,77 @@
     bigger(34, 3.4)  //  error : cannot deduce T, int or double  
 
 ### Explicit type 
-- Type can be passed to a template by *explicitly* specifying in **angle brackets <>** following the template name before the argument list
+- Type can be passed to a template by *explicitly* specifying in **angle brackets <>** following the template name before the argument list     
+   ```c++
     bigger<int>(34, 3.4)  // ok : T is int, explicitly specified, type of 2nd argument double is converted to int.
+   ```
 - when the type is explicitly specified, normal type conversions happens to the arguments in the call to the type specified.
 
 ### non-type parameters 
-- template parameter can be non-types, (ie) a name which represents a value, but the type of the value should be explicitly mentioned
-    ex : 
-    template <unsigned N, unsigned M>
-    int bigger(int (&arr)[N], int (&arr)[M]) {
-        return N > M ? N : M;
-    }
-
+- template parameter can be non-types, (ie) a name which represents a value, but the type of the value should be explicitly mentioned     
+          
+    ```c++
+    template <unsigned N, unsigned M>      
+    int bigger(int (&arr)[N], int (&arr)[M]) {      
+        return N > M ? N : M;      
+    }      
+      
     N,M - names of non-type parameters, though they are both declared to be "unsigned" type, one or more, same or different non-type parameters can be declared.
     N, M are used to declare the size of the arrays in the function parameters
 
     bigger(arr1, arr2)  ==  N, M are deduced automatically from the size of the arrays passed in the call
 
-names of the type and non-type parameter can be any un-qualified identifier 
-    template <typename arg_type, typename ret_type> 
-    ret_type bigger(arg_type a, arg_type b) {
-        return a > b ? 1 : 0;
-    }
+    names of the type and non-type parameter can be any un-qualified identifier       
+    template <typename arg_type, typename ret_type>       
+    ret_type bigger(arg_type a, arg_type b) {      
+        return a > b ? 1 : 0;     
+    }        
 
     bigger<double, bool>(3.4, 34)       ==      bool bigger(double a, double b) { ... }  is instantiated   
+    ```
  
 ### class template 
-**class template** is a template from which specific class type will be instantiated.
-    tempate <typename type> 
-    class Foo {
-        ....definition
-    };
+**class template** is a template from which specific class type will be instantiated.     
+```c++
+    tempate <typename type>       
+    class Foo {     
+        ....definition     
+    };   
+```   
 
 - declared with template keyword
 - template parameter types are specified inside angle brackets
 - class template defintion starts with class keyword followed by class template name.
 - class template body follows then.
 
-***unlike*** function templates, type should be **explicitly specified** inside ***angle brackets** to instantiate
+***unlike*** function templates, type should be **explicitly specified** inside ***angle brackets*** to instantiate
 - when a class type is instantiated from a template, class template name followed by type inside angle brackets <> forms the class name.
-    ex: 
+```c++
+     
         template <typename type> 
         class Foo {
             ...body
         };
 
         Foo<int> f1;  Foo<int> is instantiated with int replacing type, f1 is Foo<int> type.  
-- when a class type is instantiated, only the members used in the code will be instantiated
+```
+- when a class type is instantiated, only the members used in the program will be instantiated     
 **member definitions outside the class :**
 - as type is part of the class name, the template parameter list with which class template is defined should be declared 
 - followed by by the class type to which it is a member
+    ```c++
     template <typename type> 
     ret_type Foo<type>::print() {
         ....body
     }
+    ```
 - template <typename type> : template parameters for the class 
 - ret_type : return type of the member function
-- Foo<type> : class name to which the member belongs
+- `Foo<type>` : class name to which the member belongs
 - print()  :  member function name
 
 - Though type is part of the class name, inside the template definition class name can be used without type as it will be implicitly added by the compiler.
+    ```c++
     template <typename type> 
     class Foo {
         public :
@@ -127,13 +142,16 @@ names of the type and non-type parameter can be any un-qualified identifier
                 return *this;
             }
     };
+    ```
 
 - once the class name is seen, we can use the name with out type, but untill any use should have full name
+    ```c++
     template <typename type> 
     Foo<type> & Foo<type>::operator=(const Foo & rhs) {
         ...//
     }
 
+    ```
 ### Friendship
 - One-to-One 
 - One-to-Many
@@ -141,6 +159,7 @@ names of the type and non-type parameter can be any un-qualified identifier
 #### One-to-One Friendship 
 Mostly common form of friendship from class template to another template(class or function) is one-to-one (ie) establishes friendship between corresponding instantiations of class and its friend.
 Inorder to declare a specific instantiation of a class or function as a friend, the template itself needs to be declared first.
+```c++
     ex 1: 
         template <typename> class Bar;    //  any template declarations includes the template's parameters list, forward declaration of class template Bar
         template <typename> ret_type debug(int);    //  forward declaration of debug() function template.
@@ -175,8 +194,10 @@ Inorder to declare a specific instantiation of a class or function as a friend, 
         class Sales {
             friend ret_type print<Sales>();  //  one-to-one == print function that takes Sales object as template argument is a friend to Sales class. 
         };
+```
 
 - **type-aliases**, can be declared for class type generated from a template.
+```c++
     ex 1 :- 
         typedef Blob<string>  StrBlob
         typedef Blob<int> iBlob;
@@ -189,8 +210,10 @@ Inorder to declare a specific instantiation of a class or function as a friend, 
 
         twin<int> t1;   //   t1 is a pair with both first and second members of same int type
         twin<double> area;
+```
 
 - **static members**
+```c++
     template <typename T> 
     class Foo {
         public :
@@ -200,11 +223,13 @@ Inorder to declare a specific instantiation of a class or function as a friend, 
     template <typename T> 
     size_t Foo<T>::count = 0;   //  static member definition
 
+```
 - members that are **types**, when we use a member which is a type, we should explicitly tell the compiler that it is a type rather than a static member which is assumed as default
+    ```c++
     template <typename T> 
     class Foo {
         public :
-        T::mem_name get();   //  error : mem_name is assumed to be a static member of T 
+        T::mem_name get();   //  error : mem_name is assumed to be a static member of T when accessed through a scope operator
         typename T::mem_name get() //  ok : mem_name is a type name defined by T
         typedef typename T::size_type index_type;  
     };
@@ -215,9 +240,11 @@ Inorder to declare a specific instantiation of a class or function as a friend, 
     typename T::size_type get_size(T val) {
         return val.size();
     }    
+    ```
 
 ### Default arguments   
 Both template parameters and function parameters can have default arguments
+```c++
     template <typename T, typename F = DebugDelete>   // DebugDelete is the default type F represents, if type is not mentioned      
 
     class Foo {
@@ -232,19 +259,23 @@ Both template parameters and function parameters can have default arguments
     P bar(T a, T b = 45) {  //  45 is the default value of b
         ..../ 
     } 
+```
 
 #### Controlling Instantiations
-**extern template class Foo<int>;**  tells the compiler that instantiation of Foo<int> will appear somewhere else, so no need to instantiate again.
-    Foo<int> f1;   //  will not be instantiated
-    Foo<double> f2;  //  Foo<double> will be instantiated
+**extern template class Foo<int>;**  tells the compiler that instantiation of Foo<int> will appear somewhere else, so no need to instantiate again.      
+    `Foo<int> f1;`   //  will not be instantiated as instantiation is available some where else    
+    `Foo<double> f2`;  //  `Foo<double>` will be instantiated       
 
-**template class Foo<string>;**  explicitly instantiates Foo<string> with all members, even members which are not used will be instantiated
-large program with multiple files, when a specific instantiation is used in all files, it should be marked extern in all files except one, in which it should be defined
+**`template class Foo<string>`;**  explicitly instantiates Foo<string> with all members, even members which are not used will be instantiated          
+large program with multiple files, when a specific instantiation is used in all files, it should be marked extern in all files except one, in which it should be defined      
+```c++
     extern template Foo<string>;   // template declaration
     template Foo<string>;  //  template definition which instantiates Foo<string> with all members
+```
 
 ### Type Transformation Library Template classes
-**remove_reference**, a class template with a public **type** member. when instantiated with a reference type, its type member will be the type of the refered type without reference
+**remove_reference**, a class template with a public **type** member. when instantiated with a reference type, its type member will be the type of the refered type without reference     
+
     ex :-
         remove_reference<decltype(rs)>::type s1;  //  if the type of rs is lvalue reference or rvalue reference, its type member will be type of rs.
 
@@ -254,8 +285,9 @@ when it comes to template, if T is deduced as a reference, and the parameter is 
 - X&& &&, collapses to X&&
 reference collapsing is done only when reference to reference is done indirectly in typdefs and templates
 
-- A function parameter which is a rvalue reference of the template type parameter, can be bound to a lvalue through reference collapsing.
-    ex:  template <typename T> 
+- A function parameter which is a rvalue reference of the template type parameter, can be bound to a lvalue through reference collapsing.      
+```c++
+    template <typename T> 
          void print(T &&val) {
             ..../
          } 
@@ -263,14 +295,18 @@ reference collapsing is done only when reference to reference is done indirectly
          print(45)   //  T is int, as 45 is rvalue, 
          print(num)  //  T is lvalue reference of int, (ie) deduced as int&,  int& &&val == int &val
                      //  instantiates void print<int&>(int &val);
+```
 
 #### std::move()  
 uses referencing collapsing to return an rvalue reference of the argument;
+```c++
     template <typename T> 
     auto move(T &&val) {
         return static_cast<typename remove_reference<T>::type &&>(val);
     }
-static_cast is used to implicitly convert a lvalue to rvalue reference.
+```
+static_cast is used to explicitly convert a lvalue to rvalue reference.
+```c++
     std::move(str1) 
         str1 - lvalue
         T is string, lvalue reference
@@ -284,10 +320,12 @@ static_cast is used to implicitly convert a lvalue to rvalue reference.
         remove_reference<string>::type is string
         static_cast<string &&>(val) returns the val is rvalue reference
         return type is rvalue reference.
+```
 
 #### std::forward<T>(val) 
 **std::forward()** is used along with rvalue references to forward the original type of the template arguments to another function.
-**rvalue reference** parameters of template parameter types preserves lvalueness and constness of the argumen.
+**rvalue reference** parameters of template parameter types preserves lvalueness and constness of the argument.
+```c++
     template <typename T> 
     void func(T &&val) {
         do(val);  
@@ -303,8 +341,10 @@ static_cast is used to implicitly convert a lvalue to rvalue reference.
     func(45);   //  T is int, val is rvalue refernce to int
     do(val);  // a variable name is an expression that yields lvalue reference, unable to pass the original type of 45
     we loose the rvalueness of the argument. std::forward is used along rvalue reference parameters to preserve the original type of the argument.
+```
 **std::forward<T>(val)
-- through reference collapsing on its reference type, it gets the original type of the argument
+- through reference collapsing on its return type, it gets the original type of the argument     
+```c++
     tempalate <typename T>
     T && forward(T &&val) {
         return val;
@@ -316,14 +356,16 @@ static_cast is used to implicitly convert a lvalue to rvalue reference.
 
     func(45);  //  T is int, val is rvalue reference to int
     do(std::forward<T>(val)) //  std::forward returns val as a rvalue reference type, which is passed to do()
+```
 
 - When ever a template function needs to forward the arguments, std::forward is used to preserve the original type of the arguments.
 
 ### Overloading templates
 - amoung the non-template matches and template matches, non-template function is chosen
-- if there is no non-template matches, amound the template matches, more specialise one is chosen over the general one
+- if there is no non-template matches, amoung the template matches, more specialise one is chosen over the general one
 - otherwise, the call is ambiguous.
-- any non-template function overload should be declared before the template, orelse template will instantiate
+- any non-template function overload should be declared before the template, orelse template will instantiate      
+```c++
     template <typename T>
     void print(T &val) {
         .../
@@ -341,6 +383,7 @@ static_cast is used to implicitly convert a lvalue to rvalue reference.
     print(&num);  //  void print(T &val) with T as int * is instantiated, general version can be called with almost any type
                   //  void print(T *p) with T as int is instantiated, more specialised one as it can be called with only pointers.
                   //  so void pirn(T *p) instantiation is chosen
+```
             
 ```c++
 // More Examples :
@@ -395,11 +438,12 @@ static_cast is used to implicitly convert a lvalue to rvalue reference.
 
 ### VARIADIC TEMPLATES
 **Variadic Template**, is a template of class or function which can take **varying number** of parameters. The varying number of parameters is called **parameter pack**. **ellipsis...** is used to indicate that the name represents a parameter pack.
-- typename... indicates that following parameter consists of 0 or more types
-- name of type... indicates that following non-type parameter consists of 0 or more non-type parameters of given type
+- typename... indicates that following parameter consists of 0 or more types      
+- name of type... indicates that following non-type parameter consists of 0 or more non-type parameters of given type      
 - template parameter pack consists of 0 or more template parameters of same or diff types
 - function parameter pack consists of 0 or more function parameters of same or diff types
 
+```c++
     template <typename T, typename... Args> 
     void print(T &val, Args&... args) {
         print(args...);
@@ -407,14 +451,16 @@ static_cast is used to implicitly convert a lvalue to rvalue reference.
 
     print(num1, d1, str1, f1); 
     void print(int, double & , string &, float &) is instantiated, T is int, Args... is the parameter pack consisting of types double, string and float deduced from the argument.
+```
 
 **sizeof...(Args) == sizeof...(args)**, is always same they both represents no of elements in the pack    
-**Expansion of parameter packs**    
-ellipsis... after the name of the template parameter pack in the function declaration expands the template parameter pack
-Anything before the ellipsis... is the pattern that needs to be applied to every element in the pack
-    Args... args  ===  double arg1, string arg2, float arg3
-    Args&... args ===  double &arg1, string &arg2, float & arg3
-    const Args*... args === const double *arg1, const string *arg2, const float *arg3
+**Expansion of parameter packs**        
+ellipsis... after the name of the template parameter pack in the function declaration expands the template parameter pack    
+Anything before the ellipsis... is the pattern that needs to be applied to every element in the pack     
+```c++
+    Args... args  ===  double arg1, string arg2, float arg3     
+    Args&... args ===  double &arg1, string &arg2, float & arg3      
+    const Args*... args === const double *arg1, const string *arg2, const float *arg3     
 Again args... inside the function expands the function parameter pack.
     template <typename T, typename... Args> 
     void print(T &val, Args&... args) {
@@ -425,6 +471,7 @@ Again args... inside the function expands the function parameter pack.
     1st argument in the pack will be used to deduce T and val will be bound to it.
     the rest of the arguments form the template parameter pack Args, which will be expanded again to declare function parameter pack
 
+```
 when a Variadic Template is used recursively, there should be a **non-variadic** overload of the function template with only one parameter, or else the recursion will never stop as when we call print() with function parameter pack containing only one element, T will be bound to that element, and an empty template parameter pack will be deduced, so a function with val bound to arg and empty function parameter pack will be instantiated resulting in a recursion loop.
     template <typename T>   //  non-variadic function template
     void print(T &val){
@@ -434,15 +481,18 @@ when a Variadic Template is used recursively, there should be a **non-variadic**
     this non-variadic template should be declared or defined before the variadic template or else variadic version will be used to instantiate.
 
 **Pack expansion :**
+```c++
     print(do(args...));   // expands the pack inside as arguments to the do()
     (ie) print(do(arg1, arg2, arg3));
 
     print(do(args)...);   // expands the pack with pattern applied to each element, and the pattern is do(arg)
     (ie) print(do(arg1), do(arg2), do(arg3));
+```
 
 ### forwarding parameter packs 
 - std::forward is used to forward the parameter pack to another function 
 - to forward first we have declare the function parameter pack using rvalue reference
+```c++
     template <typename... Args> 
     void print(Args&&... args) {
         do_work(std::forward<Args>(args)...);
@@ -453,12 +503,14 @@ when a Variadic Template is used recursively, there should be a **non-variadic**
         expands as std::forward<Arg1>(arg1), std::forward<Arg2>(arg2), std::forward<Argi>(argi)
 
     do_work(std::forward<Args>(args)...) == do_work(std::forward<Arg1>(arg1), std::forward<Argi>(argi));
+```
 in-turn we have forwarded all type information to another function.
 
 ### Template Specialisations 
-**Template Specialisation** is a seperate definition of the original template with all or some parameters of the template are explicitly specified
-**template <>**, is used to indicate what follows is a template specialisation
-**Function template specialisation**, unlike class templates, these have to explicitly specify all parameters with particular types to specialise, So these are indeed a specific instantiation.
+**Template Specialisation** is a seperate definition of the original template with all or some parameters of the template are explicitly specified     
+**template <>**, is used to indicate what follows is a template specialisation     
+**Function template specialisation**, unlike class templates, these have to explicitly specify all parameters with particular types to specialise, So these are indeed a specific instantiation.      
+```c++
     template <typename T>   //  original template definition
     void func(T a){
         .../
@@ -468,10 +520,12 @@ in-turn we have forwarded all type information to another function.
     void func<string>(string a) {
         .../
     }
+```
 
 overloading affects the function matching where as specialisation doesn't affect function matching
 
 **class template specialisation** can specify all or some or part of the parameter.
+```c++
     std::remove_reference is dedined as follows
     template <typename T> 
     struct remove_reference {
@@ -487,6 +541,7 @@ overloading affects the function matching where as specialisation doesn't affect
     struct remove_reference<T&&> {
         typedef T  type;
     } 
+```
 
 
 

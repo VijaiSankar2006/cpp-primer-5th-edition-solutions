@@ -5,11 +5,12 @@
 ***built-in*** operators are used with our classes.     
 *Overloaded operators* can either be members or non-members, but should take atleast one parameter of class type.     
 They are similar to a function, as they have a return_type, special_function name as "operator" keyword followed by the operator symbol being defined, a parameter list inside parantheses and a body.     
-They have same precedence, associativity and same number of arguments as the corresponding built-in operators.
-    return_type operator+(param_list){
+They have same precedence, associativity and same number of arguments as the corresponding built-in operators.    
 
+    return_type operator+(param_list){   //  defines + operator
+        .../body
     };
-    //  defines + operator
+    
 
     class foo{
         public :
@@ -28,7 +29,7 @@ They have same precedence, associativity and same number of arguments as the cor
 
     2 - operator+ is defined as a non-member, where left is passed as the first param, and right operand is passed as the second param
 
-    can be called indirectly using the operator 
+    can be called indirectly by using the operator 
         ex :-  foo f1, f2;
                foo f3 = f1 + f2;
     or can be called explicitly
@@ -36,21 +37,22 @@ They have same precedence, associativity and same number of arguments as the cor
 
 **Members**
 - assignment(=), call_operator(), subscript([]), member_access operator(->) should be defined as members.
-- The compound assignment operators are not be required to members but mostly defined as members
+- The compound assignment operators are not required to be members but mostly defined as members
 - operators that changes the state of the obect such as increment(++) post and pre, decrement(--) post and pre, 
 and dereference are usually defined as members.
 
 **Non-Members**
 - symmetric operators - which when operands are reversed gives the same meaning, should be defined as non-members. arithmatic operators, equality operators, relational operators and bitwise operators are all symmetric operators
-- stream operators should be defined as non-members, as for a member class type should be in left, which is not so here.
+- stream operators should be defined as non-members, since for member, class type should be in left, which is not so here.
 ## Input and Output operators :  << >>
 non-member function, as class type is in right hand side to the stream operators.
-#### <<
+#### operator<< - Output stream operator
 - first parameter - non-const reference to output stream, non-const because when writen changes the state of the object and reference as stream objects cannot be copied.
-- second parameter - const reference to class type, const because writing to a stream doesn't change the class type.
+- second parameter - const reference to class type, const because writing to a stream doesn't change the object.
 - return_type - a reference to the output stream 
-- should be declared as friend function to have access to non-public members.
-    ex:-   
+- should be declared as friend function to have access to non-public members.    
+
+        ex:-   
            class foo{
            friend ostream & operator<<( ostream &, const foo &);
            };
@@ -60,15 +62,16 @@ non-member function, as class type is in right hand side to the stream operators
                 return os;
            }
 As normally << operators do minimal formating, it should be followed for class too, as the users of the operator excepts it to behave in the same way.
-#### >>
+#### operator>>   -  Input stream operator
 - first parameter - non-const reference to input stream, same reasons as output operator
 - second parameter - non-const reference to class type, non-const as what read is going to be written to the object.
 - return_type - reference to input stream
 - friend declaration is needed to access non-public members
-- should check for read errors and should put the object in a consistent state if there is an error, probably default construct the object
-    ex :-
+- should check for read errors and should put the object in a consistent state if there is an error, probably default construct the object    
+
+        ex :-
         class foo{
-        friend istream & operator>>(istream &, foo &);
+            friend istream & operator>>(istream &, foo &);
         };
 
         istream & operator>>( istream & is, foo & f){
@@ -87,8 +90,9 @@ As normally << operators do minimal formating, it should be followed for class t
 Defined as non-member functions so that either operand can be converted as class type
 - first & second parameter : left operand and right operand is passed as first & second parameters respectively, both are const reference as these operators normally don't change the state of the objects.
 - return_type : returns a copy of the result which is distinct to value of both the operands as result is calculated in a local temp variable
-- classes which define arithmetic operators should defined corresponding **compound assignment** operators and normally should delegate the real work to them, as they assign the result to the left operand, first parameter is non-const reference to left operand if designed as non-member, but normally they designed as members.
-    ex :-
+- classes which define arithmetic operators should defined corresponding **compound assignment** operators and normally should delegate the real work to them, as they assign the result to the left operand, first parameter is non-const reference to left operand if designed as non-member, but normally they designed as members.     
+
+        ex :-
         class Foo{
         friend Foo operator+(const Foo &lhs, const Foo &rhs){
             Foo temp(lhs);
@@ -96,7 +100,7 @@ Defined as non-member functions so that either operand can be converted as class
             return temp;
         }
         Foo & operator+=(const Foo &rhs){
-            member1 = rhs.member1;
+            member1 += rhs.member1;  //  each member is added using += operator defined by them
             ...body
             return *this;
         }
@@ -110,8 +114,9 @@ Defined as non-member functions so that either operand can be converted as class
 - return type - bool indicating equal or not
 - classes defined == should define != and only one should do the real work, and another should delegate work.
 They are defined to check equality between two objects of the class type, which checks the equality of each member from lhs with corresponding from the rhs.    
-Library algorithms uses == and < definitions of the class, so it is easy to use algorithms on the class type which has defined these      
-    ex:- 
+Library algorithms uses == and < definitions of the class, so it is easy to use algorithms on the class type which has defined these       
+
+        ex:- 
         class Foo{
         friend bool operator==(const Foo &lhs, const Foo &rhs){
             return lhs.member1 == rhs.member1 &&
@@ -128,8 +133,9 @@ Library algorithms uses == and < definitions of the class, so it is easy to use 
 - non-members
 - first and second parameter : const references to the operands
 - return_type : bool
-- Assosiative containers uses < operator of the key type to store the data
-    ex:- 
+- Assosiative containers uses < operator of the key type to store the data    
+
+        ex:- 
         class Foo{
         friend bool operator<(const Foo &lhs, const Foo &rhs){
             return .../class type should have a natural comparison
@@ -140,19 +146,23 @@ Library algorithms uses == and < definitions of the class, so it is easy to use 
 - members as they assign the value of the right hand operand value to the left hand operand
 - explicit parameter : const reference to the class type, right operand is passed as explicit parameter
 - return_type : reference to the left hand operand(object to which 'this' is implicitly bound)
-    ex:- 
+- Need to check for self assignment before assigning.
+    ```c++
+    
         class Foo{
         public :
             Foo & operator=(const std::initializer_list<T> &il){
                 ....body  //  when objects of other types are used, no need to check for self assignment
             }
         };
+    ```
 
 ### Compound Assignment operators
 - normaly defined as members, but not a necessary
 - explicit parameter : const reference to the right operand
 - return_type : reference to the left operand
-    ex:-
+    ```C++
+    
         class Foo{
         public :
             Foo & operator+=(const Foo &rhs){
@@ -160,6 +170,7 @@ Library algorithms uses == and < definitions of the class, so it is easy to use 
                 return *this;
             }
         };
+    ```
 
 ### Subscript operator
 - classes which behaves like containers, should define [] operator to retrieve the element by position
@@ -167,7 +178,8 @@ Library algorithms uses == and < definitions of the class, so it is easy to use 
 - parameter : size_t to indicate the position
 - return_type : reference to the element type, so used to both read and write
 - should have const version and non const version, const version should return reference to const element type
-    ex :-
+
+```c++
         class Foo{
         public :
             T & operator[](size_t i){
@@ -178,6 +190,7 @@ Library algorithms uses == and < definitions of the class, so it is easy to use 
             }
         };
 
+```
 ### Increment and Decrement 
 - defined as members as they change the state of the object
 - classes define iterators should defined these to move iterators across the containers
@@ -187,7 +200,8 @@ Library algorithms uses == and < definitions of the class, so it is easy to use 
 - post operators should save state of the object before increment or decrement and then saved state should be refturned by value
 - to distinguish pre and post operators, post operators normally take a unnamed second parameter, it is unnamed as it is not going to be used, as ++ and -- are unary operators pre and post don't get differentiated for overloading so post operator should take a unnamed second parameter.compiler supplies 0 for the parameter when called.
 - post operators should normally delagate the work to pre operators.
-    ex :- 
+    ```c++
+     
         class Fooiter{
         public :
             Fooiter & operator++(){
@@ -200,6 +214,7 @@ Library algorithms uses == and < definitions of the class, so it is easy to use 
                 return old_iter;
             };
         };
+    ```
 
 ### Member-Access operator
 #### dereference operator *
@@ -209,10 +224,10 @@ Library algorithms uses == and < definitions of the class, so it is easy to use 
 - point->mem;
 1) if arrow operator is called on a pointer, then the pointer is dereferenced to get the object and the indicated member is fetched. if mem is not found, the code is in error.      
 point->mem  == (*point).mem;
-2) if arrow operator is called on a object which has defined operator-> then the result of point.operator-> is used to fetch mem, If the result is a pointer then step 1 is repeated on that object, this process continues untill either a pointer to an object with indicated member is returned or the code is in error.  
-(*point)->mem 
+2) if arrow operator is called on a object which has defined operator-> then the result of operator-> is used to fetch mem, If the result is a pointer then step 1 is repeated on that object, this process continues untill either a pointer to an object with indicated member is returned or the code is in error.  
+obj->mem == (ret_type from obj.operator->()).mem       
 *** The overloaded operator-> should either return a pointer or an object with a overloaded operator->  
-    ex :-
+    
         class Foo{
         public :
             T & operator*() const {
@@ -220,7 +235,7 @@ point->mem  == (*point).mem;
             }
 
             T * operator->() const {
-                return &(*t);   // pointer should be returned, as member should be fetched from the returned object
+                return &(*this);   // pointer should be returned, as member should be fetched from the returned object
             }
         };
 - operator-> normally uses the operator* to get the reference to the object on which it uses & operator to return the pointer to the object.
@@ -232,7 +247,8 @@ Function call operator makes the object callable like any other callable object.
 - takes parameters and returns either void or some-thing.
 - objects of classes that has overloaded call operator, are called function objects.
 - Function objects can store state, (ie) we can define members to customise the call operator
-    ex:- 
+    ```c++
+    
         class Print{
         private :
             std::ostream &os;
@@ -243,6 +259,7 @@ Function call operator makes the object callable like any other callable object.
                 os << str << ch;
            }
         };
+    ```
 
         Print has a constructor which takes a reference to a outputstream, and char as to be printed with default arguments.
         operator() takes a const reference to string which is writen to the output stream along with the char.
@@ -262,18 +279,20 @@ Function call operator makes the object callable like any other callable object.
 - Lambdas are unnamed function objects of unnamed classes, when we define a lambda, an unnamed class is created with members assigned with captured variables by a contructor that takes the captured variables as parameters and overloaded operator() that takes same parameters as the lambda takes and returns what the lambda is defined to return
 - generated call operator of lambdas are const member function by default as they don't change the state of the members by default
 - lambdas can be defined mutable to get a non-const version of call-operator
-    ex:-
-        [sz](const std::string &str){ return str.size() < sz ;}
+    ```c++
+    
+        [sz](const std::string &str){ return str.size() < sz ;}  //  lamda defintion
         equivalent defintion of class that will be generated
         class check{
         public :
             check(size_t sz_) : sz(sz_) {}
-            bool operator()(const std::string &str){
+            bool operator()(const std::string &str)const{
                 return str.size() < sz;
             }
         private :
             size_t sz;
         };
+    ```
 
 ## Library defined function objects
 Library provides function objects corresponding to arithmetic, relational and logical operators. These are used in algorithms to change how algorithms compare elements.    
@@ -301,14 +320,15 @@ Each object has a type, each lambda defined is its own unique(unnamed class) typ
                 ...body
             }
          };
-         objects of foo has a call signature is void (int, string)
+         objects of foo has a call signature void (int, string)
 
-        call signature of obects created by std::bind()  is old_callable_return_type ( param...)
+        call signature of objects created by std::bind()  is old_callable_return_type ( param...)
 
     Though these callables has same call signature, we cannot store them in a container together normally as they are different types
 
 ### LIBRARY FUNCTION TYPE
-Library provides a function type, which is a template which can be used to store different types of callable objects with same signature, as the type of library function is the call signature.
+Library provides a function type, which is a template that takes *call signature* as its type     
+```c++
     ex:- 
         class Divide{
         public :
@@ -327,29 +347,34 @@ Library provides a function type, which is a template which can be used to store
                                                                     {"/", f3},
                                                                     {"*", [](int m, int n){ return m*n;}},
                                                                     {"=", std::equal<int>()},
-                                                                    {"?", std::bind(callable, _1, val)}
+                                                                    {"?", std::bind(callable, _2, _1)}
                                                                   };
+```
 
 
 ### OVERLOADING, CONVERSIONS, OPERATORS
 #### Conversions
-classes provides conversion from class type to another type through conversion operators and conversion from another type to class type through constructors.
+classes provides conversion from class type to another type through conversion operators and conversion from another type to class type through constructors.    
 **Conversion operators**
 - defined with special name as operator-keyword followed by type_name and parantheses, These don't take any parameters and though don't mention return type returns something that is convertible to the type_name to which it is providing conversion operator.
 - should be defined as const member function, as they don't change the state of the object.
-    ex:- 
+```c++
+
         class foo{
         public :
             operator int() const { return val;}
         };
 
-- compiler does a implicit conversions from our class type to another type for which conversion operator, but sometimes it will result in ambiguous call or surprising results, to avoid that conversion operators can be made explicit
+```
+- compiler does a implicit conversions from our class type to another type for which conversion operator is provided, but sometimes it will result in ambiguous call or surprising results, to avoid that conversion operators can be made explicit
+```c++
         class foo{
         public :
             explicit operator int() const { return val;}
         };
 
         static_cast<int>(foo());    //  explicitly calls operator int.
+```
 
 - explicit conversion operators are implicitly called in condition statements like
 * if, do, while, for

@@ -39,7 +39,8 @@
 **base class**, the class from which another class inherits.
 **derived class**, the class which inherits from another class.
 **direct base class**, class name specified in the class derivation list.
-**in-direct base class**, class from which the class in the derivation list has inherited.
+**in-direct base class**, class from which the class in the derivation list has inherited.     
+```c++
     class base {
 
     };
@@ -51,6 +52,7 @@
     class derived_from_derived : public derived {
 
     };
+```
 
     base : 
         direct base class to the derived class
@@ -67,7 +69,7 @@
 ### member access specifier
 **private** members of the base class are not accessible to the derived class, or users of the class. Only a friend has access.         
 **public** members of the base class are accessible to the derived object, users of the class and friend.      
-**protected** members of the base class are accessible to the derived class and friends of the derived class but not the users of the base class, but they can access only through a derived object.      
+**protected** members of the base class are accessible to the derived class and friends of the derived class but not the users of the base class, friend and derived class can access only through a derived object.      
  ```c++
  
         class Base {
@@ -79,7 +81,7 @@
                 int pro_mem;
         };
         
-        class Derived {
+        class Derived : public Base{
             public :
                 void show() {
                     std::cout << pub_mem   // ok : public member of the base  
@@ -161,7 +163,7 @@ class Pro_Derv : protected Base {
 };
 
 /* when a class is derived from other, which itself is a derived class derived from another one, then
- * each class control access to its own members.4
+ * each class control access to its own members.
  * private member : access to its own members and friend is provided
  * protected member : along with above two, derived class and its friends, and all the classes that derives further
  * from the derived class and friends of those classes has access but only through its own object.
@@ -219,7 +221,7 @@ class Derived_from_Pro_Der : public Pro_Derv {
             std::cout << pro_mem_base;       //  ok : this->pro_mem_base   
 
             std::cout << pub_mem_Pro_Derv;   //   ok : public
-            std::cout << pro_mem_Pro_Derv;   //   ok : thsi->pro_mem_Pro_Derv;
+            std::cout << pro_mem_Pro_Derv;   //   ok : this->pro_mem_Pro_Derv;
         }
     private :
         int pri_mem_Derived_Pro_Der;
