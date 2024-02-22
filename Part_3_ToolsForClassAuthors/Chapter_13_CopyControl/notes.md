@@ -230,3 +230,37 @@ It has the same class name preceded by ~
     copy and move assignment operator is declared as delete to make them deleted */      
     
 ```    
+
+## SWAP
+classes that manages resources on their own often defines a *swap()* non-member function, as the algorithms that *rearranges* containers uses swap() to swap the elements.
+Library version of swap() works normally by copy and two assignments which unnecessarily allocates memory and use copy constructors to swap, but it can be avoided by just swaping the pointers.
+```c++
+    // how library swap may work
+    void swap(T lhs, T rhs) {
+        T temp = lhs;   // copy constructor is used
+        lhs = rhs;      // copy-assignment operator is used
+        rhs = lhs;      // copy-assignment operator is used
+    }
+
+    // is suppose T has pointers to allocated memory, temp will allocate new memory and contents will be copied twice
+    //  1. temp = lhs
+    //  2. rhs = temp;
+
+    // As we can see it is unnecessary as we can simply copy pointers.
+
+    //  type specific definition of swap
+    //  ret_type is void, and takes parameter of reference to class types, defined as non-member and should be declared as friend to access private members.
+
+    void swap(T &lhs, T &rhs) {
+        using std::swap;   // using declaration is must as to use library swap for library types
+        swap(lhs.ptr, rhs.ptr);  
+        swap(lhs.mem, rhs.mem);
+    }
+
+    //  should call swap not std::swap, as if any member as its own swap() defined, this will call the type specific
+    //  version or else if we used std::swap, it will use library version not the version defined by the type.
+As swap() don't allocate memory, it is exception safe by default. 
+```
+
+
+
