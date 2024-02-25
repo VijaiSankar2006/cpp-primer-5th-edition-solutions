@@ -14,7 +14,10 @@
 #include <stack>
 #include <string>
 #include <vector>
+#include <sstream>
+#include <cstring>
 
+/*
 void getExpression(std::stack<std::string> &cont);
 
 int main(){
@@ -80,4 +83,58 @@ void getExpression(std::stack<std::string> &cont){
     }
 
     return;
+}
+*/
+
+// process_expression() handels expressions with any no.of inner parantheses.
+double process_expression() {
+    std::stack<std::string> exp;
+    std::string operators("+-/*%");
+    std::string obj;
+    double lhs, rhs, res = 0;
+    while(std::cin >> obj ) {        
+        if (obj[0] != ')') {
+            exp.push(obj);
+        } else {
+            bool op = false;
+            char oper;
+            while (exp.top() != "(" ) {
+                std::string object;
+                object = exp.top();
+                if(operators.find(object) != operators.npos ) {
+                    oper = object[0];
+                    op = true;
+                } else if(!op) {
+                        rhs = stod(object);
+                } else {
+                        lhs = stod(object);
+                        switch(oper) {
+                            case '+' : res = lhs + rhs; break;
+                            case '-' : res = lhs - rhs; break;
+                            case '/' : res = lhs / rhs; break;
+                            case '*' : res = lhs * rhs; break;
+                        } 
+                        std::cout << lhs << " " << oper << " " << rhs << " " << res << std::endl;
+                        exp.pop();
+                        exp.push(std::to_string(res));
+                        op = false;
+                        continue;
+                }
+                exp.pop();
+            }
+            exp.pop(); 
+            exp.push(std::to_string(res));
+        }
+    }
+    return res;
+}
+
+int main() {
+
+    std::cout << "Enter the expression : " << std::endl;
+    std::string exp;
+    auto res = process_expression();
+    std::cout << exp << " : " << res << std::endl;
+
+    return 0;
 }
