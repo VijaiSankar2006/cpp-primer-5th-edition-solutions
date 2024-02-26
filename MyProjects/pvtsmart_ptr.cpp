@@ -12,6 +12,7 @@
 #include <iostream>
 
 template <typename T> class pvtsmart_ptr;   //  forward declaration 
+template <typename T> class pvtshared_ptr;
 
 template <typename T> 
 void swap(pvtsmart_ptr<T> &, pvtsmart_ptr<T> &);   //  template declaration of swap non-member function
@@ -27,6 +28,7 @@ class pvtsmart_ptr {
     friend void swap<T>(pvtsmart_ptr &lhs, pvtsmart_ptr &rhs);  //  non-member version of swap that swaps the pointers
     friend bool operator==<T>(const pvtsmart_ptr &lhs, const pvtsmart_ptr &rhs);       //  checks for equality
     friend bool operator< <T>(const pvtsmart_ptr<T> &lhs, const pvtsmart_ptr<T> &rhs); //  checks whether the lhs is lesser
+    friend class pvtshared_ptr<T>;
     public :
         typedef T element_type;             //  type of the object
         explicit operator bool() const ;    //  conversion from class type to bool.

@@ -14,7 +14,7 @@
 
 template <typename T> class pvtsmart_ptr;                   //  forward declaration
 template <typename T> class pvtshared_ptr;                  //  forward declaration
-template <typename T, typename D> class pvtunique_ptr;
+template <typename T, typename D> class pvtunique_ptr;     
 
 template <typename T>       //  swap template declaration
 void swap(pvtshared_ptr<T> &lhs, pvtshared_ptr<T> &rhs);
@@ -30,6 +30,7 @@ class pvtshared_ptr : public pvtsmart_ptr<T> {
         pvtshared_ptr & operator=(const pvtshared_ptr &rhs);    //   copy assignment operator
         pvtshared_ptr & operator=(pvtshared_ptr &&rhs);         //   move assignment operator
         ~pvtshared_ptr();                                       //   destructor
+        pvtshared_ptr(pvtsmart_ptr<T> &b);                      //   constructor that takes a unique ptr;
 
         void swap(pvtshared_ptr & rhs);                         //   swaps the pointers
 
@@ -67,6 +68,12 @@ pvtshared_ptr<T>::pvtshared_ptr(pvtshared_ptr &&source)
     std::cout << "pvtshared_ptr(pvtshared_ptr &&source) ";
     source.ptr = nullptr;
     source.count = nullptr;
+}
+
+template <typename T>
+pvtshared_ptr<T>::pvtshared_ptr(pvtsmart_ptr<T> &b)  
+    : pvtsmart_ptr<T>(std::move(b)), count(new size_t(1)) {
+      b.ptr = nullptr;
 }
 
 template <typename T>
