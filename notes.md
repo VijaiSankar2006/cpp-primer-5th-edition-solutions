@@ -1,6 +1,3 @@
-Things to complete
-    Ex_9_52.cpp : Arithmatic Expression processing
-
 Exercise 13.28: Given the following classes, implement a default constructor and the
 necessary copy-control members.
 (a) class TreeNode { (b) class BinStrTree {

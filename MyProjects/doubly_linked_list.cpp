@@ -81,6 +81,7 @@ void reverse_print(const node<T> *current) {
     
 }
 
+/*
 int main() {
     node<std::string> *first = new node<std::string>({"hello world"});
     ++first->size;
@@ -104,3 +105,4 @@ int main() {
     reverse_print(first);
     return 0;
 }
+*/

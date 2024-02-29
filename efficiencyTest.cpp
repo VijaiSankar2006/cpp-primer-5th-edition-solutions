@@ -6,7 +6,7 @@
  * @brief program to test using std::chrono to measure time consumed for statements, expressions.
  *  
  */
-
+/*
 int main(){
     auto t0 = std::chrono::high_resolution_clock::now();
     std::string str1("alpha"), str2("beta"), str3("gamma");
@@ -17,3 +17,5 @@ int main(){
 
     return 0;
 }
+
+*/

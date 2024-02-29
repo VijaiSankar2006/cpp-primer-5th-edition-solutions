@@ -62,6 +62,7 @@ void remove(node<T> *current, size_t pos) {
     delete p;
 }
 
+/*
 int main() {
     node<std::string> *first = new node<std::string>({"hello world"});
     ++first->size;
@@ -82,3 +83,4 @@ int main() {
     std::cout << "size of list : " << first->size << std::endl;
     return 0;
 }
+*/

@@ -31,6 +31,7 @@ class stack {
         size_t curr = 0;
 };
 
+/*
 int main() {
     stack<std::string, 10> strstck;
 
@@ -45,3 +46,4 @@ int main() {
 
     return 0;
 }
+*/

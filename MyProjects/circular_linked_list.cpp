@@ -82,7 +82,7 @@ void reverse_print(const node<T> *current) {
     } while (current != beg);
     std::cout << std::endl;
 }
-
+/*
 int main() {
     node<std::string> *first = new node<std::string>({"hello world"});
     first->previous = first->next = first;
@@ -110,3 +110,5 @@ int main() {
     
     return 0;
 }
+
+*/
