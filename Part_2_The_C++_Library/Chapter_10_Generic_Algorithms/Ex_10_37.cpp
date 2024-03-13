@@ -10,15 +10,21 @@
 
 #include <iostream>
 #include <vector>
+#include <list>
 
 int main(){
     std::vector<int> ivec{1,2,3,4,5,6,7,8,9,10};
+    std::list<int> ilst;
 
     auto rbeg = ivec.crbegin() + 3;
     auto rend = ivec.crbegin() + 8;
 
     while( rbeg != rend){
-        std::cout << *rbeg++ << " " << " ";
+        ilst.push_back(*rbeg++);
+    }
+
+    for (auto n : ilst) {
+        std::cout << n << " ";
     }
 
 

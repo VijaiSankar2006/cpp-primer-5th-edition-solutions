@@ -1,7 +1,7 @@
 /************************************************************************************************************************************************************
  * @file Query.h
- * @brief Query class header 
- * @date 2024-02-28
+ * @brief all classes related Database queries
+ * @date 2024-03-03
  * 
  * @copyright Copyright (c) 2024
  * 
@@ -10,93 +10,177 @@
 #define QUERY_H
 
 #include <iostream>
-#inlcude "Table.h"
+#include <vector>
+#include <memory>
+#include <queue>
+#include <utility>
+#include <stack>
+#include <set>
+#include "Table.h"
 
-Class Table;
-class QueryResult {
-    friend class From;
-    friend class Where;
-    friend class And;
-    friend class Or;
-    friend Class Not;
-    private :
-        QueryResult(std::set<Table::row> records_, Table::schema &schema_type_)
-            : records(records_), schema(schema_) {}
+using std::string; using std::vector; using std::queue; using std::pair; 
+using std::set; using std::stack;
+typedef pair<bool,string> error_type;
 
-        std::set<Table::row> records;
-        Table::schema_type schema;
-};
-
-class From {
-    protected :
-        From(Table &tb_) : tb(tb_) {}
-    public :
-        qr eval() {
-            return QR(tb.);  
-        }
-};
+class QueryResult;
+class Table;
 
 class QueryBase {
+    friend class Query;
     protected :
-        QueryBase();
-        virtual qr& eval() = 0; 
-        virtual std:string & res() = 0;
+        virtual QueryResult eval(QueryResult &qr) = 0;
+        virtual string res() = 0;
+    public :
+        virtual ~QueryBase() = default;
+};
+
+class QueryResult {
+    friend class SqlParser;
+    friend class Order_by;
+    friend class Select;
+    friend class Where;
+    friend class NotQuery;
+    friend class AndQuery;
+    friend class OrQuery;
+    friend QueryResult order_by(QueryResult qr, bool desc);
+    friend std::ostream & operator<<(std::ostream & os, const QueryResult &qr);
+    public :
+        QueryResult(const error_type &e);
+        QueryResult(Table &tb, Table &og_);
+        QueryResult(Table *tb_, Table &og_); 
+    private :
+        Table tb;
+        Table original;
+        error_type error = {false, ""};
+};
+
+std::ostream & operator<<(std::ostream & os, const QueryResult &qr);
+
+class From {
+    public :
+        From(vector<string> tb_name_lst);
+        From(const Table &tb_); 
+        QueryResult eval() ;
+        string res();
+
+    private :
+        vector<Table> tb_lst;
+        vector<error_type> tb_error;
+};
+
+class Query {
+    friend Query  operator&(const Query &lhs, const Query& rhs);
+    friend Query  operator|(const Query &lhs, const Query& rhs);
+    friend Query  operator~(const Query &lhs);
+    public :
+        Query(const Table::constraint &item, const string & op_);
+        Query(QueryBase * q);
+
+        QueryResult eval(QueryResult &qr);
+        string res();
+    private :
+        std::shared_ptr<QueryBase> qb_ptr;
 };
 
 class Where : public QueryBase {
     public :
-        Where(const Table &tb);
-        Where(const std::string &col_name_, const std::string &val_);
-        qr & eval() override ;
-        std::string & res() override ;
-    private :
-        QueryResult &qr;
-        std::string col_name;
-        std::string val; 
-        bool all = false;
-};
-
-class Binary_operator : public Where {
+        Where();
+        Where(const Table::constraint &, const string &op_);
+        QueryResult eval(QueryResult &)override;
+        string res()override;
     protected :
-        Binary_operator(const std::string& lhs_col_name_, const std::string &lhs_val_,
-            const std::string& rhs_col_name_, const std::string &rhs_val_, const std::string &op_);
-        qr & eval() = 0;
-        std::string &res () override ;    
-
-    protected : 
-        QueryResult &qr;
-        std::string lhs_col_name;
-        std::string lhs_val;
-        std::string rhs_col_name;
-        std::string rhs_val;
-        std::string operand;
-}
-
-class And : public Binary_operator {
-    public :
-        And(const std::string& lhs_col_name_, const std::string &lhs_val_,
-            const std::string& rhs_col_name_, const std::string &rhs_val_);
-        qr &eval;
-        std::string res() override;
+        Table::constraint item;
+        bool all = false;
+        string op;
+        error_type error;
 };
 
-class Or : public Binary_operator {
-    public :
-        Or(const std::string& lhs_col_name_, const std::string &lhs_val_,
-            const std::string& rhs_col_name_, const std::string &rhs_val_);
-        qr & eval() overrirde ;
-        std::string res() override;
-};
-
-class Not : public Where {
-    public :
-        Not(const std::string &col_name_, const std::string val_);
-        qr &eval() override;
-        std::string & res();
+class BinaryQuery : public QueryBase {
+    public : 
+        BinaryQuery(const Query &lhs, const Query &rhs, const string &op);
+        QueryResult eval(QueryResult &) = 0;
+        string res() override;  
     
+    protected :
+        Query lhs;
+        Query rhs;
+        string operand;
+};
+
+class AndQuery : public BinaryQuery {
+    friend Query operator&(const Query &lhs, const Query &rhs);
+    public :
+        AndQuery(const Query &lhs, const Query &);
+        QueryResult eval(QueryResult &qr) override;
+};
+
+class OrQuery : public BinaryQuery {
+    friend Query operator|(const Query &lhs, const Query &rhs);
+    public : 
+        OrQuery(const Query &lhs, const Query &rhs);
+        QueryResult eval(QueryResult &qr) override;
+};
+
+class NotQuery : public QueryBase {
+    friend Query operator~(const Query &q);
+    public :
+        NotQuery(const Query &source);
+        QueryResult eval(QueryResult &qr_) override;
+        string res() override; 
     private :
-        std::string col_name;
-        std::string val;
+        Query q;
+};
+
+
+QueryResult order_by(QueryResult qr, bool desc);
+
+
+class Select : public QueryBase{
+    public :
+        Select(const vector<string> &col_lst_);
+        QueryResult eval(QueryResult &qr) override ;
+        string res() override;
+    private :   
+        std::vector<string> col_lst;
+        error_type error = {false, ""};
+};
+
+class Order_by {
+    public :
+        Order_by(const vector<string> &order_list_);
+        QueryResult eval(QueryResult qr);
+    private :
+        vector<string> order_list;
+        bool asc = true;
+        error_type error = {false, ""};
+};
+
+string str_upper(string str);
+
+class SqlParser {
+    public :
+        SqlParser(const vector<string> &lst);
+        QueryResult eval();
+        QueryResult res();
+    private :
+        static set<string> keywords;
+        typedef pair<bool, string> error_type;
+
+        vector<string> sql_query;
+        vector<string> select_lst;
+        vector<string> from_lst;
+        stack<Query> query_stck;
+        vector<pair<string, bool>> order_lst;
+        string error_msg;
+        error_type s_error{false, ""};
+        error_type f_error{false, ""};
+        error_type w_error{false, ""};
+        error_type o_error{false, ""};
+        bool where_clause = false;
+        bool order_clause = false;
+        static bool check(const string &str);
 };
 
 #endif
+
+
