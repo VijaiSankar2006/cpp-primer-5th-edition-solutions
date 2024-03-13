@@ -147,10 +147,10 @@ class Select : public QueryBase{
 
 class Order_by {
     public :
-        Order_by(const vector<string> &order_list_);
+        Order_by(const vector<pair<string, bool>> &order_list_);
         QueryResult eval(QueryResult qr);
     private :
-        vector<string> order_list;
+        vector<pair<string, bool>> order_list;
         bool asc = true;
         error_type error = {false, ""};
 };
@@ -162,8 +162,8 @@ class SqlParser {
         SqlParser(const vector<string> &lst);
         QueryResult eval();
         QueryResult res();
-    private :
         static set<string> keywords;
+    private :
         typedef pair<bool, string> error_type;
 
         vector<string> sql_query;

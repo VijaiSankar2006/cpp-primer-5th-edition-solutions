@@ -333,4 +333,27 @@ std::map<string, std::function<bool (const vector<void *>, const string &, int ,
                                                                                                   {"<=", lesser_or_equal},
                                                                                                   {">", greater},
                                                                                                   {">=", greater_or_equal}};
+compare_less_obj::compare_less_obj(int N_, size_t pos_, bool desc_) 
+    : N(N_), pos(pos_), desc(desc_) {}
+    
+bool compare_less_obj::operator()(const vector<void *> &lhs, const vector<void *> &rhs) {
+    void *p,*q;
+    if (!desc) {
+        p = lhs[pos];
+        q = rhs[pos];
+    } else {
+        q = rhs[pos];
+        p = lhs[pos];
+    }
+     using types = Table::types;
+
+    switch(N) {
+        case types::int_type : return *(static_cast<int *>(p)) < *(static_cast<int *>(q));
+        case types::double_type : return *(static_cast<double *>(p)) < *(static_cast<double *>(q));
+        case types::char_type : return *(static_cast<char *>(p)) < *(static_cast<char *>(q));
+        case types::string_type : return *(static_cast<string *>(p)) < *(static_cast<string *>(q));
+    }   
+
+    return 0;    
+}                                                                                                  
                                                                             

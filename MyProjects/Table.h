@@ -64,4 +64,15 @@ std::istream & operator>>(std::istream &os, Table &tb);
 bool compare_equal(const vector<void *> &lhs, const vector<void *> &rhs, int N, size_t pos);
 bool compare_less(vector<void *> &lhs, vector<void *> &rhs, int N, size_t pos);
 bool equal(const vector<void *> &vec, const string &val, int N, size_t pos);
+
+class compare_less_obj {
+    public :
+        compare_less_obj(int N_, size_t pos_, bool desc_ = false);
+        bool operator()(const vector<void *> &lhs, const vector<void *> &rhs);
+    private : 
+        int N;
+        size_t pos;
+        bool desc;
+};
+
 #endif

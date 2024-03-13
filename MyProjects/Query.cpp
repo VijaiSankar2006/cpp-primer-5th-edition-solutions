@@ -19,6 +19,7 @@
 #include <numeric>
 #include <set>
 #include <stack>
+#include <string>
 
 using namespace std::placeholders;
 using std::set;
@@ -150,7 +151,6 @@ QueryResult Where::eval(QueryResult& qr)
     }
 
     auto last = std::partition(qr.tb.records.begin(), qr.tb.records.end(), std::bind(op_map[op], _1, item.second, t, p.first));
-    std::cout << "where::no_of_items :" << last - qr.tb.records.begin() << std::endl;
     return QueryResult(qr.tb.new_table(qr.tb.records.begin(), last), qr.original);
 }
 
@@ -256,10 +256,31 @@ Select::Select(const vector<string>& col_lst_)
 QueryResult Select::eval(QueryResult& qr)
 {
     Table tb = qr.tb;
+    for (size_t i = 1; i != col_lst.size(); ++i) {
+        if (col_lst[i] == "*") {
+            std::cout << "> error : \n> syntax error : SELECT" << std::endl;
+            return qr;
+        }
+    }
+
+    if (col_lst[0] == "*") {
+        if (col_lst.size() == 1) {
+            col_lst.clear();
+            auto schema = qr.tb.get_schema();
+            for (auto p : schema) {
+                col_lst.push_back(p.first);
+            }
+        } else {
+            error = {true, "syntax error : SELECT"};
+            std::cout << "> error : \n>" << error.second << std::endl;
+            return qr; 
+        }    
+    } 
 
     std::cout << std::endl;
     size_t sz = 14;
     string line_break(col_lst.size() * 14 + 5, '=');
+    std::cout << "\n" + line_break << std::endl;
     std::cout << "s.no ";
     for (auto s : col_lst) {
         std::cout << std::setw(sz) << s;
@@ -288,7 +309,7 @@ QueryResult Select::eval(QueryResult& qr)
         }
         std::cout << std::endl;
     }
-
+    std::cout << line_break << std::endl;
     return qr;
 }
 
@@ -311,7 +332,7 @@ string str_upper(string str)
 }
 //-----------------------------------------------------------
 
-Order_by::Order_by(const vector<string>& order_list_)
+Order_by::Order_by(const vector<pair<string, bool>>& order_list_)
     : order_list(order_list_)
 {
 }
@@ -319,17 +340,7 @@ Order_by::Order_by(const vector<string>& order_list_)
 QueryResult Order_by::eval(QueryResult qr)
 {
     for (auto beg = order_list.begin(); beg != order_list.end(); ++beg) {
-        if (str_upper(*beg) == "DESC") {
-            asc = false;
-        }
-    }
-
-    for (auto beg = order_list.begin(); beg != order_list.end(); ++beg) {
-        if (str_upper(*beg) == "DESC") {
-            continue;
-        }
-
-        auto col_info = qr.tb.get_col_info(*beg);
+        auto col_info = qr.tb.get_col_info((*beg).first);
         Table::types t;
         switch (col_info.second[0]) {
         case 'i':
@@ -345,26 +356,27 @@ QueryResult Order_by::eval(QueryResult qr)
             t = Table::string_type;
             break;
         }
-        if (asc) {
-            std::sort(qr.tb.records.begin(), qr.tb.records.end(), std::bind(compare_less, _1, _2, t, col_info.first));
+        
+        if (!(*beg).second) {
+            std::stable_sort(qr.tb.records.begin(), qr.tb.records.end(), compare_less_obj(t, col_info.first));
         } else {
-            std::sort(qr.tb.records.begin(), qr.tb.records.end(), std::bind(compare_less, _2, _1, t, col_info.first));
+            std::stable_sort(qr.tb.records.begin(), qr.tb.records.end(), compare_less_obj(t, col_info.first, true));
         }
     }
     return qr;
 }
 //-----------------------------------------------------------
-set<string> SqlParser::keywords{"FROM", "WHERE", "AND", "OR", "NOT", "ORDERBY"};
+set<string> SqlParser::keywords{"SELECT", "FROM", "WHERE", "AND", "OR", "NOT", "ORDER_BY", "DESC"};
 
 bool SqlParser::check(const string &str) {
-    return (keywords.find(str_upper(str)) != keywords.end());
+    return (keywords.find(str) != keywords.end());
 }
 
 SqlParser::SqlParser(const vector<string>& lst)
     : sql_query(lst)
 {
     auto beg = sql_query.begin();
-    if (beg != sql_query.end() && str_upper(*beg) != "SELECT") {
+    if (beg != sql_query.end() && (*beg) != "SELECT") {
         s_error = { true, "syntax error : expected SELECT" };
     } else {
         ++beg;
@@ -376,7 +388,7 @@ SqlParser::SqlParser(const vector<string>& lst)
             beg = sql_query.end();
         }
 
-        if (beg != sql_query.end() && str_upper(*beg) == "FROM") {
+        if (beg != sql_query.end() && (*beg) == "FROM") {
             keywords.erase("FROM");
             ++beg;
             while (beg != sql_query.end() && (!check(*beg))) {
@@ -390,7 +402,7 @@ SqlParser::SqlParser(const vector<string>& lst)
             beg = sql_query.end();
         }
 
-        if (beg != sql_query.end() && str_upper(*beg) == "WHERE") {
+        if (beg != sql_query.end() && (*beg) == "WHERE") {
             keywords.erase("WHERE");
             ++beg;
             auto last = std::find(sql_query.begin(), sql_query.end(), "ORDER_BY");
@@ -401,7 +413,7 @@ SqlParser::SqlParser(const vector<string>& lst)
                     break;
                 }
                 if (lhs_seen == false) {
-                    if (str_upper(*beg) == "NOT") {
+                    if (*beg == "NOT") {
                         ++beg;
                         if (last - beg < 3) {
                             w_error = {true, "incomplete Not clause"};
@@ -424,8 +436,8 @@ SqlParser::SqlParser(const vector<string>& lst)
                         w_error = {true, "incomplete Where clause 429"};
                         break;
                     }
-                } else if (str_upper(*beg) == "AND" || str_upper(*beg) == "OR") {   
-                    string op = str_upper(*beg);
+                } else if ((*beg) == "AND" || (*beg) == "OR") {   
+                    string op = *beg;
                     ++beg;
                     if (last - beg < 3) {
                         w_error = {true, "incomplete where 439"};
@@ -441,29 +453,54 @@ SqlParser::SqlParser(const vector<string>& lst)
                             query_stck.push(Query(new OrQuery(lhs, rhs)));
                         }  
                         beg += 3;     
+                    } else if ((*beg) == "NOT") {
+                        ++beg;
+                        if (last - beg < 3) {
+                            w_error = {true, "incomplete where clause"};
+                            break;   
+                        }
+                        if (!std::any_of(beg, beg + 3, check)) {
+                            Query q = Query({*beg, *(beg + 2)}, *(beg + 1));
+                            Query rhs = Query(new NotQuery(q));
+                            Query lhs = query_stck.top();
+                            query_stck.pop(); 
+                            if (op == "AND") {
+                                query_stck.push(Query(new AndQuery(lhs, rhs)));
+                            } else {
+                                query_stck.push(Query(new OrQuery(lhs, rhs)));
+                            }  
+                            beg += 3;     
+                        } else {
+                            w_error = {true, "incomplete where clause"};
+                            break; 
+                        }
                     } else {
                         w_error = {true, "incomplete where clause 456"};
+                        beg = sql_query.end();
                         break;
                     }
+                } else {
+                    w_error = {true, "incomplete where clause 488"};
+                    beg = sql_query.end();
+                    break;
                 } 
             }
             beg = last;                    
-        } else if (beg != sql_query.end() && str_upper(*beg) != "ORDER_BY") {
+        } else if (beg != sql_query.end() && (*beg) != "ORDER_BY") {
             w_error = {true, "expected WHERE"};
             beg = sql_query.end();
         }
-        if (beg != sql_query.end() && str_upper(*beg) == "ORDER_BY") {
+        if (beg != sql_query.end() && *beg == "ORDER_BY") {
             ++beg;
         } else if (beg != sql_query.end()) {
             o_error = {true, "ORDER_BY clause is incomplete"};
             beg = sql_query.end();
         }
-
         while (beg != sql_query.end()) {
             string str = *beg++;
-            if (beg == sql_query.end() || str_upper(*beg) != "DESC") {
+            if (beg == sql_query.end() || *beg!= "DESC") {
                 order_lst.push_back({ str, false });
-            } else if (str_upper(*beg) == "DESC") {
+            } else if (*beg == "DESC") {
                 order_lst.push_back({ str, true });
                 ++beg;
             } 
@@ -486,9 +523,12 @@ QueryResult SqlParser::eval()
     Where w;
     if (!query_stck.empty()) {
         auto qr1 = query_stck.top().eval(qr);
-        qr = qr1;
+        qr = qr1;   
     } 
-    std::cout << qr << std::endl;
+    Order_by o(order_lst);
+    qr = o.eval(qr);
+    Select s(select_lst);
+    qr = s.eval(qr);
 
     return qr;
 }
@@ -506,9 +546,13 @@ int main()
     string word;
     vector<string> q_lst;
     while (std::cin >> word && word[0] != '0') {
-        q_lst.push_back(word);
+        string up_word = str_upper(word);
+        if (SqlParser::keywords.find(up_word) != SqlParser::keywords.end()) {
+            q_lst.push_back(up_word);
+        } else {
+            q_lst.push_back(word);
+        }    
     }
-    std::cout << "no of words : " << q_lst.size() << std::endl;
     SqlParser s1(q_lst);
     s1.eval();
 
