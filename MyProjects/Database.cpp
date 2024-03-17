@@ -17,23 +17,23 @@
 
 
 using std::vector; using std::string; using std::map; using std::pair;
-std::string prompt(" sql[o to submit] > ");
+std::string prompt("sql[ o to submit ] > ");
 std::string err_prompt(prompt + "error : ");
 
 void query_table(Table &tb);
 void display_help();
 Table * create_table();
-void save_to_file(Table &tb, std::ifstream &ifile, std::string &ifile_name);
+void save_to_file(Table &tb, const std::string &ifile_name);
 void clear_cin();
 
 int main() {
-    std::set<std::string> first{"SELECT","CREATE","ADD", "REMOVE", "EXIT","HELP","DELETE","SAVE","CLOSE"};
+    std::set<std::string> first{"SELECT","CREATE","ADD", "DELETE", "EXIT","HELP","DELETE","SAVE","CLOSE"};
     std::vector<std::string> sql_query;
     bool table_exist = false;
     Table * tb;
     std::ifstream ifile;
     std::string ifile_name;
-
+    std::cout << "SQL commands supported : \nADD CREATE DELETE EXIT SAVE SELECT" << std::endl;
     while (1) {
         std::cout << prompt;
         string cmd1, cmd2;
@@ -85,6 +85,16 @@ int main() {
                 tb->remove_record({p_key, val});
             }
             clear_cin();
+        }
+
+        if (cmd1 == "SAVE") {
+            if (table_exist) {
+                std::cout << "file name : ";
+                string file_name;
+                std::cin >> file_name;
+                save_to_file(*tb, file_name);
+            } 
+            clear_cin();      
         }
     }
 }
@@ -139,9 +149,8 @@ Table * create_table() {
     return new Table(schema, p_key, tbname);
 }
 
-void save_to_file(Table &tb, std::ifstream &ifile, std::string &ifile_name) {
-    ifile.close();
-    std::ofstream ofile(ifile_name);
+void save_to_file(Table &tb, const std::string &file_name) {
+    std::ofstream ofile(file_name);
     if (!ofile) {
         std::cerr << err_prompt << "unable to save file, try again" << std::endl;
         return;
@@ -151,10 +160,6 @@ void save_to_file(Table &tb, std::ifstream &ifile, std::string &ifile_name) {
     std::cout << prompt << "File Saved successfully" << std::endl;
 
     ofile.close();
-    ifile.open(ifile_name);
-    if (!ifile) {
-        std::cerr << err_prompt + " file closed unexpectedly" << std::endl;
-    }
     return; 
 }
 

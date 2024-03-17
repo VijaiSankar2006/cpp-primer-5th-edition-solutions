@@ -45,6 +45,7 @@ class QueryResult {
     friend QueryResult order_by(QueryResult qr, bool desc);
     friend std::ostream & operator<<(std::ostream & os, const QueryResult &qr);
     public :
+        QueryResult() = default;
         QueryResult(const error_type &e);
         QueryResult(Table &tb, Table &og_);
         QueryResult(Table *tb_, Table &og_); 
@@ -58,8 +59,8 @@ std::ostream & operator<<(std::ostream & os, const QueryResult &qr);
 
 class From {
     public :
-        From(vector<string> tb_name_lst);
-        From(const Table &tb_); 
+        From(const vector<string> &file_lst);
+        From(Table &tb_); 
         QueryResult eval() ;
         string res();
 
@@ -159,7 +160,7 @@ string str_upper(string str);
 
 class SqlParser {
     public :
-        SqlParser(const vector<string> &lst);
+        SqlParser(const vector<string> &lst, Table &tb_);
         QueryResult eval();
         QueryResult res();
         static set<string> keywords;
@@ -168,9 +169,13 @@ class SqlParser {
 
         vector<string> sql_query;
         vector<string> select_lst;
-        vector<string> from_lst;
+        vector<string> table_lst;
+        vector<string> file_lst;
         stack<Query> query_stck;
         vector<pair<string, bool>> order_lst;
+
+        Table tb;
+
         string error_msg;
         error_type s_error{false, ""};
         error_type f_error{false, ""};

@@ -18,8 +18,8 @@
 
 using namespace std::placeholders; 
 
-Table::Table(const schema_type schema_, const string &p_key_)
-    : schema(schema_){
+Table::Table(const schema_type schema_, const string &p_key_, const string &name_)
+    : schema(schema_), name(name_){
             auto iter = std::find_if(schema.begin(), schema.end(),
                     [this, p_key_](const pair<string, string> &p){ return p.first == p_key_;});
     if (iter == schema.end()) {
@@ -114,9 +114,12 @@ int Table::delete_records(decltype(records)::iterator b, decltype(records)::iter
     
 }
 */
+string Table::get_name() const {
+    return name;
+}
 
 Table * Table::new_table(record_type::iterator b, record_type::iterator e) {
-    auto tb = new Table(schema, primary_key);
+    auto tb = new Table(schema, primary_key, name);
     for(; b != e; ++b) {
         auto r = *b;
         decltype(r) newrow;
@@ -135,7 +138,7 @@ Table * Table::new_table(record_type::iterator b, record_type::iterator e) {
     return tb;
 }
 
-std::ostream & operator<<(std::ostream &os, Table const &tb) {
+std::ostream & operator<<(std::iostream &os, Table const &tb) {
     size_t width = 14;
     std::string line_break(width * tb.schema.size() + 5, '=');
     std::cout << "s.no ";

@@ -36,7 +36,7 @@ class Table {
 
         Table() = default;
         Table(std::ifstream &ifile); 
-        Table(schema_type schema_, const string &p_key);
+        Table(schema_type schema_, const string &p_key, const string &name_);
         bool add_record(const vector<void *> record_);
         bool create_new_record(vector<void *> &r);
         int remove_record(const constraint &item);  
@@ -45,6 +45,7 @@ class Table {
         Table * new_table(record_type::iterator b, record_type::iterator e);
         size_t size() const ;
         bool empty() const ;
+        string get_name() const;
 
         schema_type get_schema() const ;
         string get_pkey() const;
@@ -59,6 +60,8 @@ class Table {
         string name;
 };
 
+void create_schema(Table::schema_type &schema_, string &p_key_);
+void add_record(Table &tb);
 std::ostream & operator<<(std::ostream &os, Table const &tb);
 std::istream & operator>>(std::istream &os, Table &tb);
 bool compare_equal(const vector<void *> &lhs, const vector<void *> &rhs, int N, size_t pos);

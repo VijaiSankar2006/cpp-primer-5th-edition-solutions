@@ -56,22 +56,25 @@ std::ostream& operator<<(std::ostream& os, const QueryResult& qr)
 //-----------------------------------------------
 
 //  From class member definitions---------------
-From::From(const Table& tb_)
+From::From(Table& tb_)
 {
     tb_lst.push_back(tb_);
+    tb_error.push_back({false,""});
 }
-From::From(vector<string> tb_name_lst)
+
+/*
+From::From(const vector<string> &file_lst)
 {
-    std::ifstream ifile(tb_name_lst[0]);
+    std::ifstream ifile(file_lst[0]);
     if (!ifile) {
-        tb_error.push_back({ true, tb_name_lst[0] + " doesn't exist" });
+        tb_error.push_back({ true, file_lst[0] + " doesn't exist" });
     } else {
         tb_error.push_back({ false, "" });
         Table tb(ifile);
         tb_lst.push_back(tb);
     }
 }
-
+*/
 QueryResult From::eval()
 {
     if (!tb_error[0].first) {
@@ -172,7 +175,7 @@ NotQuery::NotQuery(const Query& source)
 QueryResult NotQuery::eval(QueryResult& qr_)
 {
     auto qr = q.eval(qr_);
-    Table res_tb(qr.tb.get_schema(), qr.tb.get_pkey());
+    Table res_tb(qr.tb.get_schema(), qr.tb.get_pkey(), qr.tb.get_name());
     for (auto& r : qr.original.records) {
         if (!std::any_of(qr.tb.records.begin(), qr.tb.records.end(), std::bind(compare_equal, _1, r, qr.tb.key_type, qr.tb.key_pos))) {
             res_tb.create_new_record(r);
@@ -210,7 +213,7 @@ QueryResult AndQuery::eval(QueryResult& qr)
 {
     auto l_qr = lhs.eval(qr);
     auto r_qr = rhs.eval(qr);
-    Table tb1(l_qr.tb.get_schema(), l_qr.tb.get_pkey());
+    Table tb1(l_qr.tb.get_schema(), l_qr.tb.get_pkey(), l_qr.tb.get_name());
     for (auto beg = l_qr.tb.records.begin(); beg != l_qr.tb.records.end(); ++beg) {
         if (std::any_of(r_qr.tb.records.begin(), r_qr.tb.records.end(), std::bind(compare_equal, _1, *beg, r_qr.tb.key_type, r_qr.tb.key_pos))) {
             tb1.create_new_record(*beg);
@@ -233,7 +236,7 @@ QueryResult OrQuery::eval(QueryResult& qr)
 {
     auto l_qr = lhs.eval(qr);
     auto r_qr = rhs.eval(qr);
-    Table tb(qr.tb.get_schema(), qr.tb.get_pkey());
+    Table tb(qr.tb.get_schema(), qr.tb.get_pkey(), qr.tb.get_name());
     for (auto beg = l_qr.tb.records.begin(); beg != l_qr.tb.records.end(); ++beg) {
         if (!std::any_of(r_qr.tb.records.begin(), r_qr.tb.records.end(), std::bind(compare_equal, _1, *beg, r_qr.tb.key_type, r_qr.tb.key_pos))) {
             tb.create_new_record(*beg);
@@ -255,6 +258,12 @@ Select::Select(const vector<string>& col_lst_)
 
 QueryResult Select::eval(QueryResult& qr)
 {
+
+    if (qr.error.first) {
+            std::cout << "> error : \n> " << qr.error.second << std::endl;
+            return QueryResult(error_type({true, qr.error.second}));
+    } 
+
     Table tb = qr.tb;
     for (size_t i = 1; i != col_lst.size(); ++i) {
         if (col_lst[i] == "*") {
@@ -366,145 +375,156 @@ QueryResult Order_by::eval(QueryResult qr)
     return qr;
 }
 //-----------------------------------------------------------
+bool is_file(const std::string &ifile_name) {
+    if (ifile_name.size() < 5) {
+        return false;
+    } 
+    size_t n = ifile_name.size() - 5;
+    if (ifile_name.substr(n,4) == ".txt") {
+        return true;
+    }    
+
+    return false;
+}
 set<string> SqlParser::keywords{"SELECT", "FROM", "WHERE", "AND", "OR", "NOT", "ORDER_BY", "DESC"};
 
 bool SqlParser::check(const string &str) {
     return (keywords.find(str) != keywords.end());
 }
 
-SqlParser::SqlParser(const vector<string>& lst)
-    : sql_query(lst)
+SqlParser::SqlParser(const vector<string> &lst, Table &tb_)
+    : sql_query(lst), tb(tb_) 
 {
+    // This section process SELECT clause    
     auto beg = sql_query.begin();
-    if (beg != sql_query.end() && (*beg) != "SELECT") {
-        s_error = { true, "syntax error : expected SELECT" };
-    } else {
+    while (beg != sql_query.end() && (!check(*beg))) {
+        select_lst.push_back(*beg++);
+    }
+    if (select_lst.empty()) {
+        s_error = { true, "identifier required after select, SELECT <what>" };
+        beg = sql_query.end();
+    }
+
+    //  following section process FROM clause
+    if (beg != sql_query.end() && (*beg) == "FROM") {
         ++beg;
-        while (beg != sql_query.end() && (!check(*beg))) {
-            select_lst.push_back(*beg++);
-        }
-        if (select_lst.empty()) {
-            s_error = { true, "identifier required after select, SELECT <what>" };
-            beg = sql_query.end();
+        while (beg != sql_query.end() && (!check(*beg))) { 
+            table_lst.push_back(*beg++);
         }
 
-        if (beg != sql_query.end() && (*beg) == "FROM") {
-            keywords.erase("FROM");
-            ++beg;
-            while (beg != sql_query.end() && (!check(*beg))) {
-                from_lst.push_back(*beg++);
-            }
-            if (from_lst.empty()) {
-                f_error = { true, "required <table name>" };
-            }
-        } else {
-            f_error = { true, "from clause is missing" };
-            beg = sql_query.end();
+        if (table_lst.empty()) {
+            f_error = { true, "required <table_name> or <file_name>" };
         }
+    } else {
+        f_error = { true, "from clause is missing" };
+        beg = sql_query.end();
+    }
 
-        if (beg != sql_query.end() && (*beg) == "WHERE") {
-            keywords.erase("WHERE");
-            ++beg;
-            auto last = std::find(sql_query.begin(), sql_query.end(), "ORDER_BY");
-            bool lhs_seen = false;
-            while (beg != last ) {
-                if (last - beg < 3) {
-                    w_error = {true, "incomplete where clause : 401"};
-                    break;
-                }
-                if (lhs_seen == false) {
-                    if (*beg == "NOT") {
-                        ++beg;
-                        if (last - beg < 3) {
-                            w_error = {true, "incomplete Not clause"};
-                            break;
-                        }
-                        if (!std::any_of(beg, beg + 3, check)) {
-                            Query q = Query({*beg, *(beg + 2)}, *(beg + 1));
-                            query_stck.push(Query(new NotQuery(q)));
-                            lhs_seen = true;
-                            beg += 3;
-                        } else {
-                            w_error = {true, "incomplete Not clause"};
-                            break;
-                        }
-                    }else if (!std::any_of(beg, beg + 3, check)) {
-                        query_stck.push(Query({ *beg, *(beg + 2) }, *(beg + 1)));
-                        lhs_seen = true;
-                        beg += 3;
-                    } else {
-                        w_error = {true, "incomplete Where clause 429"};
-                        break;
-                    }
-                } else if ((*beg) == "AND" || (*beg) == "OR") {   
-                    string op = *beg;
+    //  following section process WHERE clause
+    if (beg != sql_query.end() && (*beg) == "WHERE") {
+        keywords.erase("WHERE");
+        ++beg;
+        auto last = std::find(sql_query.begin(), sql_query.end(), "ORDER_BY");
+        bool lhs_seen = false;
+        while (beg != last ) {
+            if (last - beg < 3) {
+                w_error = {true, "incomplete where clause : 401"};
+                break;
+            }
+            if (lhs_seen == false) {
+                if (*beg == "NOT") {
                     ++beg;
                     if (last - beg < 3) {
-                        w_error = {true, "incomplete where 439"};
+                        w_error = {true, "incomplete Not clause"};
                         break;
                     }
                     if (!std::any_of(beg, beg + 3, check)) {
-                        Query rhs = Query({*beg, *(beg + 2)}, *(beg + 1));
+                        Query q = Query({*beg, *(beg + 2)}, *(beg + 1));
+                        query_stck.push(Query(new NotQuery(q)));
+                        lhs_seen = true;
+                        beg += 3;
+                    } else {
+                        w_error = {true, "incomplete Not clause"};
+                        break;
+                    }
+                }else if (!std::any_of(beg, beg + 3, check)) {
+                    query_stck.push(Query({ *beg, *(beg + 2) }, *(beg + 1)));
+                    lhs_seen = true;
+                    beg += 3;
+                } else {
+                    w_error = {true, "incomplete Where clause 429"};
+                    break;
+                }
+            } else if ((*beg) == "AND" || (*beg) == "OR") {   
+                string op = *beg;
+                ++beg;
+                if (last - beg < 3) {
+                    w_error = {true, "incomplete where 439"};
+                    break;
+                }
+                if (!std::any_of(beg, beg + 3, check)) {
+                    Query rhs = Query({*beg, *(beg + 2)}, *(beg + 1));
+                    Query lhs = query_stck.top();
+                    query_stck.pop();
+                    if (op == "AND") {
+                        query_stck.push(Query(new AndQuery(lhs, rhs)));
+                    } else {
+                        query_stck.push(Query(new OrQuery(lhs, rhs)));
+                    }  
+                        beg += 3;     
+                } else if ((*beg) == "NOT") {
+                    ++beg;
+                    if (last - beg < 3) {
+                        w_error = {true, "incomplete where clause"};
+                        break;   
+                    }
+                    if (!std::any_of(beg, beg + 3, check)) {
+                        Query q = Query({*beg, *(beg + 2)}, *(beg + 1));
+                        Query rhs = Query(new NotQuery(q));
                         Query lhs = query_stck.top();
-                        query_stck.pop();
+                        query_stck.pop(); 
                         if (op == "AND") {
                             query_stck.push(Query(new AndQuery(lhs, rhs)));
                         } else {
                             query_stck.push(Query(new OrQuery(lhs, rhs)));
                         }  
-                        beg += 3;     
-                    } else if ((*beg) == "NOT") {
-                        ++beg;
-                        if (last - beg < 3) {
-                            w_error = {true, "incomplete where clause"};
-                            break;   
-                        }
-                        if (!std::any_of(beg, beg + 3, check)) {
-                            Query q = Query({*beg, *(beg + 2)}, *(beg + 1));
-                            Query rhs = Query(new NotQuery(q));
-                            Query lhs = query_stck.top();
-                            query_stck.pop(); 
-                            if (op == "AND") {
-                                query_stck.push(Query(new AndQuery(lhs, rhs)));
-                            } else {
-                                query_stck.push(Query(new OrQuery(lhs, rhs)));
-                            }  
                             beg += 3;     
-                        } else {
-                            w_error = {true, "incomplete where clause"};
-                            break; 
-                        }
                     } else {
+                        w_error = {true, "incomplete where clause"};
+                        break; 
+                    }
+                } else {
                         w_error = {true, "incomplete where clause 456"};
                         beg = sql_query.end();
                         break;
-                    }
-                } else {
+                }
+            } else {
                     w_error = {true, "incomplete where clause 488"};
                     beg = sql_query.end();
                     break;
-                } 
-            }
-            beg = last;                    
-        } else if (beg != sql_query.end() && (*beg) != "ORDER_BY") {
-            w_error = {true, "expected WHERE"};
-            beg = sql_query.end();
-        }
-        if (beg != sql_query.end() && *beg == "ORDER_BY") {
-            ++beg;
-        } else if (beg != sql_query.end()) {
-            o_error = {true, "ORDER_BY clause is incomplete"};
-            beg = sql_query.end();
-        }
-        while (beg != sql_query.end()) {
-            string str = *beg++;
-            if (beg == sql_query.end() || *beg!= "DESC") {
-                order_lst.push_back({ str, false });
-            } else if (*beg == "DESC") {
-                order_lst.push_back({ str, true });
-                ++beg;
             } 
         }
+        beg = last;                    
+    } else if (beg != sql_query.end() && (*beg) != "ORDER_BY") {
+        w_error = {true, "expected WHERE"};
+        beg = sql_query.end();
+    }
+
+    //  following section process ORDER_BY clause
+    if (beg != sql_query.end() && *beg == "ORDER_BY") {
+        ++beg;
+    } else if (beg != sql_query.end()) {
+        o_error = {true, "ORDER_BY clause is incomplete"};
+        beg = sql_query.end();
+    }
+    while (beg != sql_query.end()) {
+        string str = *beg++;
+        if (beg == sql_query.end() || *beg!= "DESC") {
+            order_lst.push_back({ str, false });
+        } else if (*beg == "DESC") {
+            order_lst.push_back({ str, true });
+            ++beg;
+        } 
     }
 }
 
@@ -515,24 +535,53 @@ QueryResult SqlParser::eval()
         std::cout << "> error : \n> " << str << std::endl;
         return QueryResult(error_type({true, str}));
     }
-    auto qr = From(from_lst).eval();
-    if (qr.error.first) {
-        std::cout << "> error : \n> " << qr.error.second << std::endl;
-        return QueryResult(error_type({true, qr.error.second}));
+ 
+    if (table_lst.front() != tb.get_name()) {
+        f_error = {true, "Table name or File name doesn't match"};
+        return QueryResult(error_type(f_error));
     }
+
+    QueryResult qr;
+    if (table_lst.size()) {
+       qr = From(tb).eval();
+       if (qr.error.first) {
+            std::cout << "> error : \n> " << qr.error.second << std::endl;
+            return QueryResult(error_type({true, qr.error.second}));
+       }
+    } else {
+        qr = From(tb).eval();
+        if (qr.error.first) {
+            std::cout << "> error : \n> " << qr.error.second << std::endl;
+            return QueryResult(error_type({true, qr.error.second}));
+        }    
+    }
+   
+    
+
     Where w;
     if (!query_stck.empty()) {
         auto qr1 = query_stck.top().eval(qr);
+        if (qr.error.first) {
+            std::cout << "> error : \n> " << qr.error.second << std::endl;
+            return QueryResult(error_type({true, qr.error.second}));
+        }  
         qr = qr1;   
     } 
+
     Order_by o(order_lst);
     qr = o.eval(qr);
+    if (qr.error.first) {
+            std::cout << "> error : \n> " << qr.error.second << std::endl;
+            return QueryResult(error_type({true, qr.error.second}));
+    } 
+
     Select s(select_lst);
     qr = s.eval(qr);
 
     return qr;
 }
 
+/*
 int main()
 {
     const string eq = "=";
@@ -558,3 +607,4 @@ int main()
 
     return 0;
 }
+*/
