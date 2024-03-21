@@ -23,7 +23,10 @@ Created solutions to all exercises in the **C++ Primer book** in a well formatte
     * int
     * char
     * double
-    * string       
+    * string    
+* Create Table
+* Save Table to file
+* Load Table from a file       
 A simple database management system in which users can use SQL to create, manage, modify tables, sort them,
 filter them as per their need.       
 ## SKILLS
