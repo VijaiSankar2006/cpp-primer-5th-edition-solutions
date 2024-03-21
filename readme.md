@@ -1,6 +1,6 @@
 This repositor contains solutions to almost all exercises in **c++ primer** book and also some exercises I tried on my own. Please do inform about any corrections.
 
-[Project : DBMS](MyProjects/Database.cpp)
+[Project : DBMS](MyProjects/DBMS)
 A simple dbms which accepts SQL to
 1. Create table 
     CREATE table table_name
@@ -45,4 +45,9 @@ List of SQL Operations supported
         WHERE join_yr < 2012 AND NOT gender = f OR city = chennai
         ORDER_BY emp_id DESC
     ```
-    
+5. HELP : 
+   * HELP ALL : lists all suported commands
+   * HELP <command> : displays information about the specified command     
+6. OPEN : OPEN <file_name> , loads Table from the file.   
+7. ADD : adds records to the Table.
+8. DELETE : delets a record from the Table
