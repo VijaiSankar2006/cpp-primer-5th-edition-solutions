@@ -14,7 +14,6 @@
 #include <iostream>
 #include <fstream>
 #include <map>
-#include "pause.h"
 
 using namespace std::placeholders; 
 
@@ -76,6 +75,7 @@ int Table::remove_record(const constraint &item) {
     auto iter = std::remove_if(records.begin(), records.end(),std::bind(equal, _1, item.second, key_type, key_pos));  
     auto count = records.end() - iter;
     records.erase(iter, records.end());
+    modified = true;
     return count;
 }
 
@@ -138,39 +138,46 @@ Table * Table::new_table(record_type::iterator b, record_type::iterator e) {
     return tb;
 }
 
-std::ostream & operator<<(std::iostream &os, Table const &tb) {
-    size_t width = 14;
-    std::string line_break(width * tb.schema.size() + 5, '=');
-    std::cout << "s.no ";
-    if (typeid(os).name() != typeid(std::fstream).name()) {
+std::iostream & operator<<(std::iostream &os, Table &tb) {
+    if (tb.first_write || tb.modified) {
+        tb.first_write = false;    
+        os << tb.name + "\n";
         for (auto p : tb.schema) {
-            os << std::setw(width) << p.first;
-        }
+            os << p.first << " " << p.second << " ";
+        }    
         os << std::endl;
+        os << tb.primary_key << " " << tb.key_type << " " << tb.key_pos << std::endl;
     }
-    std::cout << line_break << std::endl;
-    size_t s_no = 1;
-    for (auto r : tb.records) {
+
+    decltype(tb.updated_pos) offset = 0;
+    if (!tb.first_write && !tb.modified) {
+        offset = tb.updated_pos;
+    }
+
+    for (size_t i = offset; i != tb.size(); ++i) {
         auto beg = tb.schema.begin();
-        std::cout << std::setw(4) << s_no++ << " ";
-        for (auto p : r) {
+        for (auto p : tb.records[i]) {
             switch(beg->second[0]) {
-                case 'i' : os << std::setw(width) << *(static_cast<int *>(p)); break; 
-                case 'd' : os << std::setw(width) << *(static_cast<double *>(p)); break;
-                case 'c' : os << std::setw(width) << *(static_cast<char *>(p)); break;
-                case 's' : os << std::setw(width) << *(static_cast<string *>(p)); break; 
+                case 'i' : os << *(static_cast<int *>(p)) << " "; break; 
+                case 'd' : os << *(static_cast<double *>(p)) << " "; break;
+                case 'c' : os << *(static_cast<char *>(p)) << " "; break;
+                case 's' : os << *(static_cast<string *>(p)) << " "; break; 
             }
             ++beg; 
         }
         os << std::endl;
     }
 
+    if (tb.modified) {
+        tb.set_modified(false);
+    }
     return os;
 }
 
-Table::Table(std::ifstream &ifile) {
+Table::Table(std::fstream &iofile) {
+    getline(iofile, name);
     std::string first_line;
-    getline(ifile, first_line);
+    getline(iofile, first_line);
     std::istringstream fline_strm(first_line);
     std::string col_name, col_type;
     while(fline_strm >> col_name >> col_type) {
@@ -178,7 +185,7 @@ Table::Table(std::ifstream &ifile) {
     } 
 
     int k_t;
-    ifile >> primary_key >> k_t >> key_pos;
+    iofile >> primary_key >> k_t >> key_pos;
 
     switch(k_t) {
         case int_type : key_type = int_type; break;
@@ -188,8 +195,8 @@ Table::Table(std::ifstream &ifile) {
     }
 
     std::string line;
-    getline(ifile,line);
-    while (getline(ifile, line)) {
+    getline(iofile,line);
+    while (getline(iofile, line)) {
         std::istringstream line_strm(line);
         vector<void *> row;
         for(auto p : schema){
@@ -202,8 +209,10 @@ Table::Table(std::ifstream &ifile) {
         }
         records.push_back(row);
     }
-
-    ifile.close();
+    updated_pos = records.size();
+    if (updated_pos || schema.size()) {
+        first_write = false;
+    }
 }
 
 Table::schema_type Table::get_schema() const {
@@ -234,6 +243,14 @@ void create_schema(Table::schema_type &schema_, string &p_key_) {
     std::cout << "\nEnter primary key : ";
     std::cin >> p_key_;
 
+}
+
+bool Table::is_modified() const {
+    return modified;
+}
+
+void Table::set_modified(bool value) {
+    modified = value;
 }
 
 void add_record(Table &tb) {

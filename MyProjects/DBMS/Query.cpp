@@ -9,8 +9,6 @@
 
 #include "Query.h"
 #include "Table.h"
-#include "Types.cpp"
-#include "pause.h"
 #include <algorithm>
 #include <fstream>
 #include <functional>
@@ -25,8 +23,8 @@ using namespace std::placeholders;
 using std::set;
 using std::stack;
 class Table;
-std::ostream& operator<<(std::ostream& os, const Table& tb);
-std::ostream& operator<<(std::ostream& os, const QueryResult& qr);
+std::iostream& operator<<(std::iostream& os, Table &tb);
+std::iostream& operator<<(std::iostream& os, QueryResult& qr);
 extern std::map<string, std::function<bool(const vector<void*>, const string&, int, size_t)>> op_map;
 
 // QueryResult class members definition----------
@@ -44,12 +42,12 @@ QueryResult::QueryResult(const error_type& e)
     : error(e)
 {
 }
-std::ostream& operator<<(std::ostream& os, const QueryResult& qr)
+std::iostream& operator<<(std::iostream& os, QueryResult& qr)
 {
     if (qr.error.first) {
         os << "> error : \n> " <<  qr.error.second << std::endl;
     } else {
-        os << std::endl << qr.tb << std::endl;
+        os << qr.tb << std::endl;
     }    
     return os;
 }
@@ -452,14 +450,14 @@ SqlParser::SqlParser(const vector<string> &lst, Table &tb_)
                     lhs_seen = true;
                     beg += 3;
                 } else {
-                    w_error = {true, "incomplete Where clause 429"};
+                    w_error = {true, "incomplete Where clause"};
                     break;
                 }
             } else if ((*beg) == "AND" || (*beg) == "OR") {   
                 string op = *beg;
                 ++beg;
                 if (last - beg < 3) {
-                    w_error = {true, "incomplete where 439"};
+                    w_error = {true, "incomplete where"};
                     break;
                 }
                 if (!std::any_of(beg, beg + 3, check)) {
@@ -494,12 +492,12 @@ SqlParser::SqlParser(const vector<string> &lst, Table &tb_)
                         break; 
                     }
                 } else {
-                        w_error = {true, "incomplete where clause 456"};
+                        w_error = {true, "incomplete where clause"};
                         beg = sql_query.end();
                         break;
                 }
             } else {
-                    w_error = {true, "incomplete where clause 488"};
+                    w_error = {true, "incomplete where clause"};
                     beg = sql_query.end();
                     break;
             } 

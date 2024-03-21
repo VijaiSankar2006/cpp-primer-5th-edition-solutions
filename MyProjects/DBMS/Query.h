@@ -43,7 +43,7 @@ class QueryResult {
     friend class AndQuery;
     friend class OrQuery;
     friend QueryResult order_by(QueryResult qr, bool desc);
-    friend std::ostream & operator<<(std::ostream & os, const QueryResult &qr);
+    friend std::iostream & operator<<(std::iostream & os, QueryResult &qr);
     public :
         QueryResult() = default;
         QueryResult(const error_type &e);
@@ -55,7 +55,7 @@ class QueryResult {
         error_type error = {false, ""};
 };
 
-std::ostream & operator<<(std::ostream & os, const QueryResult &qr);
+std::ostream & operator<<(std::ostream & os, QueryResult &qr);
 
 class From {
     public :
