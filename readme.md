@@ -1,6 +1,7 @@
-This repositor contains solutions to almost all exercises in **c++ primer** book and also some exercises I tried on my own. Please do inform about any corrections.
+# Solutions to **C++ Primer 5th Edition** by Stanley B. Lippman, Josée Lajoie, Barbara E. Moo 
+This repositor contains solutions to almost all exercises in **C++ Primer 5th edition** book and also some exercises I tried on my own. Please do inform about any corrections.
 
-[Project : DBMS](MyProjects/DBMS)
+# [Project : DBMS](DBMS)
 A simple dbms which accepts SQL to
 1. Create table 
     CREATE table table_name
