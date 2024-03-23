@@ -1,12 +1,3 @@
-Exercise 13.28: Given the following classes, implement a default constructor and the
-necessary copy-control members.
-(a) class TreeNode { (b) class BinStrTree {
-private: private:
-std::string value; TreeNode *root;
-int count; };
-TreeNode *left;
-TreeNode *right;
-};
 
 # TYPES OF INITIALISATION
 1) default initialisation : when objects are not provided any initial value, objects are default initialise
