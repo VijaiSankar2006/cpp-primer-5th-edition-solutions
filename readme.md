@@ -1,12 +1,7 @@
 # [Solutions to **C++ Primer 5th Edition** by Stanley B. Lippman, Josée Lajoie, Barbara E. Moo](Part_1_The_Basics)
 This repositor contains solutions to almost all exercises in **C++ Primer 5th edition** book and also some exercises I tried on my own. Please do inform about any corrections.
 
-<pre><a href = "main/../LICENSE.txt">LICENSE.txt</a>         <a href = "main/../copy_rights.txt">copy_rights.txt</a>     <a href = "main/../myresume.md">myresume.md</a>         <a href = "main/../myresume.pdf">myresume.pdf</a>        <a href = "main/../readme.md">readme.md</a>           <details><summary><a href = "main/.">OtherWorks</a></summary>
-   <a href = "main/Binary_Search_tree.cpp">Binary_Search_tree.cpp</a>   <a href = "main/circular_linked_list.cpp">circular_linked_list.cpp</a>   <a href = "main/debug.cpp">debug.cpp</a>              <a href = "main/debugchar.cpp">debugchar.cpp</a>          <a href = "main/dir_cont.txt">dir_cont.txt</a>        
-   <a href = "main/doubly_linked_list.cpp">doubly_linked_list.cpp</a>   <a href = "main/efficiencyTest.cpp">efficiencyTest.cpp</a>     <a href = "main/file_explorer.cpp">file_explorer.cpp</a>      <a href = "main/notes.md">notes.md</a>               <a href = "main/pause.cpp">pause.cpp</a>              <a href = "main/pause.h">pause.h</a>             
-   <a href = "main/precedence.md">precedence.md</a>          <a href = "main/pvtdelete.cpp">pvtdelete.cpp</a>          <a href = "main/pvtmemory.cpp">pvtmemory.cpp</a>          <a href = "main/pvtshared_ptr.cpp">pvtshared_ptr.cpp</a>      <a href = "main/pvtsmart_ptr.cpp">pvtsmart_ptr.cpp</a>       <a href = "main/pvtstring.cpp">pvtstring.cpp</a>       
-   <a href = "main/pvtunique_ptr.cpp">pvtunique_ptr.cpp</a>      <a href = "main/pvtvector.cpp">pvtvector.cpp</a>          <a href = "main/readme.md">readme.md</a>              <a href = "main/singly_linked_lst.cpp">singly_linked_lst.cpp</a>   <a href = "main/stack.cpp">stack.cpp</a>              <a href = "main/temp.txt">temp.txt</a>            
-   <a href = "main/test.cpp">test.cpp</a>               <a href = "main/tools.cpp">tools.cpp</a>           </details><details><summary><a href = "main/../Part_1_The_Basics">Part_1_The_Basics</a></summary>
+<pre><a href = "main/../LICENSE.txt">LICENSE.txt</a>         <a href = "main/../copy_rights.txt">copy_rights.txt</a>     <a href = "main/../myresume.md">myresume.md</a>         <a href = "main/../myresume.pdf">myresume.pdf</a>        <a href = "main/../readme.md">readme.md</a>           <details><summary><a href = "main/../Part_1_The_Basics">Part_1_The_Basics</a></summary>
 <details><summary>   <a href = "main/../Part_1_The_Basics/chapter_1_Getting_Started">chapter_1_Getting_Started</a></summary>
       <a href = "main/../Part_1_The_Basics/chapter_1_Getting_Started/Ex_1_1.cpp">Ex_1_1.cpp</a>                <a href = "main/../Part_1_The_Basics/chapter_1_Getting_Started/Ex_1_10.cpp">Ex_1_10.cpp</a>               <a href = "main/../Part_1_The_Basics/chapter_1_Getting_Started/Ex_1_11.cpp">Ex_1_11.cpp</a>               <a href = "main/../Part_1_The_Basics/chapter_1_Getting_Started/Ex_1_12.cpp">Ex_1_12.cpp</a>         
       <a href = "main/../Part_1_The_Basics/chapter_1_Getting_Started/Ex_1_13.cpp">Ex_1_13.cpp</a>               <a href = "main/../Part_1_The_Basics/chapter_1_Getting_Started/Ex_1_14.cpp">Ex_1_14.cpp</a>               <a href = "main/../Part_1_The_Basics/chapter_1_Getting_Started/Ex_1_15.cpp">Ex_1_15.cpp</a>               <a href = "main/../Part_1_The_Basics/chapter_1_Getting_Started/Ex_1_16.cpp">Ex_1_16.cpp</a>               <a href = "main/../Part_1_The_Basics/chapter_1_Getting_Started/Ex_1_17.cpp">Ex_1_17.cpp</a>               <a href = "main/../Part_1_The_Basics/chapter_1_Getting_Started/Ex_1_18.cpp">Ex_1_18.cpp</a>         
@@ -164,8 +159,7 @@ This repositor contains solutions to almost all exercises in **C++ Primer 5th ed
 <a href = "main/../DBMS/employees.txt">employees.txt</a>          
 <a href = "main/../DBMS/file.txt">file.txt</a>            
 <a href = "main/../DBMS/readme.md">readme.md</a>           
-</pre>
-<pre>      
+</pre>      
 
 A simple dbms which accepts SQL to
 1. Create table 
@@ -218,6 +212,14 @@ List of SQL Operations supported
 7. ADD : adds records to the Table.
 8. DELETE : delets a record from the Table
 
-</pre>
 </details>
+<details><summary><a href = "main/."><h1>OtherWorks</h1></a></summary>
+<pre>
+<a href = "main/Binary_Search_tree.cpp">Binary_Search_tree.cpp</a>   <a href = "main/circular_linked_list.cpp">circular_linked_list.cpp</a>   <a href = "main/debug.cpp">debug.cpp</a>              <a href = "main/debugchar.cpp">debugchar.cpp</a>          <a href = "main/dir_cont.txt">dir_cont.txt</a>        
+<a href = "main/doubly_linked_list.cpp">doubly_linked_list.cpp</a>   <a href = "main/efficiencyTest.cpp">efficiencyTest.cpp</a>     <a href = "main/file_explorer.cpp">file_explorer.cpp</a>      <a href = "main/notes.md">notes.md</a>               <a href = "main/pause.cpp">pause.cpp</a>              <a href = "main/pause.h">pause.h</a>             
+<a href = "main/precedence.md">precedence.md</a>          <a href = "main/pvtdelete.cpp">pvtdelete.cpp</a>          <a href = "main/pvtmemory.cpp">pvtmemory.cpp</a>          <a href = "main/pvtshared_ptr.cpp">pvtshared_ptr.cpp</a>      <a href = "main/pvtsmart_ptr.cpp">pvtsmart_ptr.cpp</a>       <a href = "main/pvtstring.cpp">pvtstring.cpp</a>       
+<a href = "main/pvtunique_ptr.cpp">pvtunique_ptr.cpp</a>      <a href = "main/pvtvector.cpp">pvtvector.cpp</a>          <a href = "main/readme.md">readme.md</a>              <a href = "main/singly_linked_lst.cpp">singly_linked_lst.cpp</a>   <a href = "main/stack.cpp">stack.cpp</a>              <a href = "main/temp.txt">temp.txt</a>            
+<a href = "main/test.cpp">test.cpp</a>               <a href = "main/tools.cpp">tools.cpp</a>           
+</details>
+
 <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/vijaishankar/CPP-Primer-5th-Edition-Solutions">CPP-Primer-5th-Edition-Solutions</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://github.com/vijaishankar">Vijai Sankar S</a> is marked with <a href="http://creativecommons.org/publicdomain/zero/1.0?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC0 1.0 Universal<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/zero.svg?ref=chooser-v1"></a></p>
