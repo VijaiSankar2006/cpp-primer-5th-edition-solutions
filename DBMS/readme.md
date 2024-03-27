@@ -1,4 +1,5 @@
-<details> <summary> <a href = "DBMS"><h1>Project : DBMS</h1></a></summary>
+<details><summary><h1 style = "text-align : center; color : blue">DBMS</h1></summary><a href = "main/../DBMS/Database.cpp">Database.cpp</a>        <a href = "main/../DBMS/Query.cpp">Query.cpp</a>           <a href = "main/../DBMS/Query.h">Query.h</a>             <a href = "main/../DBMS/Table.cpp">Table.cpp</a>           <a href = "main/../DBMS/Table.h">Table.h</a>             
+<a href = "main/../DBMS/employees.txt">employees.txt</a>       <a href = "main/../DBMS/file.txt">file.txt</a>            <a href = "main/../DBMS/readme.md">readme.md</a>           <a href = "main/../DBMS/tempreadme.md">tempreadme.md</a>         
 
 A simple dbms which accepts SQL to
 1. Create table 
@@ -50,5 +51,4 @@ List of SQL Operations supported
 6. OPEN : OPEN <file_name> , loads Table from the file.   
 7. ADD : adds records to the Table.
 8. DELETE : delets a record from the Table
-
 </details>
