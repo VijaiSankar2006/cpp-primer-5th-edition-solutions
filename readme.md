@@ -149,9 +149,9 @@ This repositor contains solutions to almost all exercises in **C++ Primer 5th ed
    <a href = "main/../Part_4_AdvancedTopics/Ex_17_1.cpp">Ex_17_1.cpp</a>            <a href = "main/../Part_4_AdvancedTopics/Ex_17_2.cpp">Ex_17_2.cpp</a>            <a href = "main/../Part_4_AdvancedTopics/Ex_17_3.cpp">Ex_17_3.cpp</a>         
    <a href = "main/../Part_4_AdvancedTopics/text.txt">text.txt</a>               <details><summary><a href = "main/../Part_4_AdvancedTopics/chapter_17_SpecializedLibrarayFacilities">chapter_17_SpecializedLibrarayFacilities</a></summary>
 </details></details>
-</pre><pre>
-<details><summary><h1 style = "text-align : center; color : blue">DBMS</h1></summary><a href = "main/../DBMS/Database.cpp">Database.cpp</a>        <a href = "main/../DBMS/Query.cpp">Query.cpp</a>           <a href = "main/../DBMS/Query.h">Query.h</a>             <a href = "main/../DBMS/Table.cpp">Table.cpp</a>           <a href = "main/../DBMS/Table.h">Table.h</a>             
-<a href = "main/../DBMS/employees.txt">employees.txt</a>       <a href = "main/../DBMS/file.txt">file.txt</a>            <a href = "main/../DBMS/readme.md">readme.md</a>           <a href = "main/../DBMS/tempreadme.md">tempreadme.md</a>         
+</pre>
+<details><summary><h1 style = "text-align : center; color : blue">DBMS</h1></summary><pre><a href = "main/../DBMS/Database.cpp">Database.cpp</a>        <a href = "main/../DBMS/Query.cpp">Query.cpp</a>           <a href = "main/../DBMS/Query.h">Query.h</a>             <a href = "main/../DBMS/Table.cpp">Table.cpp</a>           <a href = "main/../DBMS/Table.h">Table.h</a>             
+<a href = "main/../DBMS/employees.txt">employees.txt</a>       <a href = "main/../DBMS/file.txt">file.txt</a>            <a href = "main/../DBMS/readme.md">readme.md</a>           <a href = "main/../DBMS/tempreadme.md">tempreadme.md</a></pre>         
 
 A simple dbms which accepts SQL to
 1. Create table 
@@ -204,11 +204,10 @@ List of SQL Operations supported
 7. ADD : adds records to the Table.
 8. DELETE : delets a record from the Table
 </details>
-</pre><pre>
-<details><summary><h1 style = "text-align : center; color : blue">OtherWorks</h1></summary><a href = "main/Binary_Search_tree.cpp">Binary_Search_tree.cpp</a><a href = "main/circular_linked_list.cpp">circular_linked_list.cpp</a>
+
+<details><summary><h1 style = "text-align : center; color : blue">OtherWorks</h1></summary><pre><a href = "main/Binary_Search_tree.cpp">Binary_Search_tree.cpp</a><a href = "main/circular_linked_list.cpp">circular_linked_list.cpp</a>
 <a href = "main/debug.cpp">debug.cpp</a>           <a href = "main/debugchar.cpp">debugchar.cpp</a>       <a href = "main/dir_cont.txt">dir_cont.txt</a>        <a href = "main/doubly_linked_list.cpp">doubly_linked_list.cpp</a><a href = "main/efficiencyTest.cpp">efficiencyTest.cpp</a>  <a href = "main/file_explorer.cpp">file_explorer.cpp</a>   
 <a href = "main/notes.md">notes.md</a>            <a href = "main/pause.cpp">pause.cpp</a>           <a href = "main/pause.h">pause.h</a>             <a href = "main/precedence.md">precedence.md</a>       <a href = "main/pvtdelete.cpp">pvtdelete.cpp</a>       <a href = "main/pvtmemory.cpp">pvtmemory.cpp</a>       
 <a href = "main/pvtshared_ptr.cpp">pvtshared_ptr.cpp</a>   <a href = "main/pvtsmart_ptr.cpp">pvtsmart_ptr.cpp</a>    <a href = "main/pvtstring.cpp">pvtstring.cpp</a>       <a href = "main/pvtunique_ptr.cpp">pvtunique_ptr.cpp</a>   <a href = "main/pvtvector.cpp">pvtvector.cpp</a>       <a href = "main/readme.md">readme.md</a>           
-<a href = "main/singly_linked_lst.cpp">singly_linked_lst.cpp</a><a href = "main/stack.cpp">stack.cpp</a>           <a href = "main/temp.txt">temp.txt</a>            <a href = "main/test.cpp">test.cpp</a>            <a href = "main/tools.cpp">tools.cpp</a>      
+<a href = "main/singly_linked_lst.cpp">singly_linked_lst.cpp</a><a href = "main/stack.cpp">stack.cpp</a>           <a href = "main/temp.txt">temp.txt</a>            <a href = "main/test.cpp">test.cpp</a>            <a href = "main/tools.cpp">tools.cpp</a></pre>      
 </details>     
-</pre>
