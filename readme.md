@@ -1,7 +1,7 @@
 # [Solutions to **C++ Primer 5th Edition** by Stanley B. Lippman, Josée Lajoie, Barbara E. Moo](Part_1_The_Basics)
 This repositor contains solutions to almost all exercises in **C++ Primer 5th edition** book and also some exercises I tried on my own. Please do inform about any corrections.
 
-# <details> <summary> <a href = "DBMS"> <h1>Project : DBMS</h1> </a></summary>
+# <details> <summary> <a href = "DBMS">Project : DBMS</a></summary>
 A simple dbms which accepts SQL to
 1. Create table 
     CREATE table table_name
