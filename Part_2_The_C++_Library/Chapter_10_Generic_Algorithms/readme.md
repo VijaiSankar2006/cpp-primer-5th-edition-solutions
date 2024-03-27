@@ -295,6 +295,7 @@
 3. Forward iterators
 4. Bidirectional iterators
 5. Random Access iterators
+```c++
     Input Iterators :
         - reads but doesn't write
         - single pass only
@@ -336,7 +337,7 @@
         - [], subscript operator, in short of *(iter + n) to access element based on its element
         ex:- iterators of vector, array, string, deque and pointers of built-in array are random access iterators
              sort() requires random access iterators
-
+```
 ## ALGORITHM PARAMETERS CONVENTION
     alg(beg, end, otherargs)
     alg(beg, end, dest, otherargs)      
