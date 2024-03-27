@@ -1,5 +1,5 @@
 <details> <summary> <a href = "DBMS"><h1>Project : DBMS</h1></a></summary>
-<pre>
+
 A simple dbms which accepts SQL to
 1. Create table 
     CREATE table table_name
@@ -50,5 +50,5 @@ List of SQL Operations supported
 6. OPEN : OPEN <file_name> , loads Table from the file.   
 7. ADD : adds records to the Table.
 8. DELETE : delets a record from the Table
-</pre>
+
 </details>
