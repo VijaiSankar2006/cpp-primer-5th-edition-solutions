@@ -1,4 +1,4 @@
-<details><summary><h1 style = "text-align : center; color : blue">DBMS</h1></summary><pre><a href = "main/../DBMS/Database.cpp">Database.cpp</a>        <a href = "main/../DBMS/Query.cpp">Query.cpp</a>           <a href = "main/../DBMS/Query.h">Query.h</a>             <a href = "main/../DBMS/Table.cpp">Table.cpp</a>           <a href = "main/../DBMS/Table.h">Table.h</a>             
+<details><summary><h1 style = "text-align:center; color:blue">DBMS</h1></summary><pre><a href = "main/../DBMS/Database.cpp">Database.cpp</a>        <a href = "main/../DBMS/Query.cpp">Query.cpp</a>           <a href = "main/../DBMS/Query.h">Query.h</a>             <a href = "main/../DBMS/Table.cpp">Table.cpp</a>           <a href = "main/../DBMS/Table.h">Table.h</a>             
 <a href = "main/../DBMS/employees.txt">employees.txt</a>       <a href = "main/../DBMS/file.txt">file.txt</a>            <a href = "main/../DBMS/readme.md">readme.md</a>           <a href = "main/../DBMS/tempreadme.md">tempreadme.md</a></pre>         
 
 A simple dbms which accepts SQL to
