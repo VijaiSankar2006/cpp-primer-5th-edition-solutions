@@ -54,9 +54,6 @@ List of SQL Operations supported
 8. DELETE : delets a record from the Table
 </details>
 
-
-
-
 <pre><a href = "main/../LICENSE.txt">LICENSE.txt</a>         <a href = "main/../copy_rights.txt">copy_rights.txt</a>     <a href = "main/../myresume.md">myresume.md</a>         <a href = "main/../myresume.pdf">myresume.pdf</a>        <a href = "main/../readme.md">readme.md</a>           <details><summary><a href = "main/../DBMS">DBMS</a></summary>
    <a href = "main/../DBMS/Database.cpp">Database.cpp</a>        
    <a href = "main/../DBMS/Query.cpp">Query.cpp</a>              <a href = "main/../DBMS/Query.h">Query.h</a>                <a href = "main/../DBMS/Table.cpp">Table.cpp</a>              <a href = "main/../DBMS/Table.h">Table.h</a>                <a href = "main/../DBMS/employees.txt">employees.txt</a>          <a href = "main/../DBMS/file.txt">file.txt</a>            
@@ -212,12 +209,4 @@ List of SQL Operations supported
    <a href = "main/../Part_4_AdvancedTopics/Ex_17_1.cpp">Ex_17_1.cpp</a>            <a href = "main/../Part_4_AdvancedTopics/Ex_17_2.cpp">Ex_17_2.cpp</a>         
    <a href = "main/../Part_4_AdvancedTopics/Ex_17_3.cpp">Ex_17_3.cpp</a>            <a href = "main/../Part_4_AdvancedTopics/text.txt">text.txt</a>            <details><summary>   <a href = "main/../Part_4_AdvancedTopics/chapter_17_SpecializedLibrarayFacilities">chapter_17_SpecializedLibrarayFacilities</a></summary>
 </details></details>
-</pre><pre><p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
-    <a property="dct:title" rel="cc:attributionURL" href="https://github.com/vijaishankar/CPP-Primer-5th-Edition-Solutions">CPP-Primer-5th-Edition-Solutions</a> by 
-        <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://github.com/vijaishankar">Vijai Sankar S</a>
-        is marked with <a href="http://creativecommons.org/publicdomain/zero/1.0?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC0 1.0 Universal
-        <img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1">
-        <img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/zero.svg?ref=chooser-v1">
-    </a>
-</p>
-</pre>
+</pre><p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/vijaishankar/CPP-Primer-5th-Edition-Solutions">CPP-Primer-5th-Edition-Solutions</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://github.com/vijaishankar">Vijai Sankar S</a> is marked with <a href="http://creativecommons.org/publicdomain/zero/1.0?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC0 1.0 Universal<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/zero.svg?ref=chooser-v1"></a></p>
