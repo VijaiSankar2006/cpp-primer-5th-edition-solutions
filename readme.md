@@ -155,10 +155,17 @@ This repositor contains solutions to almost all exercises in **C++ Primer 5th ed
 </details></details>
 </pre>
 <details> <summary> <a href = "DBMS"><h1>Project : DBMS</h1></a></summary>
+<pre>
 <a href = "main/../DBMS">DBMS</a></summary>
-   <a href = "main/../DBMS/Database.cpp">Database.cpp</a>        
-   <a href = "main/../DBMS/Query.cpp">Query.cpp</a>              <a href = "main/../DBMS/Query.h">Query.h</a>                <a href = "main/../DBMS/Table.cpp">Table.cpp</a>              <a href = "main/../DBMS/Table.h">Table.h</a>                <a href = "main/../DBMS/employees.txt">employees.txt</a>          <a href = "main/../DBMS/file.txt">file.txt</a>            
-   <a href = "main/../DBMS/readme.md">readme.md</a>           
+<a href = "main/../DBMS/Database.cpp">Database.cpp</a>        
+<a href = "main/../DBMS/Query.cpp">Query.cpp</a>              
+<a href = "main/../DBMS/Query.h">Query.h</a>                
+<a href = "main/../DBMS/Table.cpp">Table.cpp</a>              
+<a href = "main/../DBMS/Table.h">Table.h</a>                
+<a href = "main/../DBMS/employees.txt">employees.txt</a>          
+<a href = "main/../DBMS/file.txt">file.txt</a>            
+<a href = "main/../DBMS/readme.md">readme.md</a>           
+</pre>
 <pre>   
 A simple dbms which accepts SQL to
 1. Create table 
