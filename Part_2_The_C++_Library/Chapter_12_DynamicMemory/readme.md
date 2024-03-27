@@ -77,13 +77,5 @@ allocator class offers independent allocation and construction of objects in the
 - std::construct_at(q, args), q must point to the memory pointed by p, args must match a constructor of the type pointed by q,
 - std::destroy(q), destroys the objects pointed by q;  
 
-![Alt text](../../pictures/12_1_smartPointerOperations.png) 
-![Alt text](../../pictures/12_2_operationsSpecificSharedPointers.png) 
-![Alt text](../../pictures/12_3_otherSharedPointerOperations.png) 
-![Alt text](../../pictures/12_4_uniquePointerOperations.png) 
-![Alt text](../../pictures/12_6_uniquePtrsArrays.png) 
-![Alt text](../../pictures/12_5_weakPtrs.png) 
-![Alt text](../../pictures/12_7_allocatorClass.png) 
-![Alt text](../../pictures/12_8_allocatorAlgorithms.png)
 
 

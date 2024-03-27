@@ -356,14 +356,6 @@
         list.unique() erases all the adjasent duplicate elements
         list.merge() destroys the second sequence
 
-![splice](../../pictures/spliceAlgorithm.png)
-![member algorithms](../../pictures/listForwardListMemberAlgorithms.png) 
-![iterator categories](../../pictures/iteratorcategories.png) 
-![ostreamiterators](../../pictures/ostreamiterators.png) 
-![istreamiterators](../../pictures/istreamiterators.png) 
-![lambdacapture](../../pictures/lambdacapture.png) 
-![lambdaCaptureList](../../pictures/lamdaCaptureList.png)
-        
         
     
 

@@ -13,8 +13,7 @@
 • The << operator, which is used to write output to an ostream object      
 • The getline function (§ 3.2.2, p. 87), which reads a line of input from a given istream into a given string      
 • istringstream and ifstream inherits from istream, so can be used anywhere we use cin       
-• ostringstream and ofstream inherits from ostream, so can be used anywhere we use cout          
-![The Input Types](../../pictures/IO_Types)      
+• ostringstream and ofstream inherits from ostream, so can be used anywhere we use cout               
 
 > ifstream and istringstream inherits from istream, so we can use obj of ifstream and istringstream in place of cin    
 
@@ -35,7 +34,6 @@
 
 ### Condition State
     The state of a io stream(obj) can be accessed by strm::iostate type - machine dependent integral 
-![IO State](../../pictures/condition_state_ofIO.png)
 
 ### Flushing Buffer
     cout << "hi" << endl;  //  writes hi and a newline, then flushes the buffer
@@ -46,12 +44,10 @@
 
 ### fstream
     along with all the operations that iostream provides, fstream adds these file specific operations
-![FILE OPERATIONS](../../pictures/fstreamOperations.png)
 
 ### filemodes
     'in' mode is implicit in ifstream, it cannot be used ofstream
-    'out' and 'trunc' mode is implicit in ofstream, so by default ofstream truncates the file opened unless 'app' mode is specified, if file not present a new file is created, 'out' cannot be specified with ifstream 
-![List of Modes](../../pictures/fileModes.png)   
+    'out' and 'trunc' mode is implicit in ofstream, so by default ofstream truncates the file opened unless 'app' mode is specified, if file not present a new file is created, 'out' cannot be specified with ifstream    
     
     fstream should be close the file, before bound to other file, if not fstream will set failbit.
     modes are reset every time file is opened.
@@ -66,7 +62,6 @@
 ### sstream - in-memory input output of strings
     istringstream, reads  a string
     ostringstream, writes a string
-![Alt text](../../pictures/sstreamOperations.png)
 
     stringstream.str() will return a copy of the underlying string and stores a copy of the new string if passed,
     # even after extracting all characters from the stream

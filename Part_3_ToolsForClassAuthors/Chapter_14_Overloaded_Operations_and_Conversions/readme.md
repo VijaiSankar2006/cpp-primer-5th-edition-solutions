@@ -383,9 +383,6 @@ classes provides conversion from class type to another type through conversion o
 
 - conversions to bool is usually only used in conditions, so they should be defined as explicit.
 
-![Alt text](../../pictures/Table_14_1_operatorsOverloaded.png) 
-![Alt text](../../pictures/Table_14_2_Library_function_objects.png) 
-![Alt text](../../pictures/Table_14_3_LibraryFunctionType.png)
 
 
 

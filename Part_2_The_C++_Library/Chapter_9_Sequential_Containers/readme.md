@@ -25,39 +25,6 @@
               vector<noDefault> vec2(10)        // error : as noDefault as no default constructor, vec2 won't be able to     
                                                            constructs objects
 
-![ContainerOperations](../../pictures/ContainerOperations1.png)     
-![Container Operations](../../pictures/ContainerOperations2.png)     
-![Defining and Initialising Containers](../../pictures/Defining_and_initialisers_containers.png)     
-![Alt text](../../pictures/ContainerOperations9.2.1.png)
-![Alt text](../../pictures/ContainerOperations9.2.2.png) 
-![Alt text](../../pictures/Defining_and_initialisers9.3.png) 
-![Alt text](../../pictures/InitialisingContainers9.3.png) 
-![Alt text](../../pictures/ContainerAssignmentOperations9.4.png) 
-![Alt text](../../pictures/additionToSequentialContainers9.5.png) 
-![Alt text](../../pictures/AddingElementsToSequentialContainers9.5.1.png) 
-![Alt text](../../pictures/AddingElementsToSequentialContainers9.5.2.png) 
-![Alt text](../../pictures/invalidatingIterators.png) 
-![Alt text](../../pictures/accessingSequentialContainers9.6.png) 
-![Alt text](../../pictures/AccessOperationsToSequentialContainers9.6.png) 
-![Alt text](../../pictures/eraseSequentialContainers9.7.png) 
-![Alt text](../../pictures/ErasingOperationsOnSequentialContainers9.7.png)
-![Alt text](../../pictures/forwarlistModification9.8.png) 
-![Alt text](../../pictures/containerSizeManagements9.9.png) 
-![Alt text](../../pictures/SequentialContainersSizeOperations9.9.png)
-![Alt text](../../pictures/containerSizeManagement9.10.png) 
-![Alt text](../../pictures/stringConstruction9.11.png) 
-![Alt text](../../pictures/substringOperations9.12.png) 
-![Alt text](../../pictures/stringModifications9.13.png) 
-![Alt text](../../pictures/stringModifications2.png) 
-![Alt text](../../pictures/st9.13.png) 
-![Alt text](../../pictures/stringSearch9.14.png) 
-![Alt text](../../pictures/stringCompare9.15.png) 
-![Alt text](../../pictures/stringAndNumbersConversions9.16.png) 
-![Alt text](../../pictures/adaptersContainers9.17.png) 
-![Alt text](../../pictures/stackOperations9.18.png) 
-![Alt text](../../pictures/queueOperations9.19.png) 
-![Alt text](../../pictures/IteratorInvalidators.png) 
-
 
 
 

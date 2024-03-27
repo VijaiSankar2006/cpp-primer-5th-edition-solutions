@@ -66,14 +66,6 @@
 - when storing elements in sorted is prohibitive and there is no natural way to compare elements, then unordered types are best used
 - supports all operations of their ordered ones
 
-![AssociativeContainers](../../pictures/Table11_1_AssociativeContainers.png) 
-![OperationsOnPairs](../../pictures/Table_11_2_OperatinsOnPairs.png) 
-![AssociativeContainerTypes](../../pictures/Table_11_3_AssociativeContainerTypes.png) 
-![insertOperations](../../pictures/Table_11_4_insertOperations.png) 
-![RemovingElements](../../pictures/Table_11_5_RemovingElements.png) 
-![SubscriptOperation](../../pictures/Table_11_6_SubscriptOperation.png) 
-![findOperations](../../pictures/Table_11_7_findOperations.png) 
-![UnorderContainers](../../pictures/Table_11_8_UnorderedContainers.png)
 
 
 

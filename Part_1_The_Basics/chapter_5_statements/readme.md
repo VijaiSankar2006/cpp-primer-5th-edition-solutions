@@ -69,4 +69,3 @@ exception handling in c++ consists of three concepts **throw,try-catch and excep
 - new header - defines the bad_alloc exception type
 - type_info header - defines bad_cast exception type
 
-![stdexcept](../pic/stdexcept.png)
