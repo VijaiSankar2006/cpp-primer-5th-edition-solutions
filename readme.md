@@ -59,7 +59,7 @@ List of SQL Operations supported
 <a href = "main/../myresume.md">myresume.md</a>
 <a href = "main/../myresume.pdf">myresume.pdf</a>
 <a href = "main/../readme.md">readme.md</a>
-[+] <a href = "main/../DBMS">DBMS</a>
+<details><summary><details><summary><details><summary>[+] <a href = "main/../DBMS">DBMS</a></summary>
    <a href = "main/../DBMS/Database.cpp">Database.cpp</a>
    <a href = "main/../DBMS/Query.cpp">Query.cpp</a>
    <a href = "main/../DBMS/Query.h">Query.h</a>
@@ -67,7 +67,8 @@ List of SQL Operations supported
    <a href = "main/../DBMS/Table.h">Table.h</a>
    <a href = "main/../DBMS/employees.txt">employees.txt</a>
    <a href = "main/../DBMS/file.txt">file.txt</a>
-[+] <a href = "main/.">OtherWorks</a>
+</details>
+<details><summary>[+] <a href = "main/.">OtherWorks</a></summary>
    <a href = "main/Binary_Search_tree.cpp">Binary_Search_tree.cpp</a>
    <a href = "main/circular_linked_list.cpp">circular_linked_list.cpp</a>
    <a href = "main/debug.cpp">debug.cpp</a>
@@ -93,8 +94,9 @@ List of SQL Operations supported
    <a href = "main/temp.txt">temp.txt</a>
    <a href = "main/test.cpp">test.cpp</a>
    <a href = "main/tools.cpp">tools.cpp</a>
-[+] <a href = "main/../Part_1_The_Basics">Part_1_The_Basics</a>
-   [+] <a href = "main/../Part_1_The_Basics/chapter_1_Getting_Started">chapter_1_Getting_Started</a>
+</details>
+<details><summary>[+] <a href = "main/../Part_1_The_Basics">Part_1_The_Basics</a></summary>
+<details><summary>   [+] <a href = "main/../Part_1_The_Basics/chapter_1_Getting_Started">chapter_1_Getting_Started</a></summary>
       <a href = "main/../Part_1_The_Basics/chapter_1_Getting_Started/Ex_1_1.cpp">Ex_1_1.cpp</a>
       <a href = "main/../Part_1_The_Basics/chapter_1_Getting_Started/Ex_1_10.cpp">Ex_1_10.cpp</a>
       <a href = "main/../Part_1_The_Basics/chapter_1_Getting_Started/Ex_1_11.cpp">Ex_1_11.cpp</a>
@@ -123,7 +125,8 @@ List of SQL Operations supported
       <a href = "main/../Part_1_The_Basics/chapter_1_Getting_Started/Sales_item.h">Sales_item.h</a>
       <a href = "main/../Part_1_The_Basics/chapter_1_Getting_Started/a.out">a.out</a>
       <a href = "main/../Part_1_The_Basics/chapter_1_Getting_Started/notes.md">notes.md</a>
-   [+] <a href = "main/../Part_1_The_Basics/chapter_2_variables_and_basic_types">chapter_2_variables_and_basic_types</a>
+</details>
+<details><summary>   [+] <a href = "main/../Part_1_The_Basics/chapter_2_variables_and_basic_types">chapter_2_variables_and_basic_types</a></summary>
       <a href = "main/../Part_1_The_Basics/chapter_2_variables_and_basic_types/Ex_2_1.md">Ex_2_1.md</a>
       <a href = "main/../Part_1_The_Basics/chapter_2_variables_and_basic_types/Ex_2_10.md">Ex_2_10.md</a>
       <a href = "main/../Part_1_The_Basics/chapter_2_variables_and_basic_types/Ex_2_11.md">Ex_2_11.md</a>
@@ -168,7 +171,8 @@ List of SQL Operations supported
       <a href = "main/../Part_1_The_Basics/chapter_2_variables_and_basic_types/Ex_2_9.md">Ex_2_9.md</a>
       <a href = "main/../Part_1_The_Basics/chapter_2_variables_and_basic_types/notes.md">notes.md</a>
       <a href = "main/../Part_1_The_Basics/chapter_2_variables_and_basic_types/sales_data.h">sales_data.h</a>
-   [+] <a href = "main/../Part_1_The_Basics/chapter_3_Strings_Vectors_Arrays">chapter_3_Strings_Vectors_Arrays</a>
+</details>
+<details><summary>   [+] <a href = "main/../Part_1_The_Basics/chapter_3_Strings_Vectors_Arrays">chapter_3_Strings_Vectors_Arrays</a></summary>
       <a href = "main/../Part_1_The_Basics/chapter_3_Strings_Vectors_Arrays/Ex_3_1.cpp">Ex_3_1.cpp</a>
       <a href = "main/../Part_1_The_Basics/chapter_3_Strings_Vectors_Arrays/Ex_3_10.cpp">Ex_3_10.cpp</a>
       <a href = "main/../Part_1_The_Basics/chapter_3_Strings_Vectors_Arrays/Ex_3_11.md">Ex_3_11.md</a>
@@ -222,7 +226,8 @@ List of SQL Operations supported
       <a href = "main/../Part_1_The_Basics/chapter_3_Strings_Vectors_Arrays/subscript_iteration.cpp">subscript_iteration.cpp</a>
       <a href = "main/../Part_1_The_Basics/chapter_3_Strings_Vectors_Arrays/tables.md">tables.md</a>
       <a href = "main/../Part_1_The_Basics/chapter_3_Strings_Vectors_Arrays/test.cpp">test.cpp</a>
-   [+] <a href = "main/../Part_1_The_Basics/chapter_4_expressions">chapter_4_expressions</a>
+</details>
+<details><summary>   [+] <a href = "main/../Part_1_The_Basics/chapter_4_expressions">chapter_4_expressions</a></summary>
       <a href = "main/../Part_1_The_Basics/chapter_4_expressions/Ex_4_1.md">Ex_4_1.md</a>
       <a href = "main/../Part_1_The_Basics/chapter_4_expressions/Ex_4_10.cpp">Ex_4_10.cpp</a>
       <a href = "main/../Part_1_The_Basics/chapter_4_expressions/Ex_4_11.cpp">Ex_4_11.cpp</a>
@@ -264,7 +269,8 @@ List of SQL Operations supported
       <a href = "main/../Part_1_The_Basics/chapter_4_expressions/grades.cpp">grades.cpp</a>
       <a href = "main/../Part_1_The_Basics/chapter_4_expressions/notes.md">notes.md</a>
       <a href = "main/../Part_1_The_Basics/chapter_4_expressions/test.cpp">test.cpp</a>
-   [+] <a href = "main/../Part_1_The_Basics/chapter_5_statements">chapter_5_statements</a>
+</details>
+<details><summary>   [+] <a href = "main/../Part_1_The_Basics/chapter_5_statements">chapter_5_statements</a></summary>
       <a href = "main/../Part_1_The_Basics/chapter_5_statements/Ex_5_1.md">Ex_5_1.md</a>
       <a href = "main/../Part_1_The_Basics/chapter_5_statements/Ex_5_10.cpp">Ex_5_10.cpp</a>
       <a href = "main/../Part_1_The_Basics/chapter_5_statements/Ex_5_11.cpp">Ex_5_11.cpp</a>
@@ -291,7 +297,8 @@ List of SQL Operations supported
       <a href = "main/../Part_1_The_Basics/chapter_5_statements/Ex_5_8.md">Ex_5_8.md</a>
       <a href = "main/../Part_1_The_Basics/chapter_5_statements/Ex_5_9.cpp">Ex_5_9.cpp</a>
       <a href = "main/../Part_1_The_Basics/chapter_5_statements/notes.md">notes.md</a>
-   [+] <a href = "main/../Part_1_The_Basics/chapter_6_functions">chapter_6_functions</a>
+</details>
+<details><summary>   [+] <a href = "main/../Part_1_The_Basics/chapter_6_functions">chapter_6_functions</a></summary>
       <a href = "main/../Part_1_The_Basics/chapter_6_functions/Chapter6.h">Chapter6.h</a>
       <a href = "main/../Part_1_The_Basics/chapter_6_functions/Ex_6_1.md">Ex_6_1.md</a>
       <a href = "main/../Part_1_The_Basics/chapter_6_functions/Ex_6_10.cpp">Ex_6_10.cpp</a>
@@ -351,7 +358,8 @@ List of SQL Operations supported
       <a href = "main/../Part_1_The_Basics/chapter_6_functions/fact.cc">fact.cc</a>
       <a href = "main/../Part_1_The_Basics/chapter_6_functions/factMain.cc">factMain.cc</a>
       <a href = "main/../Part_1_The_Basics/chapter_6_functions/notes.md">notes.md</a>
-   [+] <a href = "main/../Part_1_The_Basics/chapter_7_classes">chapter_7_classes</a>
+</details>
+<details><summary>   [+] <a href = "main/../Part_1_The_Basics/chapter_7_classes">chapter_7_classes</a></summary>
       <a href = "main/../Part_1_The_Basics/chapter_7_classes/Ex_7_1.cpp">Ex_7_1.cpp</a>
       <a href = "main/../Part_1_The_Basics/chapter_7_classes/Ex_7_10.md">Ex_7_10.md</a>
       <a href = "main/../Part_1_The_Basics/chapter_7_classes/Ex_7_11.cpp">Ex_7_11.cpp</a>
@@ -412,8 +420,10 @@ List of SQL Operations supported
       <a href = "main/../Part_1_The_Basics/chapter_7_classes/Ex_7_9.cpp">Ex_7_9.cpp</a>
       <a href = "main/../Part_1_The_Basics/chapter_7_classes/notes.md">notes.md</a>
       <a href = "main/../Part_1_The_Basics/chapter_7_classes/sales_data.h">sales_data.h</a>
-[+] <a href = "main/../Part_2_The_C++_Library">Part_2_The_C++_Library</a>
-   [+] <a href = "main/../Part_2_The_C++_Library/Chapter_10_Generic_Algorithms">Chapter_10_Generic_Algorithms</a>
+</details>
+</details>
+<details><summary>[+] <a href = "main/../Part_2_The_C++_Library">Part_2_The_C++_Library</a></summary>
+<details><summary>   [+] <a href = "main/../Part_2_The_C++_Library/Chapter_10_Generic_Algorithms">Chapter_10_Generic_Algorithms</a></summary>
       <a href = "main/../Part_2_The_C++_Library/Chapter_10_Generic_Algorithms/EX_10_29.cpp">EX_10_29.cpp</a>
       <a href = "main/../Part_2_The_C++_Library/Chapter_10_Generic_Algorithms/Ex_10.35.cpp">Ex_10.35.cpp</a>
       <a href = "main/../Part_2_The_C++_Library/Chapter_10_Generic_Algorithms/Ex_10_1.cpp">Ex_10_1.cpp</a>
@@ -459,7 +469,8 @@ List of SQL Operations supported
       <a href = "main/../Part_2_The_C++_Library/Chapter_10_Generic_Algorithms/Sales_item.h">Sales_item.h</a>
       <a href = "main/../Part_2_The_C++_Library/Chapter_10_Generic_Algorithms/iostream_iterator.cpp">iostream_iterator.cpp</a>
       <a href = "main/../Part_2_The_C++_Library/Chapter_10_Generic_Algorithms/notes.md">notes.md</a>
-   [+] <a href = "main/../Part_2_The_C++_Library/Chapter_11_AssociativeContainers">Chapter_11_AssociativeContainers</a>
+</details>
+<details><summary>   [+] <a href = "main/../Part_2_The_C++_Library/Chapter_11_AssociativeContainers">Chapter_11_AssociativeContainers</a></summary>
       <a href = "main/../Part_2_The_C++_Library/Chapter_11_AssociativeContainers/EX_11_3.cpp">EX_11_3.cpp</a>
       <a href = "main/../Part_2_The_C++_Library/Chapter_11_AssociativeContainers/Ex_11_1.cpp">Ex_11_1.cpp</a>
       <a href = "main/../Part_2_The_C++_Library/Chapter_11_AssociativeContainers/Ex_11_10.cpp">Ex_11_10.cpp</a>
@@ -501,7 +512,8 @@ List of SQL Operations supported
       <a href = "main/../Part_2_The_C++_Library/Chapter_11_AssociativeContainers/Ex_11_9.cpp">Ex_11_9.cpp</a>
       <a href = "main/../Part_2_The_C++_Library/Chapter_11_AssociativeContainers/Sales_item.h">Sales_item.h</a>
       <a href = "main/../Part_2_The_C++_Library/Chapter_11_AssociativeContainers/notes.md">notes.md</a>
-   [+] <a href = "main/../Part_2_The_C++_Library/Chapter_12_DynamicMemory">Chapter_12_DynamicMemory</a>
+</details>
+<details><summary>   [+] <a href = "main/../Part_2_The_C++_Library/Chapter_12_DynamicMemory">Chapter_12_DynamicMemory</a></summary>
       <a href = "main/../Part_2_The_C++_Library/Chapter_12_DynamicMemory/EX_12_12.cpp">EX_12_12.cpp</a>
       <a href = "main/../Part_2_The_C++_Library/Chapter_12_DynamicMemory/Ex_12_1.cpp">Ex_12_1.cpp</a>
       <a href = "main/../Part_2_The_C++_Library/Chapter_12_DynamicMemory/Ex_12_10.cpp">Ex_12_10.cpp</a>
@@ -536,7 +548,8 @@ List of SQL Operations supported
       <a href = "main/../Part_2_The_C++_Library/Chapter_12_DynamicMemory/Ex_12_8.cpp">Ex_12_8.cpp</a>
       <a href = "main/../Part_2_The_C++_Library/Chapter_12_DynamicMemory/Ex_12_9.cpp">Ex_12_9.cpp</a>
       <a href = "main/../Part_2_The_C++_Library/Chapter_12_DynamicMemory/notes.md">notes.md</a>
-   [+] <a href = "main/../Part_2_The_C++_Library/Chapter_8_The_IO_Library">Chapter_8_The_IO_Library</a>
+</details>
+<details><summary>   [+] <a href = "main/../Part_2_The_C++_Library/Chapter_8_The_IO_Library">Chapter_8_The_IO_Library</a></summary>
       <a href = "main/../Part_2_The_C++_Library/Chapter_8_The_IO_Library/Ex_8_1.cpp">Ex_8_1.cpp</a>
       <a href = "main/../Part_2_The_C++_Library/Chapter_8_The_IO_Library/Ex_8_10.cpp">Ex_8_10.cpp</a>
       <a href = "main/../Part_2_The_C++_Library/Chapter_8_The_IO_Library/Ex_8_11.cpp">Ex_8_11.cpp</a>
@@ -553,7 +566,8 @@ List of SQL Operations supported
       <a href = "main/../Part_2_The_C++_Library/Chapter_8_The_IO_Library/Ex_8_9.cpp">Ex_8_9.cpp</a>
       <a href = "main/../Part_2_The_C++_Library/Chapter_8_The_IO_Library/notes.md">notes.md</a>
       <a href = "main/../Part_2_The_C++_Library/Chapter_8_The_IO_Library/notescopy.md">notescopy.md</a>
-   [+] <a href = "main/../Part_2_The_C++_Library/Chapter_9_Sequential_Containers">Chapter_9_Sequential_Containers</a>
+</details>
+<details><summary>   [+] <a href = "main/../Part_2_The_C++_Library/Chapter_9_Sequential_Containers">Chapter_9_Sequential_Containers</a></summary>
       <a href = "main/../Part_2_The_C++_Library/Chapter_9_Sequential_Containers/Ex_9_1.cpp">Ex_9_1.cpp</a>
       <a href = "main/../Part_2_The_C++_Library/Chapter_9_Sequential_Containers/Ex_9_10.cpp">Ex_9_10.cpp</a>
       <a href = "main/../Part_2_The_C++_Library/Chapter_9_Sequential_Containers/Ex_9_11.cpp">Ex_9_11.cpp</a>
@@ -608,8 +622,10 @@ List of SQL Operations supported
       <a href = "main/../Part_2_The_C++_Library/Chapter_9_Sequential_Containers/Ex_9_9.cpp">Ex_9_9.cpp</a>
       <a href = "main/../Part_2_The_C++_Library/Chapter_9_Sequential_Containers/notes.md">notes.md</a>
       <a href = "main/../Part_2_The_C++_Library/Chapter_9_Sequential_Containers/text.txt">text.txt</a>
-[+] <a href = "main/../Part_3_ToolsForClassAuthors">Part_3_ToolsForClassAuthors</a>
-   [+] <a href = "main/../Part_3_ToolsForClassAuthors/Chapter_13_CopyControl">Chapter_13_CopyControl</a>
+</details>
+</details>
+<details><summary>[+] <a href = "main/../Part_3_ToolsForClassAuthors">Part_3_ToolsForClassAuthors</a></summary>
+<details><summary>   [+] <a href = "main/../Part_3_ToolsForClassAuthors/Chapter_13_CopyControl">Chapter_13_CopyControl</a></summary>
       <a href = "main/../Part_3_ToolsForClassAuthors/Chapter_13_CopyControl/Ex_13_1.cpp">Ex_13_1.cpp</a>
       <a href = "main/../Part_3_ToolsForClassAuthors/Chapter_13_CopyControl/Ex_13_10.cpp">Ex_13_10.cpp</a>
       <a href = "main/../Part_3_ToolsForClassAuthors/Chapter_13_CopyControl/Ex_13_11.cpp">Ex_13_11.cpp</a>
@@ -668,7 +684,8 @@ List of SQL Operations supported
       <a href = "main/../Part_3_ToolsForClassAuthors/Chapter_13_CopyControl/Ex_13_8.cpp">Ex_13_8.cpp</a>
       <a href = "main/../Part_3_ToolsForClassAuthors/Chapter_13_CopyControl/Ex_13_9.cpp">Ex_13_9.cpp</a>
       <a href = "main/../Part_3_ToolsForClassAuthors/Chapter_13_CopyControl/notes.md">notes.md</a>
-   [+] <a href = "main/../Part_3_ToolsForClassAuthors/Chapter_14_Overloaded_Operations_and_Conversions">Chapter_14_Overloaded_Operations_and_Conversions</a>
+</details>
+<details><summary>   [+] <a href = "main/../Part_3_ToolsForClassAuthors/Chapter_14_Overloaded_Operations_and_Conversions">Chapter_14_Overloaded_Operations_and_Conversions</a></summary>
       <a href = "main/../Part_3_ToolsForClassAuthors/Chapter_14_Overloaded_Operations_and_Conversions/Ex_14_1.cpp">Ex_14_1.cpp</a>
       <a href = "main/../Part_3_ToolsForClassAuthors/Chapter_14_Overloaded_Operations_and_Conversions/Ex_14_10_SalesData.cpp">Ex_14_10_SalesData.cpp</a>
       <a href = "main/../Part_3_ToolsForClassAuthors/Chapter_14_Overloaded_Operations_and_Conversions/Ex_14_11.cpp">Ex_14_11.cpp</a>
@@ -723,7 +740,8 @@ List of SQL Operations supported
       <a href = "main/../Part_3_ToolsForClassAuthors/Chapter_14_Overloaded_Operations_and_Conversions/Ex_14_8.cpp">Ex_14_8.cpp</a>
       <a href = "main/../Part_3_ToolsForClassAuthors/Chapter_14_Overloaded_Operations_and_Conversions/Ex_14_9.cpp">Ex_14_9.cpp</a>
       <a href = "main/../Part_3_ToolsForClassAuthors/Chapter_14_Overloaded_Operations_and_Conversions/notes.md">notes.md</a>
-   [+] <a href = "main/../Part_3_ToolsForClassAuthors/Chapter_15_ObjectOrientedProgramming">Chapter_15_ObjectOrientedProgramming</a>
+</details>
+<details><summary>   [+] <a href = "main/../Part_3_ToolsForClassAuthors/Chapter_15_ObjectOrientedProgramming">Chapter_15_ObjectOrientedProgramming</a></summary>
       <a href = "main/../Part_3_ToolsForClassAuthors/Chapter_15_ObjectOrientedProgramming/Ex_15_1.cpp">Ex_15_1.cpp</a>
       <a href = "main/../Part_3_ToolsForClassAuthors/Chapter_15_ObjectOrientedProgramming/Ex_15_10.cpp">Ex_15_10.cpp</a>
       <a href = "main/../Part_3_ToolsForClassAuthors/Chapter_15_ObjectOrientedProgramming/Ex_15_11_Debug.cpp">Ex_15_11_Debug.cpp</a>
@@ -769,7 +787,8 @@ List of SQL Operations supported
       <a href = "main/../Part_3_ToolsForClassAuthors/Chapter_15_ObjectOrientedProgramming/TextQuery.cpp">TextQuery.cpp</a>
       <a href = "main/../Part_3_ToolsForClassAuthors/Chapter_15_ObjectOrientedProgramming/notes.md">notes.md</a>
       <a href = "main/../Part_3_ToolsForClassAuthors/Chapter_15_ObjectOrientedProgramming/text.txt">text.txt</a>
-   [+] <a href = "main/../Part_3_ToolsForClassAuthors/Chapter_16_Templates_and_GenericProgramming">Chapter_16_Templates_and_GenericProgramming</a>
+</details>
+<details><summary>   [+] <a href = "main/../Part_3_ToolsForClassAuthors/Chapter_16_Templates_and_GenericProgramming">Chapter_16_Templates_and_GenericProgramming</a></summary>
       <a href = "main/../Part_3_ToolsForClassAuthors/Chapter_16_Templates_and_GenericProgramming/BlobPtrTemplate.cpp">BlobPtrTemplate.cpp</a>
       <a href = "main/../Part_3_ToolsForClassAuthors/Chapter_16_Templates_and_GenericProgramming/BlobTemplate.cpp">BlobTemplate.cpp</a>
       <a href = "main/../Part_3_ToolsForClassAuthors/Chapter_16_Templates_and_GenericProgramming/EX_16_3.cpp">EX_16_3.cpp</a>
@@ -841,11 +860,15 @@ List of SQL Operations supported
       <a href = "main/../Part_3_ToolsForClassAuthors/Chapter_16_Templates_and_GenericProgramming/Ex_16_9.cpp">Ex_16_9.cpp</a>
       <a href = "main/../Part_3_ToolsForClassAuthors/Chapter_16_Templates_and_GenericProgramming/Sales_data_1.cpp">Sales_data_1.cpp</a>
       <a href = "main/../Part_3_ToolsForClassAuthors/Chapter_16_Templates_and_GenericProgramming/notes.md">notes.md</a>
-[+] <a href = "main/../Part_4_AdvancedTopics">Part_4_AdvancedTopics</a>
+</details>
+</details>
+<details><summary>[+] <a href = "main/../Part_4_AdvancedTopics">Part_4_AdvancedTopics</a></summary>
    <a href = "main/../Part_4_AdvancedTopics/Ex_17_1.cpp">Ex_17_1.cpp</a>
    <a href = "main/../Part_4_AdvancedTopics/Ex_17_2.cpp">Ex_17_2.cpp</a>
    <a href = "main/../Part_4_AdvancedTopics/Ex_17_3.cpp">Ex_17_3.cpp</a>
    <a href = "main/../Part_4_AdvancedTopics/text.txt">text.txt</a>
-   [+] <a href = "main/../Part_4_AdvancedTopics/chapter_17_SpecializedLibrarayFacilities">chapter_17_SpecializedLibrarayFacilities</a>
+<details><summary>   [+] <a href = "main/../Part_4_AdvancedTopics/chapter_17_SpecializedLibrarayFacilities">chapter_17_SpecializedLibrarayFacilities</a></summary>
+</details>
+</details>
 
 </pre>
