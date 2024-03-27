@@ -59,7 +59,7 @@ List of SQL Operations supported
 <a href = "main/../myresume.md">myresume.md</a>
 <a href = "main/../myresume.pdf">myresume.pdf</a>
 <a href = "main/../readme.md">readme.md</a>
-<details><summary><details><summary><details><summary>[+] <a href = "main/../DBMS">DBMS</a></summary>
+<details><summary>[+] <a href = "main/../DBMS">DBMS</a></summary>
    <a href = "main/../DBMS/Database.cpp">Database.cpp</a>
    <a href = "main/../DBMS/Query.cpp">Query.cpp</a>
    <a href = "main/../DBMS/Query.h">Query.h</a>
