@@ -1,10 +1,7 @@
 # [Solutions to **C++ Primer 5th Edition** by Stanley B. Lippman, Josée Lajoie, Barbara E. Moo](Part_1_The_Basics)
 This repositor contains solutions to almost all exercises in **C++ Primer 5th edition** book and also some exercises I tried on my own. Please do inform about any corrections.
 
-<pre><a href = "main/../LICENSE.txt">LICENSE.txt</a>         <a href = "main/../copy_rights.txt">copy_rights.txt</a>     <a href = "main/../myresume.md">myresume.md</a>         <a href = "main/../myresume.pdf">myresume.pdf</a>        <a href = "main/../readme.md">readme.md</a>           <details><summary><a href = "main/../DBMS">DBMS</a></summary>
-   <a href = "main/../DBMS/Database.cpp">Database.cpp</a>        
-   <a href = "main/../DBMS/Query.cpp">Query.cpp</a>              <a href = "main/../DBMS/Query.h">Query.h</a>                <a href = "main/../DBMS/Table.cpp">Table.cpp</a>              <a href = "main/../DBMS/Table.h">Table.h</a>                <a href = "main/../DBMS/employees.txt">employees.txt</a>          <a href = "main/../DBMS/file.txt">file.txt</a>            
-   <a href = "main/../DBMS/readme.md">readme.md</a>           </details><details><summary><a href = "main/.">OtherWorks</a></summary>
+<pre><a href = "main/../LICENSE.txt">LICENSE.txt</a>         <a href = "main/../copy_rights.txt">copy_rights.txt</a>     <a href = "main/../myresume.md">myresume.md</a>         <a href = "main/../myresume.pdf">myresume.pdf</a>        <a href = "main/../readme.md">readme.md</a>           <details><summary><a href = "main/.">OtherWorks</a></summary>
    <a href = "main/Binary_Search_tree.cpp">Binary_Search_tree.cpp</a>   <a href = "main/circular_linked_list.cpp">circular_linked_list.cpp</a>   <a href = "main/debug.cpp">debug.cpp</a>              <a href = "main/debugchar.cpp">debugchar.cpp</a>          <a href = "main/dir_cont.txt">dir_cont.txt</a>        
    <a href = "main/doubly_linked_list.cpp">doubly_linked_list.cpp</a>   <a href = "main/efficiencyTest.cpp">efficiencyTest.cpp</a>     <a href = "main/file_explorer.cpp">file_explorer.cpp</a>      <a href = "main/notes.md">notes.md</a>               <a href = "main/pause.cpp">pause.cpp</a>              <a href = "main/pause.h">pause.h</a>             
    <a href = "main/precedence.md">precedence.md</a>          <a href = "main/pvtdelete.cpp">pvtdelete.cpp</a>          <a href = "main/pvtmemory.cpp">pvtmemory.cpp</a>          <a href = "main/pvtshared_ptr.cpp">pvtshared_ptr.cpp</a>      <a href = "main/pvtsmart_ptr.cpp">pvtsmart_ptr.cpp</a>       <a href = "main/pvtstring.cpp">pvtstring.cpp</a>       
@@ -158,7 +155,11 @@ This repositor contains solutions to almost all exercises in **C++ Primer 5th ed
 </details></details>
 </pre>
 <details> <summary> <a href = "DBMS"><h1>Project : DBMS</h1></a></summary>
-<pre>
+<a href = "main/../DBMS">DBMS</a></summary>
+   <a href = "main/../DBMS/Database.cpp">Database.cpp</a>        
+   <a href = "main/../DBMS/Query.cpp">Query.cpp</a>              <a href = "main/../DBMS/Query.h">Query.h</a>                <a href = "main/../DBMS/Table.cpp">Table.cpp</a>              <a href = "main/../DBMS/Table.h">Table.h</a>                <a href = "main/../DBMS/employees.txt">employees.txt</a>          <a href = "main/../DBMS/file.txt">file.txt</a>            
+   <a href = "main/../DBMS/readme.md">readme.md</a>           
+<pre>   
 A simple dbms which accepts SQL to
 1. Create table 
     CREATE table table_name
