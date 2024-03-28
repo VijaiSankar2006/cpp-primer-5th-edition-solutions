@@ -7,3 +7,10 @@ description: "Solutions to C++ Primer 5th Editions"
 
 # Build settings
 remote_theme: jekyll/minima
+
+header_pages :
+  - about.md
+  - protofolio.md
+
+minima :
+  skin : dark (or solarized-dark)
