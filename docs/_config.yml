@@ -1,4 +1,4 @@
-remote_theme: pages-themes/minimal@v0.2.0
+remote_theme: "pages-themes/minimal@v0.2.0"
 title: "C++ Primer 5th Editions Solutions"
 description: "Solutions to almost all exercises in C++ Primer 5th Edition by Stanley B. Lippman, Josée Lajoie, Barbara E. Moo can be found in this site."
 site.locale : "en-US"
