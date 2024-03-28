@@ -1,7 +1,9 @@
-remote_theme: "pages-themes/minimal@v0.2.0"
-title: "C++ Primer 5th Editions Solutions"
-description: "Solutions to almost all exercises in C++ Primer 5th Edition by Stanley B. Lippman, Josée Lajoie, Barbara E. Moo can be found in this site."
-site.locale : "en-US"
-name : "Vijai Shankar"
-url : "https://cpp-primer-5th-edition-solutions.github.io/"
-repository : "https://github.com/cpp-primer-5th-edition-solutions/cpp-primer-5th-edition-solutions.github.io"
+# Site settings
+title: My Blog
+author:
+  name: Vijai Shankar
+  email: missingsemicolon.vijai@gmail.com
+description: "Solutions to C++ Primer 5th Editions"
+
+# Build settings
+remote_theme: jekyll/minima
