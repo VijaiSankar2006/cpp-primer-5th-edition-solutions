@@ -10,4 +10,3 @@ remote_theme: jekyll/minima
 
 header_pages :
   - about.md
-  - protofolio.md
