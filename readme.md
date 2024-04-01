@@ -221,8 +221,8 @@ This repositor contains solutions to almost all exercises in **C++ Primer 5th ed
 | <a href = "/docs/_posts/2024-03-28-myfirstpost.md">2024-03-28-myfirstpost.md</a>| <a href = "/docs/_posts/2024-03-28-nexttips.md">2024-03-28-nexttips.md</a> |       |       |       |       |      
 </details></details>
 
-<details><summary><h1 style = "text-align:center; color:blue">DBMS</h1></summary><pre><a href = "main/../DBMS/Database.cpp">Database.cpp</a>        <a href = "main/../DBMS/Query.cpp">Query.cpp</a>           <a href = "main/../DBMS/Query.h">Query.h</a>             <a href = "main/../DBMS/Table.cpp">Table.cpp</a>           <a href = "main/../DBMS/Table.h">Table.h</a>             
-<a href = "main/../DBMS/employees.txt">employees.txt</a>       <a href = "main/../DBMS/file.txt">file.txt</a>            <a href = "main/../DBMS/readme.md">readme.md</a>           <a href = "main/../DBMS/tempreadme.md">tempreadme.md</a></pre>         
+<details><summary><h1 style = "text-align:center; color:blue">DBMS</h1></summary><pre><a href = "/DBMS/Database.cpp">Database.cpp</a>        <a href = "/DBMS/Query.cpp">Query.cpp</a>           <a href = "/DBMS/Query.h">Query.h</a>             <a href = "/DBMS/Table.cpp">Table.cpp</a>           <a href = "/DBMS/Table.h">Table.h</a>             
+<a href = "/DBMS/employees.txt">employees.txt</a>       <a href = "/DBMS/file.txt">file.txt</a>            <a href = "/DBMS/readme.md">readme.md</a>           <a href = "/DBMS/tempreadme.md">tempreadme.md</a></pre>         
 
 A simple dbms which accepts SQL to
 1. Create table 
@@ -273,12 +273,9 @@ List of SQL Operations supported
    * HELP <command> : displays information about the specified command     
 6. OPEN : OPEN <file_name> , loads Table from the file.   
 7. ADD : adds records to the Table.
-8. DELETE : delets a record from the Table
-</details>
-|   |   |   |   |   |   |
-|---|---|---|---|---|---|
-| <a href = "/DBMS/Database.cpp">Database.cpp</a>| <a href = "/DBMS/Query.cpp">Query.cpp</a>| <a href = "/DBMS/Query.h">Query.h</a>| <a href = "/DBMS/Table.cpp">Table.cpp</a>| <a href = "/DBMS/Table.h">Table.h</a>| <a href = "/DBMS/employees.txt">employees.txt</a> |                
-| <a href = "/DBMS/file.txt">file.txt</a>| <a href = "/DBMS/readme.md">readme.md</a> |       |       |       |       |             
+8. DELETE : delets a record from the Table     
+
+</details>       
 
 
 
