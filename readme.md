@@ -2,14 +2,11 @@
 This repositor contains solutions to almost all exercises in **C++ Primer 5th edition** book and also some exercises I tried on my own. Please do inform about any corrections.
 
 
-
 |   |   |   |   |   |   |
 |---|---|---|---|---|---|
 | <a href = "/LICENSE.txt">LICENSE.txt</a>| <a href = "/copy_rights.txt">copy_rights.txt</a>| <a href = "/myresume.md">myresume.md</a>| <a href = "/myresume.pdf">myresume.pdf</a>| <a href = "/readme.md">readme.md</a> |       |      
 <details><summary><a href = "/Part_1_The_Basics">Part_1_The_Basics</a></summary>   
 
-|   |   |   |   |   |   |
-|---|---|---|---|---|---|
    <details><summary><a href = "/Part_1_The_Basics/chapter_1_Getting_Started">chapter_1_Getting_Started</a></summary>
 
 |   |   |   |   |   |   |
@@ -95,8 +92,6 @@ This repositor contains solutions to almost all exercises in **C++ Primer 5th ed
 | <a href = "/Part_1_The_Basics/chapter_7_classes/Ex_7_6.cpp">Ex_7_6.cpp</a>| <a href = "/Part_1_The_Basics/chapter_7_classes/Ex_7_7.cpp">Ex_7_7.cpp</a>| <a href = "/Part_1_The_Basics/chapter_7_classes/Ex_7_8.md">Ex_7_8.md</a>| <a href = "/Part_1_The_Basics/chapter_7_classes/Ex_7_9.cpp">Ex_7_9.cpp</a>| <a href = "/Part_1_The_Basics/chapter_7_classes/readme.md">readme.md</a>| <a href = "/Part_1_The_Basics/chapter_7_classes/sales_data.h">sales_data.h</a> |        
 </details></details><details><summary><a href = "/Part_2_The_Cplusplus_Library">Part_2_The_Cplusplus_Library</a></summary>
 
-|   |   |   |   |   |   |
-|---|---|---|---|---|---|
    <details><summary><a href = "/Part_2_The_Cplusplus_Library/Chapter_10_Generic_Algorithms">Chapter_10_Generic_Algorithms</a></summary>
 
 |   |   |   |   |   |   |
@@ -152,8 +147,6 @@ This repositor contains solutions to almost all exercises in **C++ Primer 5th ed
 | <a href = "/Part_2_The_Cplusplus_Library/Chapter_9_Sequential_Containers/Ex_9_6.cpp">Ex_9_6.cpp</a>| <a href = "/Part_2_The_Cplusplus_Library/Chapter_9_Sequential_Containers/Ex_9_7.cpp">Ex_9_7.cpp</a>| <a href = "/Part_2_The_Cplusplus_Library/Chapter_9_Sequential_Containers/Ex_9_8.cpp">Ex_9_8.cpp</a>| <a href = "/Part_2_The_Cplusplus_Library/Chapter_9_Sequential_Containers/Ex_9_9.cpp">Ex_9_9.cpp</a>| <a href = "/Part_2_The_Cplusplus_Library/Chapter_9_Sequential_Containers/readme.md">readme.md</a>| <a href = "/Part_2_The_Cplusplus_Library/Chapter_9_Sequential_Containers/text.txt">text.txt</a> |        
 </details></details><details><summary><a href = "/Part_3_ToolsForClassAuthors">Part_3_ToolsForClassAuthors</a></summary>
 
-|   |   |   |   |   |   |
-|---|---|---|---|---|---|
    <details><summary><a href = "/Part_3_ToolsForClassAuthors/Chapter_13_CopyControl">Chapter_13_CopyControl</a></summary>
 
 |   |   |   |   |   |   |
@@ -216,8 +209,6 @@ This repositor contains solutions to almost all exercises in **C++ Primer 5th ed
 | <a href = "/Part_4_AdvancedTopics/Ex_17_1.cpp">Ex_17_1.cpp</a>| <a href = "/Part_4_AdvancedTopics/Ex_17_2.cpp">Ex_17_2.cpp</a>| <a href = "/Part_4_AdvancedTopics/Ex_17_3.cpp">Ex_17_3.cpp</a>| <a href = "/Part_4_AdvancedTopics/text.txt">text.txt</a> |       |       |      
    <details><summary><a href = "/Part_4_AdvancedTopics/chapter_17_SpecializedLibrarayFacilities">chapter_17_SpecializedLibrarayFacilities</a></summary>
 
-|   |   |   |   |   |   |
-|---|---|---|---|---|---|
 </details></details><details><summary><a href = "/docs">docs</a></summary>                
 
 |   |   |   |   |   |   |
