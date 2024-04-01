@@ -283,6 +283,7 @@ List of SQL Operations supported
 
 
 
+<details><summary><h1>OtherWorks</h1></summary>       
 
 |   |   |   |   |   |   |
 |---|---|---|---|---|---|
@@ -292,3 +293,4 @@ List of SQL Operations supported
 | <a href = "tstring.cpp">pvtstring.cpp</a>| <a href = "tunique_ptr.cpp">pvtunique_ptr.cpp</a>| <a href = "tvector.cpp">pvtvector.cpp</a>| <a href = "adme.md">readme.md</a>| <a href = "adme1.md">readme1.md</a>| <a href = "ngly_linked_lst.cpp">singly_linked_lst.cpp</a> |        
 | <a href = "ack.cpp">stack.cpp</a>| <a href = "mp.txt">temp.txt</a>| <a href = "st.cpp">test.cpp</a>| <a href = "ols.cpp">tools.cpp</a> |       |       |         
 
+</details>
