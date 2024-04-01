@@ -52,3 +52,8 @@ List of SQL Operations supported
 7. ADD : adds records to the Table.
 8. DELETE : delets a record from the Table
 </details>
+|   |   |   |   |   |   |
+|---|---|---|---|---|---|
+| <a href = "/DBMS/Database.cpp">Database.cpp</a>| <a href = "/DBMS/Query.cpp">Query.cpp</a>| <a href = "/DBMS/Query.h">Query.h</a>| <a href = "/DBMS/Table.cpp">Table.cpp</a>| <a href = "/DBMS/Table.h">Table.h</a>| <a href = "/DBMS/employees.txt">employees.txt</a> |        
+| <a href = "/DBMS/file.txt">file.txt</a>| <a href = "/DBMS/readme.md">readme.md</a> |       |       |       |       |      
+

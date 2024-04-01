@@ -2,6 +2,7 @@
 This repositor contains solutions to almost all exercises in **C++ Primer 5th edition** book and also some exercises I tried on my own. Please do inform about any corrections.
 
 
+
 |   |   |   |   |   |   |
 |---|---|---|---|---|---|
 | <a href = "/LICENSE.txt">LICENSE.txt</a>| <a href = "/copy_rights.txt">copy_rights.txt</a>| <a href = "/myresume.md">myresume.md</a>| <a href = "/myresume.pdf">myresume.pdf</a>| <a href = "/readme.md">readme.md</a> |       |      
@@ -274,10 +275,18 @@ List of SQL Operations supported
 7. ADD : adds records to the Table.
 8. DELETE : delets a record from the Table
 </details>
+|   |   |   |   |   |   |
+|---|---|---|---|---|---|
+| <a href = "/DBMS/Database.cpp">Database.cpp</a>| <a href = "/DBMS/Query.cpp">Query.cpp</a>| <a href = "/DBMS/Query.h">Query.h</a>| <a href = "/DBMS/Table.cpp">Table.cpp</a>| <a href = "/DBMS/Table.h">Table.h</a>| <a href = "/DBMS/employees.txt">employees.txt</a> |        
+| <a href = "/DBMS/file.txt">file.txt</a>| <a href = "/DBMS/readme.md">readme.md</a> |       |       |       |       |      
 
-<details><summary><h1 style = "text-align:center; color:blue">OtherWorks</h1></summary><pre><a href = "main/Binary_Search_tree.cpp">Binary_Search_tree.cpp</a><a href = "main/circular_linked_list.cpp">circular_linked_list.cpp</a>
-<a href = "main/debug.cpp">debug.cpp</a>           <a href = "main/debugchar.cpp">debugchar.cpp</a>       <a href = "main/dir_cont.txt">dir_cont.txt</a>        <a href = "main/doubly_linked_list.cpp">doubly_linked_list.cpp</a><a href = "main/efficiencyTest.cpp">efficiencyTest.cpp</a>  <a href = "main/file_explorer.cpp">file_explorer.cpp</a>   
-<a href = "main/notes.md">notes.md</a>            <a href = "main/pause.cpp">pause.cpp</a>           <a href = "main/pause.h">pause.h</a>             <a href = "main/precedence.md">precedence.md</a>       <a href = "main/pvtdelete.cpp">pvtdelete.cpp</a>       <a href = "main/pvtmemory.cpp">pvtmemory.cpp</a>       
-<a href = "main/pvtshared_ptr.cpp">pvtshared_ptr.cpp</a>   <a href = "main/pvtsmart_ptr.cpp">pvtsmart_ptr.cpp</a>    <a href = "main/pvtstring.cpp">pvtstring.cpp</a>       <a href = "main/pvtunique_ptr.cpp">pvtunique_ptr.cpp</a>   <a href = "main/pvtvector.cpp">pvtvector.cpp</a>       <a href = "main/readme.md">readme.md</a>           
-<a href = "main/singly_linked_lst.cpp">singly_linked_lst.cpp</a><a href = "main/stack.cpp">stack.cpp</a>           <a href = "main/temp.txt">temp.txt</a>            <a href = "main/test.cpp">test.cpp</a>            <a href = "main/tools.cpp">tools.cpp</a></pre>      
-</details>     
+
+
+|   |   |   |   |   |   |
+|---|---|---|---|---|---|
+| <a href = "nary_Search_tree.cpp">Binary_Search_tree.cpp</a>| <a href = "rcular_linked_list.cpp">circular_linked_list.cpp</a>| <a href = "bug.cpp">debug.cpp</a>| <a href = "bugchar.cpp">debugchar.cpp</a>| <a href = "r_cont.txt">dir_cont.txt</a>| <a href = "ubly_linked_list.cpp">doubly_linked_list.cpp</a> |        
+| <a href = "ficiencyTest.cpp">efficiencyTest.cpp</a>| <a href = "plorer.cpp">explorer.cpp</a>| <a href = "le_explorer.cpp">file_explorer.cpp</a>| <a href = "tput.md">output.md</a>| <a href = "tput.txt">output.txt</a>| <a href = "use.cpp">pause.cpp</a> |        
+| <a href = "use.h">pause.h</a>| <a href = "ecedence.md">precedence.md</a>| <a href = "tdelete.cpp">pvtdelete.cpp</a>| <a href = "tmemory.cpp">pvtmemory.cpp</a>| <a href = "tshared_ptr.cpp">pvtshared_ptr.cpp</a>| <a href = "tsmart_ptr.cpp">pvtsmart_ptr.cpp</a> |        
+| <a href = "tstring.cpp">pvtstring.cpp</a>| <a href = "tunique_ptr.cpp">pvtunique_ptr.cpp</a>| <a href = "tvector.cpp">pvtvector.cpp</a>| <a href = "adme.md">readme.md</a>| <a href = "adme1.md">readme1.md</a>| <a href = "ngly_linked_lst.cpp">singly_linked_lst.cpp</a> |        
+| <a href = "ack.cpp">stack.cpp</a>| <a href = "mp.txt">temp.txt</a>| <a href = "st.cpp">test.cpp</a>| <a href = "ols.cpp">tools.cpp</a> |       |       |      
+
