@@ -2,7 +2,6 @@
 This repositor contains solutions to almost all exercises in **C++ Primer 5th edition** book and also some exercises I tried on my own. Please do inform about any corrections.
 
 
-
 |   |   |   |   |   |   |
 |---|---|---|---|---|---|
 | <a href = "/LICENSE.txt">LICENSE.txt</a>| <a href = "/copy_rights.txt">copy_rights.txt</a>| <a href = "/myresume.md">myresume.md</a>| <a href = "/myresume.pdf">myresume.pdf</a>| <a href = "/readme.md">readme.md</a> |       |      
@@ -209,16 +208,6 @@ This repositor contains solutions to almost all exercises in **C++ Primer 5th ed
 | <a href = "/Part_4_AdvancedTopics/Ex_17_1.cpp">Ex_17_1.cpp</a>| <a href = "/Part_4_AdvancedTopics/Ex_17_2.cpp">Ex_17_2.cpp</a>| <a href = "/Part_4_AdvancedTopics/Ex_17_3.cpp">Ex_17_3.cpp</a>| <a href = "/Part_4_AdvancedTopics/text.txt">text.txt</a> |       |       |      
 <details><summary><a href = "/Part_4_AdvancedTopics/chapter_17_SpecializedLibrarayFacilities">chapter_17_SpecializedLibrarayFacilities</a></summary>
 
-</details></details><details><summary><a href = "/docs">docs</a></summary>
-
-|   |   |   |   |   |   |
-|---|---|---|---|---|---|
-| <a href = "/docs/_config.yml">_config.yml</a>| <a href = "/docs/about.md">about.md</a>| <a href = "/docs/index.html">index.html</a> |       |       |       |      
-<details><summary><a href = "/docs/_posts">_posts</a></summary>
-
-|   |   |   |   |   |   |
-|---|---|---|---|---|---|
-| <a href = "/docs/_posts/2024-03-28-myfirstpost.md">2024-03-28-myfirstpost.md</a>| <a href = "/docs/_posts/2024-03-28-nexttips.md">2024-03-28-nexttips.md</a> |       |       |       |       |      
 </details></details>
 
 <details><summary><h1 style = "text-align:center; color:blue">DBMS</h1></summary><pre><a href = "/DBMS/Database.cpp">Database.cpp</a>        <a href = "/DBMS/Query.cpp">Query.cpp</a>           <a href = "/DBMS/Query.h">Query.h</a>             <a href = "/DBMS/Table.cpp">Table.cpp</a>           <a href = "/DBMS/Table.h">Table.h</a>             
