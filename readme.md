@@ -2,10 +2,11 @@
 This repositor contains solutions to almost all exercises in **C++ Primer 5th edition** book and also some exercises I tried on my own. Please do inform about any corrections.
 
 
+
 |   |   |   |   |   |   |
 |---|---|---|---|---|---|
 | <a href = "/LICENSE.txt">LICENSE.txt</a>| <a href = "/copy_rights.txt">copy_rights.txt</a>| <a href = "/myresume.md">myresume.md</a>| <a href = "/myresume.pdf">myresume.pdf</a>| <a href = "/readme.md">readme.md</a> |       |      
-&nbsp;<details><summary><a href = "/Part_1_The_Basics">Part_1_The_Basics</a></summary>   
+&nbsp;<details><summary><a href = "/Part_1_The_Basics">Part_1_The_Basics</a></summary>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<details><summary><a href = "/Part_1_The_Basics/chapter_1_Getting_Started">chapter_1_Getting_Started</a></summary>
 
@@ -61,7 +62,7 @@ This repositor contains solutions to almost all exercises in **C++ Primer 5th ed
 | <a href = "/Part_1_The_Basics/chapter_5_statements/Ex_5_20.cpp">Ex_5_20.cpp</a>| <a href = "/Part_1_The_Basics/chapter_5_statements/Ex_5_21.cpp">Ex_5_21.cpp</a>| <a href = "/Part_1_The_Basics/chapter_5_statements/Ex_5_22.md">Ex_5_22.md</a>| <a href = "/Part_1_The_Basics/chapter_5_statements/Ex_5_23.cpp">Ex_5_23.cpp</a>| <a href = "/Part_1_The_Basics/chapter_5_statements/Ex_5_24.cpp">Ex_5_24.cpp</a>| <a href = "/Part_1_The_Basics/chapter_5_statements/Ex_5_25.cpp">Ex_5_25.cpp</a> |        
 | <a href = "/Part_1_The_Basics/chapter_5_statements/Ex_5_3.cpp">Ex_5_3.cpp</a>| <a href = "/Part_1_The_Basics/chapter_5_statements/Ex_5_4.md">Ex_5_4.md</a>| <a href = "/Part_1_The_Basics/chapter_5_statements/Ex_5_5.cpp">Ex_5_5.cpp</a>| <a href = "/Part_1_The_Basics/chapter_5_statements/Ex_5_6.cpp">Ex_5_6.cpp</a>| <a href = "/Part_1_The_Basics/chapter_5_statements/Ex_5_7.md">Ex_5_7.md</a>| <a href = "/Part_1_The_Basics/chapter_5_statements/Ex_5_8.md">Ex_5_8.md</a> |        
 | <a href = "/Part_1_The_Basics/chapter_5_statements/Ex_5_9.cpp">Ex_5_9.cpp</a>| <a href = "/Part_1_The_Basics/chapter_5_statements/readme.md">readme.md</a> |       |       |       |       |      
-</details>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<details><summary><a href = "/Part_1_The_Basics/chapter_6_functions">chapter_6_functions</a></summary> 
+</details>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<details><summary><a href = "/Part_1_The_Basics/chapter_6_functions">chapter_6_functions</a></summary>
 
 |   |   |   |   |   |   |
 |---|---|---|---|---|---|
@@ -75,8 +76,7 @@ This repositor contains solutions to almost all exercises in **C++ Primer 5th ed
 | <a href = "/Part_1_The_Basics/chapter_6_functions/Ex_6_47.cpp">Ex_6_47.cpp</a>| <a href = "/Part_1_The_Basics/chapter_6_functions/Ex_6_48.cpp">Ex_6_48.cpp</a>| <a href = "/Part_1_The_Basics/chapter_6_functions/Ex_6_49.md">Ex_6_49.md</a>| <a href = "/Part_1_The_Basics/chapter_6_functions/Ex_6_5.cpp">Ex_6_5.cpp</a>| <a href = "/Part_1_The_Basics/chapter_6_functions/Ex_6_50.cpp">Ex_6_50.cpp</a>| <a href = "/Part_1_The_Basics/chapter_6_functions/Ex_6_50.md">Ex_6_50.md</a> |        
 | <a href = "/Part_1_The_Basics/chapter_6_functions/Ex_6_52.md">Ex_6_52.md</a>| <a href = "/Part_1_The_Basics/chapter_6_functions/Ex_6_53.md">Ex_6_53.md</a>| <a href = "/Part_1_The_Basics/chapter_6_functions/Ex_6_54.md">Ex_6_54.md</a>| <a href = "/Part_1_The_Basics/chapter_6_functions/Ex_6_55.cpp">Ex_6_55.cpp</a>| <a href = "/Part_1_The_Basics/chapter_6_functions/Ex_6_56.cpp">Ex_6_56.cpp</a>| <a href = "/Part_1_The_Basics/chapter_6_functions/Ex_6_6.md">Ex_6_6.md</a> |        
 | <a href = "/Part_1_The_Basics/chapter_6_functions/Ex_6_7.cpp">Ex_6_7.cpp</a>| <a href = "/Part_1_The_Basics/chapter_6_functions/Ex_6_9.cpp">Ex_6_9.cpp</a>| <a href = "/Part_1_The_Basics/chapter_6_functions/fact.cc">fact.cc</a>| <a href = "/Part_1_The_Basics/chapter_6_functions/factMain.cc">factMain.cc</a>| <a href = "/Part_1_The_Basics/chapter_6_functions/readme.md">readme.md</a> |       |      
-</details>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<details><summary><a href = "/Part_1_The_Basics/chapter_7_classes">chapter_7_classes</a></summary>   
+</details>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<details><summary><a href = "/Part_1_The_Basics/chapter_7_classes">chapter_7_classes</a></summary>
 
 |   |   |   |   |   |   |
 |---|---|---|---|---|---|
@@ -209,12 +209,12 @@ This repositor contains solutions to almost all exercises in **C++ Primer 5th ed
 | <a href = "/Part_4_AdvancedTopics/Ex_17_1.cpp">Ex_17_1.cpp</a>| <a href = "/Part_4_AdvancedTopics/Ex_17_2.cpp">Ex_17_2.cpp</a>| <a href = "/Part_4_AdvancedTopics/Ex_17_3.cpp">Ex_17_3.cpp</a>| <a href = "/Part_4_AdvancedTopics/text.txt">text.txt</a> |       |       |      
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<details><summary><a href = "/Part_4_AdvancedTopics/chapter_17_SpecializedLibrarayFacilities">chapter_17_SpecializedLibrarayFacilities</a></summary>
 
-</details></details>&nbsp;<details><summary><a href = "/docs">docs</a></summary>                
+</details></details>&nbsp;<details><summary><a href = "/docs">docs</a></summary>
 
 |   |   |   |   |   |   |
 |---|---|---|---|---|---|
 | <a href = "/docs/_config.yml">_config.yml</a>| <a href = "/docs/about.md">about.md</a>| <a href = "/docs/index.html">index.html</a> |       |       |       |      
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<details><summary><a href = "/docs/_posts">_posts</a></summary>              
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<details><summary><a href = "/docs/_posts">_posts</a></summary>
 
 |   |   |   |   |   |   |
 |---|---|---|---|---|---|
