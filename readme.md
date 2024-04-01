@@ -1,7 +1,7 @@
 # [Solutions to **C++ Primer 5th Edition** by Stanley B. Lippman, Josée Lajoie, Barbara E. Moo](Part_1_The_Basics)
 This repositor contains solutions to almost all exercises in **C++ Primer 5th edition** book and also some exercises I tried on my own. Please do inform about any corrections.
 
-<pre>|   |   |   |   |   |   |
+|   |   |   |   |   |   |
 |---|---|---|---|---|---|
 | <a href = "/LICENSE.txt">LICENSE.txt</a>| <a href = "/copy_rights.txt">copy_rights.txt</a>| <a href = "/myresume.md">myresume.md</a>| <a href = "/myresume.pdf">myresume.pdf</a>| <a href = "/readme.md">readme.md</a> | |
 <details><summary><a href = "/Part_1_The_Basics">Part_1_The_Basics</a></summary>   
@@ -204,7 +204,7 @@ This repositor contains solutions to almost all exercises in **C++ Primer 5th ed
 |---|---|---|---|---|---|
 | <a href = "/docs/_posts/2024-03-28-myfirstpost.md">2024-03-28-myfirstpost.md</a>| <a href = "/docs/_posts/2024-03-28-nexttips.md">2024-03-28-nexttips.md</a> | | | | |
 </details></details>
-</pre>
+
 <details><summary><h1 style = "text-align:center; color:blue">DBMS</h1></summary><pre><a href = "main/../DBMS/Database.cpp">Database.cpp</a>        <a href = "main/../DBMS/Query.cpp">Query.cpp</a>           <a href = "main/../DBMS/Query.h">Query.h</a>             <a href = "main/../DBMS/Table.cpp">Table.cpp</a>           <a href = "main/../DBMS/Table.h">Table.h</a>             
 <a href = "main/../DBMS/employees.txt">employees.txt</a>       <a href = "main/../DBMS/file.txt">file.txt</a>            <a href = "main/../DBMS/readme.md">readme.md</a>           <a href = "main/../DBMS/tempreadme.md">tempreadme.md</a></pre>         
 
