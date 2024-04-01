@@ -54,6 +54,8 @@ List of SQL Operations supported
 </details>
 |   |   |   |   |   |   |
 |---|---|---|---|---|---|
-| <a href = "/DBMS/Database.cpp">Database.cpp</a>| <a href = "/DBMS/Query.cpp">Query.cpp</a>| <a href = "/DBMS/Query.h">Query.h</a>| <a href = "/DBMS/Table.cpp">Table.cpp</a>| <a href = "/DBMS/Table.h">Table.h</a>| <a href = "/DBMS/employees.txt">employees.txt</a> |        
-| <a href = "/DBMS/file.txt">file.txt</a>| <a href = "/DBMS/readme.md">readme.md</a> |       |       |       |       |      
+| <a href = "/DBMS/Database.cpp">Database.cpp</a>| <a href = "/DBMS/Query.cpp">Query.cpp</a>| <a href = "/DBMS/Query.h">Query.h</a>| <a href = "/DBMS/Table.cpp">Table.cpp</a>| <a href = "/DBMS/Table.h">Table.h</a>| <a href = "/DBMS/employees.txt">employees.txt</a> |                
+| <a href = "/DBMS/file.txt">file.txt</a>| <a href = "/DBMS/readme.md">readme.md</a> |       |       |       |       |             
+
+
 
