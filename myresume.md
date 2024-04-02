@@ -1,18 +1,21 @@
 <h1 style = "text-align : center; font-size : 30px; background-color: grey; color : black"> VIJAI SANKAR S </h1>
-<pre> missingsemicolon.vijai@gmail.com    linkedin.com/in/vijaishankar2006      https://github.com/VijaiSankar2006     Chennai   </pre>
+<pre>missingsemicolon.vijai@gmail.com   linkedin.com/in/vijaishankar2006     https://github.com/VijaiSankar2006     Chennai   </pre>
 
 ## SUMMARY       
-Highly motivated individual with excellent knowledge of software development specialized in C++ 17, C and OOPS.
-Looking for an opportunity as an Entry level software developer to learn, develop, test and implement powerful system
-softwares and interactive, robust application softwares.  
+Self-motivated C++ enthusiast with a GitHub repository showcasing proficiency. Strong problem-solving skills honed through independent study. Prefer onsite work environments to engage directly with teams and immerse fully in development processes. Seeking opportunities to apply skills and learn in a professional setting.  
 
 ## PROJECTS
-[Solutions to C++ Primer Book](https://github.com/VijaiSankar2006/cpp-primer-5th-edition-solutions.git)        
-Created solutions to all exercises in the **C++ Primer book** in a well formatted way that is easy to understand and easy to modify by the readers.        
-* Contains solutions to **16 chapters**.     
-* Solutions to more than **700 exercises**.        
+[Solutions to C++ Primer Book](https://github.com/VijaiSankar2006/cpp-primer-5th-edition-solutions)            
+**Highlights**      
+1. Comprehensive Solutions: Provides thorough solutions to all exercises found in the "C++ Primer" book, ensuring a comprehensive resource for learners.
+    - Contains solutions to **16 chapters**.
+    - Solutions to more than **700 exercises**.
+2. Clarity and Readability: Emphasizes clear and well-formatted code, enhancing readability and understanding for users at all levels of proficiency.
+3. Modifiability: Structures solutions with modularity in mind, enabling easy modification by readers to suit their specific needs or preferences.
+4. Active Maintenance: Regularly updated and maintained to incorporate feedback, address issues, and ensure relevance to current best practices in C++ programming.              
 
-[DATABASE MANAGEMENT SYSTEM](https://github.com/VijaiSankar2006/cpp-primer-5th-edition-solutions/DBMS)       
+[DATABASE MANAGEMENT SYSTEM](https://github.com/VijaiSankar2006/cpp-primer-5th-edition-solutions/tree/04f78e8e913d8d4a86bd7faa792f3da72788fac6/DBMS)      
+**Highlights** 
 * **SQL** is implemented as the QueryLanguage
 * Select clause
 * Where clause
@@ -30,13 +33,12 @@ Created solutions to all exercises in the **C++ Primer book** in a well formatte
 A simple database management system in which users can use SQL to create, manage, modify tables, sort them,
 filter them as per their need.       
 ## SKILLS
-* C
 * C++ 17
-* OOP
+* C
+* OOPS
 * SQL
-* CREATIVE PROBLEM SOLVING
-* ANALYTICAL THINKING
-* Consistent commitment to learn and implement
+* jekyll
+* liquid
 ## EXPERIENCE
 customer support associate       
 Sutherland Global Services March 2013 - April 2014, chennai        
