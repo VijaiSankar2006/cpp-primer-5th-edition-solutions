@@ -1,10 +1,26 @@
-# [Solutions to **C++ Primer 5th Edition** by Stanley B. Lippman, Josée Lajoie, Barbara E. Moo](Part_1_The_Basics)
-This repositor contains solutions to almost all exercises in **C++ Primer 5th edition** book and also some exercises I tried on my own. Please do inform about any corrections.
+# C++ Primer 5th Edition Solutions
+Welcome to a dedicated repository tailored for students delving into the intricacies of **C++** through the esteemed pages of **'C++ Primer 5th Edition' by Stanley Lippman, Josée Lajoie, and Barbara Moo**. Within these digital confines lies a treasure trove of meticulously crafted solutions to nearly every exercise, serving as an invaluable compass for learners and enthusiasts alike. Embark on your C++ journey with confidence as you navigate through my curated **index** or explore the **repository's directory structure** with ease. Click, discover, and immerse yourself in a wealth of resources designed to empower and enlighten your C++ odyssey.
+
+
+
+## Authors
+
+- [@Vijai Sankar S](/myresume.md)
+
+
+## 🛠 Skills
+C, C++ 17, jekyll, liquid
+## License
+
+[CC0-1.0 License](http://creativecommons.org/publicdomain/zero/1.0/)
+
 
 
 |   |   |   |   |   |   |
 |---|---|---|---|---|---|
 | <a href = "/LICENSE.txt">LICENSE.txt</a>| <a href = "/copy_rights.txt">copy_rights.txt</a>| <a href = "/myresume.md">myresume.md</a>| <a href = "/myresume.pdf">myresume.pdf</a>| <a href = "/readme.md">readme.md</a> |       |      
+
+# INDEX [Solutions to C++ Primer 5th Edition]     
 <details><summary><a href = "/Part_1_The_Basics">Part_1_The_Basics</a></summary>
 
 <details><summary><a href = "/Part_1_The_Basics/chapter_1_Getting_Started">chapter_1_Getting_Started</a></summary>
@@ -208,9 +224,11 @@ This repositor contains solutions to almost all exercises in **C++ Primer 5th ed
 | <a href = "/Part_4_AdvancedTopics/Ex_17_1.cpp">Ex_17_1.cpp</a>| <a href = "/Part_4_AdvancedTopics/Ex_17_2.cpp">Ex_17_2.cpp</a>| <a href = "/Part_4_AdvancedTopics/Ex_17_3.cpp">Ex_17_3.cpp</a>| <a href = "/Part_4_AdvancedTopics/text.txt">text.txt</a> |       |       |      
 <details><summary><a href = "/Part_4_AdvancedTopics/chapter_17_SpecializedLibrarayFacilities">chapter_17_SpecializedLibrarayFacilities</a></summary>
 
-</details></details>
+</details></details>       
 
-<details><summary><h1 style = "text-align:center; color:blue">DBMS</h1></summary><pre><a href = "/DBMS/Database.cpp">Database.cpp</a>        <a href = "/DBMS/Query.cpp">Query.cpp</a>           <a href = "/DBMS/Query.h">Query.h</a>             <a href = "/DBMS/Table.cpp">Table.cpp</a>           <a href = "/DBMS/Table.h">Table.h</a>             
+---------------------------------------------   
+
+<details><summary><h1>DBMS</h1></summary><pre><a href = "/DBMS/Database.cpp">Database.cpp</a>        <a href = "/DBMS/Query.cpp">Query.cpp</a>           <a href = "/DBMS/Query.h">Query.h</a>             <a href = "/DBMS/Table.cpp">Table.cpp</a>           <a href = "/DBMS/Table.h">Table.h</a>             
 <a href = "/DBMS/employees.txt">employees.txt</a>       <a href = "/DBMS/file.txt">file.txt</a>            <a href = "/DBMS/readme.md">readme.md</a>           <a href = "/DBMS/tempreadme.md">tempreadme.md</a></pre>         
 
 A simple dbms which accepts SQL to
