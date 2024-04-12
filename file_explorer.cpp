@@ -128,7 +128,7 @@ std::string Directory::add_space(const fs::path &p) {
 } 
 
 std::string Directory::hyperlink(const fs::path &p) {
-    return std::string("<a href = \"") + std::string(fs::relative(p)) + "\">" + std::string(p.filename()) + "</a>";
+    return std::string("<a href = \"./codes/") + std::string(fs::relative(p)) + "\">" + std::string(p.filename()) + "</a>";
 }
 
 bool Directory::check_exclude_dot_dir(const std::string &fname) {
@@ -169,7 +169,7 @@ std::ostream & operator<<(std::ostream &os, Directory &dir) {
      
     for (auto p : dir.dir_list) {   
         if (dir.exclude_dirlist.find(p.first.filename()) == dir.exclude_dirlist.end() && !Directory::check_exclude_dot_dir(p.first.filename().c_str())) {
-            os << "<li><details><summary>" << dir.hyperlink(p.first) << "</summary>"<< std::endl;
+            os << "<li><details><summary>" << p.first.stem().string() << "</summary>"<< std::endl;
             os << *p.second;
             os << "</details></li>";
         }        
@@ -188,7 +188,7 @@ int main() {
     d1.set_exclude_dot_dir(true);
     d1.set_exclude_dot_files(true);
     d1.set_exclude_dir({"docs"});
-    ofile << "<aside>";
+    ofile << "<aside><h1>Index</h1>";
     ofile << d1 << std::endl;
     ofile << "</aside>"; 
     return 0;
