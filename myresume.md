@@ -34,15 +34,9 @@ filter them as per their need.
 5. Create, Save, Load Table operations implemented       
 
 ## SKILLS
-* C++ 17 
-* C
-* OOPS
-* Github
-* HTML5
-* CSS3
-* SQL
-* jekyll
-* liquid     
+    * C++ 17   * C   * OOPS
+    * Github   * HTML5   * CSS3   * SQL
+    * jekyll   * liquid     
 
 ## EXPERIENCE
 customer support associate       
