@@ -4,6 +4,9 @@ Welcome to a special place for students learning C++ with **"C++ Primer 5th Edit
 ## Authors
 
 - [@Vijai Sankar S](/myresume.md)
+- [myresume.pdf](/myresume.pdf)
+- [myresume.html](/myresume.html)
+- [myresume.txt](/myresume.txt)
 
 ## 🛠 Skills
 C++ 17
@@ -275,7 +278,7 @@ A simple dbms which accepts SQL to
 1. Create table 
     CREATE table table_name
 2. Save table to file
-3. Get **data type** of the information from the user at ==run time==.
+3. Get **data type** of the information from the user at <ins>run time</ins>.
     * int
     * double
     * char
