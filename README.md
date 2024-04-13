@@ -256,7 +256,7 @@ C++ 17
 # PROJECTS
 ## [https://vijaisankar2006.github.io/cpp-primer-5th-Editions-Solutions/](https://vijaisankar2006.github.io/cpp-primer-5th-Editions-Solutions/)
 **Highlights :**
-1. **Only site** to host allmost == all(more than 700) == exercises through ghpages. 
+1. **Only site** to host allmost ==all(more than 700)== exercises through ghpages. 
 2. Intuitive index for easy chapter-wise navigation.
 3. Consistent layout and theme for a comfortable user experience.
 4. Designed with ease of navigation in mind.     
