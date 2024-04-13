@@ -7,6 +7,7 @@
  * 
  *************************************************************************************************************************************************************/
 
+// program needs to be corrected
 #include <iostream>
 #include <filesystem>
 #include <fstream>
@@ -127,10 +128,6 @@ std::string Directory::add_space(const fs::path &p) {
     return std::string();
 } 
 
-std::string Directory::hyperlink(const fs::path &p) {
-    return std::string("<a href = \"./codes/") + std::string(fs::relative(p)) + "\">" + std::string(p.filename()) + "</a>";
-}
-
 bool Directory::check_exclude_dot_dir(const std::string &fname) {
     if (exclude_dot_dir) {
         if (fname[0] == '.') {
@@ -158,28 +155,61 @@ std::ostream & operator<<(std::ostream &os, Directory &dir) {
     for (size_t i = 0; i < dir.indent * 3; ++i) {
         indent_str += indent_str;
     }
-    os << "<ul>";
+    os << indent_str << "|      |      |      |      |      |      |" << std::endl;
+    os << indent_str << "|---|---|---|---|---|---|" << std::endl;
+    size_t count = 0;
+    bool first = true;
     for (auto p : dir.file_list) {
         if (dir.exclude_filelist.find(p.filename()) == dir.exclude_filelist.end() 
             && dir.exclude_extensionlist.find(p.extension()) == dir.exclude_extensionlist.end()
             && !Directory::check_exclude_dot_files(p.filename().c_str())) {     
-            os << "<li>" << dir.hyperlink(p) << "</li>";  
+            if (first) {
+                os << indent_str;
+                first = false;
+            }
+            os << "| " << "[" << p.filename().string() << "](" << fs::relative(p) << ")";
+            if (++count == 6) {
+                os << " |" << std::endl;
+                first = true;
+                count = 0;
+            }  
         }    
     } 
-     
+
+    while (count++ != 7) {
+        os << " |";
+    }
+    os << std::endl;
+
+    count = 0; 
+    first = true;
     for (auto p : dir.dir_list) {   
         if (dir.exclude_dirlist.find(p.first.filename()) == dir.exclude_dirlist.end() && !Directory::check_exclude_dot_dir(p.first.filename().c_str())) {
-            os << "<li><details><summary>" << p.first.stem().string() << "</summary>"<< std::endl;
+            if (first) {
+                os << indent_str;
+                first = false;
+            }
+            os << indent_str << "| " << "<details><summary>" << p.first.stem().string() << "</summary>";
             os << *p.second;
-            os << "</details></li>";
+            os << "</details>";
+            if (++count == 6) {
+                os << "  |" << std::endl;
+                count = 0;    
+                first = true;
+            }
         }        
     }
+
+    while (count++ != 7) {
+        os << "  |";
+    } 
+    os << std::endl;
 
     return os;
 }    
 
 int main() {
-    std::ofstream ofile("/home/vijai/github/c++primer/solutions.html");
+    std::ofstream ofile("/home/vijai/github/c++primer/output.md");
     fs::path curr("/home/vijai/github/c++primer");
     std::cout << "displaying contents of : " << curr << std::endl;
     Directory d1(curr);
@@ -188,8 +218,6 @@ int main() {
     d1.set_exclude_dot_dir(true);
     d1.set_exclude_dot_files(true);
     d1.set_exclude_dir({"docs"});
-    ofile << "<aside><h1>Index</h1>";
-    ofile << d1 << std::endl;
-    ofile << "</aside>"; 
+    ofile << d1 << std::endl; 
     return 0;
 }

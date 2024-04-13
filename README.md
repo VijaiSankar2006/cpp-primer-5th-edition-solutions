@@ -1,17 +1,14 @@
 # C++ Primer 5th Edition Solutions
-Welcome to a dedicated repository tailored for students delving into the intricacies of **C++** through the esteemed pages of **'C++ Primer 5th Edition' by Stanley Lippman, Josée Lajoie, and Barbara Moo**. Within these digital confines lies a treasure trove of meticulously crafted solutions to nearly every exercise, serving as an invaluable compass for learners and enthusiasts alike. Embark on your C++ journey with confidence as you navigate through my curated **index** or explore the **repository's directory structure** with ease. Click, discover, and immerse yourself in a wealth of resources designed to empower and enlighten your C++ odyssey.
-
-
+Welcome to a special place for students learning C++ with **"C++ Primer 5th Edition" by Stanley Lippman, Josée Lajoie, and Barbara Moo**. Here, you'll find solutions to the book's exercises to help you learn. Use the index to find what you need or browse through the folders. Enjoy your C++ journey!
 
 ## Authors
 
 - [@Vijai Sankar S](/myresume.md)
 
-
 ## 🛠 Skills
-C, C++ 17, jekyll, liquid
-## License
+C++ 17
 
+## License
 [CC0-1.0 License](http://creativecommons.org/publicdomain/zero/1.0/)
 
 
@@ -20,8 +17,13 @@ C, C++ 17, jekyll, liquid
 |---|---|---|---|---|---|
 | <a href = "/LICENSE.txt">LICENSE.txt</a>| <a href = "/copy_rights.txt">copy_rights.txt</a>| <a href = "/myresume.md">myresume.md</a>| <a href = "/myresume.pdf">myresume.pdf</a>| <a href = "/readme.md">readme.md</a> |       |      
 
-# INDEX [Solutions to C++ Primer 5th Edition]     
-<details><summary><a href = "/Part_1_The_Basics">Part_1_The_Basics</a></summary>
+----------------------------------------------------------------------------
+
+
+----------------------------------------------------------------------------
+
+# Solutions to C++ Primer 5th Edition [INDEX]     
+<details open><summary>Part_1_The_Basics</summary>
 
 <details><summary><a href = "/Part_1_The_Basics/chapter_1_Getting_Started">chapter_1_Getting_Started</a></summary>
 
@@ -105,7 +107,11 @@ C, C++ 17, jekyll, liquid
 | <a href = "/Part_1_The_Basics/chapter_7_classes/Ex_7_48.md">Ex_7_48.md</a>| <a href = "/Part_1_The_Basics/chapter_7_classes/Ex_7_49.md">Ex_7_49.md</a>| <a href = "/Part_1_The_Basics/chapter_7_classes/Ex_7_5.cpp">Ex_7_5.cpp</a>| <a href = "/Part_1_The_Basics/chapter_7_classes/Ex_7_50.cpp">Ex_7_50.cpp</a>| <a href = "/Part_1_The_Basics/chapter_7_classes/Ex_7_51.md">Ex_7_51.md</a>| <a href = "/Part_1_The_Basics/chapter_7_classes/Ex_7_52.md">Ex_7_52.md</a> |        
 | <a href = "/Part_1_The_Basics/chapter_7_classes/Ex_7_53.cpp">Ex_7_53.cpp</a>| <a href = "/Part_1_The_Basics/chapter_7_classes/Ex_7_54.md">Ex_7_54.md</a>| <a href = "/Part_1_The_Basics/chapter_7_classes/Ex_7_55.md">Ex_7_55.md</a>| <a href = "/Part_1_The_Basics/chapter_7_classes/Ex_7_56.md">Ex_7_56.md</a>| <a href = "/Part_1_The_Basics/chapter_7_classes/Ex_7_57.cpp">Ex_7_57.cpp</a>| <a href = "/Part_1_The_Basics/chapter_7_classes/Ex_7_58.md">Ex_7_58.md</a> |        
 | <a href = "/Part_1_The_Basics/chapter_7_classes/Ex_7_6.cpp">Ex_7_6.cpp</a>| <a href = "/Part_1_The_Basics/chapter_7_classes/Ex_7_7.cpp">Ex_7_7.cpp</a>| <a href = "/Part_1_The_Basics/chapter_7_classes/Ex_7_8.md">Ex_7_8.md</a>| <a href = "/Part_1_The_Basics/chapter_7_classes/Ex_7_9.cpp">Ex_7_9.cpp</a>| <a href = "/Part_1_The_Basics/chapter_7_classes/readme.md">readme.md</a>| <a href = "/Part_1_The_Basics/chapter_7_classes/sales_data.h">sales_data.h</a> |        
-</details></details><details><summary><a href = "/Part_2_The_Cplusplus_Library">Part_2_The_Cplusplus_Library</a></summary>
+</details></details>
+
+--------------------------------------------------------------------------
+
+<details open><summary>Part_2_The_Cplusplus_Library</summary>
 
 <details><summary><a href = "/Part_2_The_Cplusplus_Library/Chapter_10_Generic_Algorithms">Chapter_10_Generic_Algorithms</a></summary>
 
@@ -160,7 +166,11 @@ C, C++ 17, jekyll, liquid
 | <a href = "/Part_2_The_Cplusplus_Library/Chapter_9_Sequential_Containers/Ex_9_42.cpp">Ex_9_42.cpp</a>| <a href = "/Part_2_The_Cplusplus_Library/Chapter_9_Sequential_Containers/Ex_9_43.cpp">Ex_9_43.cpp</a>| <a href = "/Part_2_The_Cplusplus_Library/Chapter_9_Sequential_Containers/Ex_9_44.cpp">Ex_9_44.cpp</a>| <a href = "/Part_2_The_Cplusplus_Library/Chapter_9_Sequential_Containers/Ex_9_45.cpp">Ex_9_45.cpp</a>| <a href = "/Part_2_The_Cplusplus_Library/Chapter_9_Sequential_Containers/Ex_9_46.cpp">Ex_9_46.cpp</a>| <a href = "/Part_2_The_Cplusplus_Library/Chapter_9_Sequential_Containers/Ex_9_47.cpp">Ex_9_47.cpp</a> |        
 | <a href = "/Part_2_The_Cplusplus_Library/Chapter_9_Sequential_Containers/Ex_9_48.cpp">Ex_9_48.cpp</a>| <a href = "/Part_2_The_Cplusplus_Library/Chapter_9_Sequential_Containers/Ex_9_49.cpp">Ex_9_49.cpp</a>| <a href = "/Part_2_The_Cplusplus_Library/Chapter_9_Sequential_Containers/Ex_9_5.cpp">Ex_9_5.cpp</a>| <a href = "/Part_2_The_Cplusplus_Library/Chapter_9_Sequential_Containers/Ex_9_50.cpp">Ex_9_50.cpp</a>| <a href = "/Part_2_The_Cplusplus_Library/Chapter_9_Sequential_Containers/Ex_9_51_DateClass.cpp">Ex_9_51_DateClass.cpp</a>| <a href = "/Part_2_The_Cplusplus_Library/Chapter_9_Sequential_Containers/Ex_9_52.cpp">Ex_9_52.cpp</a> |        
 | <a href = "/Part_2_The_Cplusplus_Library/Chapter_9_Sequential_Containers/Ex_9_6.cpp">Ex_9_6.cpp</a>| <a href = "/Part_2_The_Cplusplus_Library/Chapter_9_Sequential_Containers/Ex_9_7.cpp">Ex_9_7.cpp</a>| <a href = "/Part_2_The_Cplusplus_Library/Chapter_9_Sequential_Containers/Ex_9_8.cpp">Ex_9_8.cpp</a>| <a href = "/Part_2_The_Cplusplus_Library/Chapter_9_Sequential_Containers/Ex_9_9.cpp">Ex_9_9.cpp</a>| <a href = "/Part_2_The_Cplusplus_Library/Chapter_9_Sequential_Containers/readme.md">readme.md</a>| <a href = "/Part_2_The_Cplusplus_Library/Chapter_9_Sequential_Containers/text.txt">text.txt</a> |        
-</details></details><details><summary><a href = "/Part_3_ToolsForClassAuthors">Part_3_ToolsForClassAuthors</a></summary>
+</details></details>
+
+-------------------------------------------------------------------------
+
+<details open><summary>Part_3_ToolsForClassAuthors</summary>
 
 <details><summary><a href = "/Part_3_ToolsForClassAuthors/Chapter_13_CopyControl">Chapter_13_CopyControl</a></summary>
 
@@ -217,7 +227,11 @@ C, C++ 17, jekyll, liquid
 | <a href = "/Part_3_ToolsForClassAuthors/Chapter_16_Templates_and_GenericProgramming/Ex_16_57.cpp">Ex_16_57.cpp</a>| <a href = "/Part_3_ToolsForClassAuthors/Chapter_16_Templates_and_GenericProgramming/Ex_16_58.cpp">Ex_16_58.cpp</a>| <a href = "/Part_3_ToolsForClassAuthors/Chapter_16_Templates_and_GenericProgramming/Ex_16_59.cpp">Ex_16_59.cpp</a>| <a href = "/Part_3_ToolsForClassAuthors/Chapter_16_Templates_and_GenericProgramming/Ex_16_6.cpp">Ex_16_6.cpp</a>| <a href = "/Part_3_ToolsForClassAuthors/Chapter_16_Templates_and_GenericProgramming/Ex_16_60.cpp">Ex_16_60.cpp</a>| <a href = "/Part_3_ToolsForClassAuthors/Chapter_16_Templates_and_GenericProgramming/Ex_16_61.cpp">Ex_16_61.cpp</a> |        
 | <a href = "/Part_3_ToolsForClassAuthors/Chapter_16_Templates_and_GenericProgramming/Ex_16_62.cpp">Ex_16_62.cpp</a>| <a href = "/Part_3_ToolsForClassAuthors/Chapter_16_Templates_and_GenericProgramming/Ex_16_63.cpp">Ex_16_63.cpp</a>| <a href = "/Part_3_ToolsForClassAuthors/Chapter_16_Templates_and_GenericProgramming/Ex_16_64.cpp">Ex_16_64.cpp</a>| <a href = "/Part_3_ToolsForClassAuthors/Chapter_16_Templates_and_GenericProgramming/Ex_16_65.cpp">Ex_16_65.cpp</a>| <a href = "/Part_3_ToolsForClassAuthors/Chapter_16_Templates_and_GenericProgramming/Ex_16_66.cpp">Ex_16_66.cpp</a>| <a href = "/Part_3_ToolsForClassAuthors/Chapter_16_Templates_and_GenericProgramming/Ex_16_67.cpp">Ex_16_67.cpp</a> |        
 | <a href = "/Part_3_ToolsForClassAuthors/Chapter_16_Templates_and_GenericProgramming/Ex_16_7.cpp">Ex_16_7.cpp</a>| <a href = "/Part_3_ToolsForClassAuthors/Chapter_16_Templates_and_GenericProgramming/Ex_16_8.cpp">Ex_16_8.cpp</a>| <a href = "/Part_3_ToolsForClassAuthors/Chapter_16_Templates_and_GenericProgramming/Ex_16_9.cpp">Ex_16_9.cpp</a>| <a href = "/Part_3_ToolsForClassAuthors/Chapter_16_Templates_and_GenericProgramming/Sales_data_1.cpp">Sales_data_1.cpp</a>| <a href = "/Part_3_ToolsForClassAuthors/Chapter_16_Templates_and_GenericProgramming/readme.md">readme.md</a> |       |      
-</details></details><details><summary><a href = "/Part_4_AdvancedTopics">Part_4_AdvancedTopics</a></summary>
+</details></details>
+
+-------------------------------------------------------
+
+<details open><summary><a href = "/Part_4_AdvancedTopics">Part_4_AdvancedTopics</a></summary>
 
 |   |   |   |   |   |   |
 |---|---|---|---|---|---|
@@ -226,9 +240,26 @@ C, C++ 17, jekyll, liquid
 
 </details></details>       
 
----------------------------------------------   
+-------------------------------------------------------------------
 
-<details><summary><h1>DBMS</h1></summary><pre><a href = "/DBMS/Database.cpp">Database.cpp</a>        <a href = "/DBMS/Query.cpp">Query.cpp</a>           <a href = "/DBMS/Query.h">Query.h</a>             <a href = "/DBMS/Table.cpp">Table.cpp</a>           <a href = "/DBMS/Table.h">Table.h</a>             
+# PROJECTS
+## [https://vijaisankar2006.github.io/cpp-primer-5th-Editions-Solutions/](https://vijaisankar2006.github.io/cpp-primer-5th-Editions-Solutions/)
+**Highlights :**
+1. **Only site** to host allmost == all(more than 700) == exercises through ghpages. 
+2. Intuitive index for easy chapter-wise navigation.
+3. Consistent layout and theme for a comfortable user experience.
+4. Designed with ease of navigation in mind.     
+
+![WEBSITE](mysite.png)   
+
+> :warning: **Warning:** All the files are accessed by ==relative links==, so if u see 404, trust me file do exists, pls hit home and access the index form there, the relative links will work.
+
+-------------------------------------------------------------------
+#
+-------------------------------------------------------------------
+# <details open><summary>DBMS</summary>
+
+<pre><a href = "/DBMS/Database.cpp">Database.cpp</a>        <a href = "/DBMS/Query.cpp">Query.cpp</a>           <a href = "/DBMS/Query.h">Query.h</a>             <a href = "/DBMS/Table.cpp">Table.cpp</a>           <a href = "/DBMS/Table.h">Table.h</a>             
 <a href = "/DBMS/employees.txt">employees.txt</a>       <a href = "/DBMS/file.txt">file.txt</a>            <a href = "/DBMS/readme.md">readme.md</a>           <a href = "/DBMS/tempreadme.md">tempreadme.md</a></pre>         
 
 A simple dbms which accepts SQL to
@@ -284,17 +315,17 @@ List of SQL Operations supported
 
 </details>       
 
+---------------------------------------------------------
 
-
-
-<details><summary><h1>OtherWorks</h1></summary>       
+# <details open><summary>OtherWorks</summary>       
 
 |   |   |   |   |   |   |
 |---|---|---|---|---|---|
-| <a href = "nary_Search_tree.cpp">Binary_Search_tree.cpp</a>| <a href = "rcular_linked_list.cpp">circular_linked_list.cpp</a>| <a href = "bug.cpp">debug.cpp</a>| <a href = "bugchar.cpp">debugchar.cpp</a>| <a href = "r_cont.txt">dir_cont.txt</a>| <a href = "ubly_linked_list.cpp">doubly_linked_list.cpp</a> |              
-| <a href = "ficiencyTest.cpp">efficiencyTest.cpp</a>| <a href = "plorer.cpp">explorer.cpp</a>| <a href = "le_explorer.cpp">file_explorer.cpp</a>| <a href = "tput.md">output.md</a>| <a href = "tput.txt">output.txt</a>| <a href = "use.cpp">pause.cpp</a> |                 
-| <a href = "use.h">pause.h</a>| <a href = "ecedence.md">precedence.md</a>| <a href = "tdelete.cpp">pvtdelete.cpp</a>| <a href = "tmemory.cpp">pvtmemory.cpp</a>| <a href = "tshared_ptr.cpp">pvtshared_ptr.cpp</a>| <a href = "tsmart_ptr.cpp">pvtsmart_ptr.cpp</a> |        
-| <a href = "tstring.cpp">pvtstring.cpp</a>| <a href = "tunique_ptr.cpp">pvtunique_ptr.cpp</a>| <a href = "tvector.cpp">pvtvector.cpp</a>| <a href = "adme.md">readme.md</a>| <a href = "adme1.md">readme1.md</a>| <a href = "ngly_linked_lst.cpp">singly_linked_lst.cpp</a> |        
-| <a href = "ack.cpp">stack.cpp</a>| <a href = "mp.txt">temp.txt</a>| <a href = "st.cpp">test.cpp</a>| <a href = "ols.cpp">tools.cpp</a> |       |       |         
-
+| <a href = "/OtherWorks/binary_Search_tree.cpp">Binary_Search_tree.cpp</a>| <a href = "/OtherWorks/circular_linked_list.cpp">circular_linked_list.cpp</a>| <a href = "/OtherWorks/debug.cpp">debug.cpp</a>| <a href = "/OtherWorks/debugchar.cpp">debugchar.cpp</a>| <a href = "/OtherWorks/dir_cont.txt">dir_cont.txt</a>| <a href = "/OtherWorks/doubly_linked_list.cpp">doubly_linked_list.cpp</a> |              
+| <a href = "/OtherWorks/eficiencyTest.cpp">efficiencyTest.cpp</a>| <a href = "/OtherWorks/explorer.cpp">explorer.cpp</a>| <a href = "/OtherWorks/file_explorer.cpp">file_explorer.cpp</a>| <a href = "/OtherWorks/output.md">output.md</a>| <a href = "/OtherWorks/output.txt">output.txt</a>| <a href = "/OtherWorks/pause.cpp">pause.cpp</a> |                 
+| <a href = "/OtherWorks/pause.h">pause.h</a>| <a href = "/OtherWorks/precedence.md">precedence.md</a>| <a href = "/OtherWorks/pvtdelete.cpp">pvtdelete.cpp</a>| <a href = "/OtherWorks/pvtmemory.cpp">pvtmemory.cpp</a>| <a href = "/OtherWorks/pvtshared_ptr.cpp">pvtshared_ptr.cpp</a>| <a href = "/OtherWorks/pvtsmart_ptr.cpp">pvtsmart_ptr.cpp</a> |        
+| <a href = "/OtherWorks/pvtstring.cpp">pvtstring.cpp</a>| <a href = "/OtherWorks/pvtunique_ptr.cpp">pvtunique_ptr.cpp</a>| <a href = "/OtherWorks/pvtvector.cpp">pvtvector.cpp</a>| <a href = "readme.md">readme.md</a>| <a href = "/OtherWorks/singly_linked_lst.cpp">singly_linked_lst.cpp</a> |        
+| <a href = "/OtherWorks/stack.cpp">stack.cpp</a>| <a href = "/OtherWorks/test.cpp">test.cpp</a>| <a href = "/OtherWorks/tools.cpp">tools.cpp</a> |       |       |         
 </details>
+
+--------------------------------------------------------------------------------------
