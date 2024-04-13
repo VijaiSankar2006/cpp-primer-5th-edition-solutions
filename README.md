@@ -17,6 +17,7 @@ C++ 17
 |---|---|---|---|---|---|
 | <a href = "/LICENSE.txt">LICENSE.txt</a>| <a href = "/copy_rights.txt">copy_rights.txt</a>| <a href = "/myresume.md">myresume.md</a>| <a href = "/myresume.pdf">myresume.pdf</a>| <a href = "/readme.md">readme.md</a> |       |      
 
+<<<<<<< HEAD
 ----------------------------------------------------------------------------
 
 
@@ -24,6 +25,10 @@ C++ 17
 
 # Solutions to C++ Primer 5th Edition [INDEX]     
 <details open><summary>Part_1_The_Basics</summary>
+=======
+# INDEX [Solutions to C++ Primer 5th Edition]     
+<details open><summary><a href = "/Part_1_The_Basics">Part_1_The_Basics</a></summary>
+>>>>>>> 173614d2ac2b6a9511002e57fab8222346f6d977
 
 <details><summary><a href = "/Part_1_The_Basics/chapter_1_Getting_Started">chapter_1_Getting_Started</a></summary>
 
@@ -107,6 +112,7 @@ C++ 17
 | <a href = "/Part_1_The_Basics/chapter_7_classes/Ex_7_48.md">Ex_7_48.md</a>| <a href = "/Part_1_The_Basics/chapter_7_classes/Ex_7_49.md">Ex_7_49.md</a>| <a href = "/Part_1_The_Basics/chapter_7_classes/Ex_7_5.cpp">Ex_7_5.cpp</a>| <a href = "/Part_1_The_Basics/chapter_7_classes/Ex_7_50.cpp">Ex_7_50.cpp</a>| <a href = "/Part_1_The_Basics/chapter_7_classes/Ex_7_51.md">Ex_7_51.md</a>| <a href = "/Part_1_The_Basics/chapter_7_classes/Ex_7_52.md">Ex_7_52.md</a> |        
 | <a href = "/Part_1_The_Basics/chapter_7_classes/Ex_7_53.cpp">Ex_7_53.cpp</a>| <a href = "/Part_1_The_Basics/chapter_7_classes/Ex_7_54.md">Ex_7_54.md</a>| <a href = "/Part_1_The_Basics/chapter_7_classes/Ex_7_55.md">Ex_7_55.md</a>| <a href = "/Part_1_The_Basics/chapter_7_classes/Ex_7_56.md">Ex_7_56.md</a>| <a href = "/Part_1_The_Basics/chapter_7_classes/Ex_7_57.cpp">Ex_7_57.cpp</a>| <a href = "/Part_1_The_Basics/chapter_7_classes/Ex_7_58.md">Ex_7_58.md</a> |        
 | <a href = "/Part_1_The_Basics/chapter_7_classes/Ex_7_6.cpp">Ex_7_6.cpp</a>| <a href = "/Part_1_The_Basics/chapter_7_classes/Ex_7_7.cpp">Ex_7_7.cpp</a>| <a href = "/Part_1_The_Basics/chapter_7_classes/Ex_7_8.md">Ex_7_8.md</a>| <a href = "/Part_1_The_Basics/chapter_7_classes/Ex_7_9.cpp">Ex_7_9.cpp</a>| <a href = "/Part_1_The_Basics/chapter_7_classes/readme.md">readme.md</a>| <a href = "/Part_1_The_Basics/chapter_7_classes/sales_data.h">sales_data.h</a> |        
+<<<<<<< HEAD
 </details></details>
 
 --------------------------------------------------------------------------
@@ -114,6 +120,11 @@ C++ 17
 <details open><summary>Part_2_The_Cplusplus_Library</summary>
 
 <details><summary><a href = "/Part_2_The_Cplusplus_Library/Chapter_10_Generic_Algorithms">Chapter_10_Generic_Algorithms</a></summary>
+=======
+</details></details><details><summary><a href = "/Part_2_The_Cplusplus_Library">Part_2_The_Cplusplus_Library</a></summary>
+-------------------------------------------------------------------------------------------------------
+<details open><summary><a href = "/Part_2_The_Cplusplus_Library/Chapter_10_Generic_Algorithms">Chapter_10_Generic_Algorithms</a></summary>
+>>>>>>> 173614d2ac2b6a9511002e57fab8222346f6d977
 
 |   |   |   |   |   |   |
 |---|---|---|---|---|---|
@@ -166,6 +177,7 @@ C++ 17
 | <a href = "/Part_2_The_Cplusplus_Library/Chapter_9_Sequential_Containers/Ex_9_42.cpp">Ex_9_42.cpp</a>| <a href = "/Part_2_The_Cplusplus_Library/Chapter_9_Sequential_Containers/Ex_9_43.cpp">Ex_9_43.cpp</a>| <a href = "/Part_2_The_Cplusplus_Library/Chapter_9_Sequential_Containers/Ex_9_44.cpp">Ex_9_44.cpp</a>| <a href = "/Part_2_The_Cplusplus_Library/Chapter_9_Sequential_Containers/Ex_9_45.cpp">Ex_9_45.cpp</a>| <a href = "/Part_2_The_Cplusplus_Library/Chapter_9_Sequential_Containers/Ex_9_46.cpp">Ex_9_46.cpp</a>| <a href = "/Part_2_The_Cplusplus_Library/Chapter_9_Sequential_Containers/Ex_9_47.cpp">Ex_9_47.cpp</a> |        
 | <a href = "/Part_2_The_Cplusplus_Library/Chapter_9_Sequential_Containers/Ex_9_48.cpp">Ex_9_48.cpp</a>| <a href = "/Part_2_The_Cplusplus_Library/Chapter_9_Sequential_Containers/Ex_9_49.cpp">Ex_9_49.cpp</a>| <a href = "/Part_2_The_Cplusplus_Library/Chapter_9_Sequential_Containers/Ex_9_5.cpp">Ex_9_5.cpp</a>| <a href = "/Part_2_The_Cplusplus_Library/Chapter_9_Sequential_Containers/Ex_9_50.cpp">Ex_9_50.cpp</a>| <a href = "/Part_2_The_Cplusplus_Library/Chapter_9_Sequential_Containers/Ex_9_51_DateClass.cpp">Ex_9_51_DateClass.cpp</a>| <a href = "/Part_2_The_Cplusplus_Library/Chapter_9_Sequential_Containers/Ex_9_52.cpp">Ex_9_52.cpp</a> |        
 | <a href = "/Part_2_The_Cplusplus_Library/Chapter_9_Sequential_Containers/Ex_9_6.cpp">Ex_9_6.cpp</a>| <a href = "/Part_2_The_Cplusplus_Library/Chapter_9_Sequential_Containers/Ex_9_7.cpp">Ex_9_7.cpp</a>| <a href = "/Part_2_The_Cplusplus_Library/Chapter_9_Sequential_Containers/Ex_9_8.cpp">Ex_9_8.cpp</a>| <a href = "/Part_2_The_Cplusplus_Library/Chapter_9_Sequential_Containers/Ex_9_9.cpp">Ex_9_9.cpp</a>| <a href = "/Part_2_The_Cplusplus_Library/Chapter_9_Sequential_Containers/readme.md">readme.md</a>| <a href = "/Part_2_The_Cplusplus_Library/Chapter_9_Sequential_Containers/text.txt">text.txt</a> |        
+<<<<<<< HEAD
 </details></details>
 
 -------------------------------------------------------------------------
@@ -173,6 +185,11 @@ C++ 17
 <details open><summary>Part_3_ToolsForClassAuthors</summary>
 
 <details><summary><a href = "/Part_3_ToolsForClassAuthors/Chapter_13_CopyControl">Chapter_13_CopyControl</a></summary>
+=======
+</details></details><details><summary><a href = "/Part_3_ToolsForClassAuthors">Part_3_ToolsForClassAuthors</a></summary>
+-----------------------------------------------------------------------------------------
+<details open><summary><a href = "/Part_3_ToolsForClassAuthors/Chapter_13_CopyControl">Chapter_13_CopyControl</a></summary>
+>>>>>>> 173614d2ac2b6a9511002e57fab8222346f6d977
 
 |   |   |   |   |   |   |
 |---|---|---|---|---|---|
@@ -242,6 +259,7 @@ C++ 17
 
 -------------------------------------------------------------------
 
+<<<<<<< HEAD
 # PROJECTS
 ## [https://vijaisankar2006.github.io/cpp-primer-5th-Editions-Solutions/](https://vijaisankar2006.github.io/cpp-primer-5th-Editions-Solutions/)
 **Highlights :**
@@ -260,6 +278,9 @@ C++ 17
 # <details open><summary>DBMS</summary>
 
 <pre><a href = "/DBMS/Database.cpp">Database.cpp</a>        <a href = "/DBMS/Query.cpp">Query.cpp</a>           <a href = "/DBMS/Query.h">Query.h</a>             <a href = "/DBMS/Table.cpp">Table.cpp</a>           <a href = "/DBMS/Table.h">Table.h</a>             
+=======
+<details open><summary><h1>DBMS</h1></summary><pre><a href = "/DBMS/Database.cpp">Database.cpp</a>        <a href = "/DBMS/Query.cpp">Query.cpp</a>           <a href = "/DBMS/Query.h">Query.h</a>             <a href = "/DBMS/Table.cpp">Table.cpp</a>           <a href = "/DBMS/Table.h">Table.h</a>             
+>>>>>>> 173614d2ac2b6a9511002e57fab8222346f6d977
 <a href = "/DBMS/employees.txt">employees.txt</a>       <a href = "/DBMS/file.txt">file.txt</a>            <a href = "/DBMS/readme.md">readme.md</a>           <a href = "/DBMS/tempreadme.md">tempreadme.md</a></pre>         
 
 A simple dbms which accepts SQL to
@@ -315,17 +336,31 @@ List of SQL Operations supported
 
 </details>       
 
+<<<<<<< HEAD
 ---------------------------------------------------------
 
 # <details open><summary>OtherWorks</summary>       
+=======
+---------------------------------------------------------------------------
+<details open><summary><h1>OtherWorks</h1></summary>       
+>>>>>>> 173614d2ac2b6a9511002e57fab8222346f6d977
 
 |   |   |   |   |   |   |
 |---|---|---|---|---|---|
 | <a href = "/OtherWorks/binary_Search_tree.cpp">Binary_Search_tree.cpp</a>| <a href = "/OtherWorks/circular_linked_list.cpp">circular_linked_list.cpp</a>| <a href = "/OtherWorks/debug.cpp">debug.cpp</a>| <a href = "/OtherWorks/debugchar.cpp">debugchar.cpp</a>| <a href = "/OtherWorks/dir_cont.txt">dir_cont.txt</a>| <a href = "/OtherWorks/doubly_linked_list.cpp">doubly_linked_list.cpp</a> |              
+<<<<<<< HEAD
 | <a href = "/OtherWorks/eficiencyTest.cpp">efficiencyTest.cpp</a>| <a href = "/OtherWorks/explorer.cpp">explorer.cpp</a>| <a href = "/OtherWorks/file_explorer.cpp">file_explorer.cpp</a>| <a href = "/OtherWorks/output.md">output.md</a>| <a href = "/OtherWorks/output.txt">output.txt</a>| <a href = "/OtherWorks/pause.cpp">pause.cpp</a> |                 
 | <a href = "/OtherWorks/pause.h">pause.h</a>| <a href = "/OtherWorks/precedence.md">precedence.md</a>| <a href = "/OtherWorks/pvtdelete.cpp">pvtdelete.cpp</a>| <a href = "/OtherWorks/pvtmemory.cpp">pvtmemory.cpp</a>| <a href = "/OtherWorks/pvtshared_ptr.cpp">pvtshared_ptr.cpp</a>| <a href = "/OtherWorks/pvtsmart_ptr.cpp">pvtsmart_ptr.cpp</a> |        
 | <a href = "/OtherWorks/pvtstring.cpp">pvtstring.cpp</a>| <a href = "/OtherWorks/pvtunique_ptr.cpp">pvtunique_ptr.cpp</a>| <a href = "/OtherWorks/pvtvector.cpp">pvtvector.cpp</a>| <a href = "readme.md">readme.md</a>| <a href = "/OtherWorks/singly_linked_lst.cpp">singly_linked_lst.cpp</a> |        
 | <a href = "/OtherWorks/stack.cpp">stack.cpp</a>| <a href = "/OtherWorks/test.cpp">test.cpp</a>| <a href = "/OtherWorks/tools.cpp">tools.cpp</a> |       |       |         
+=======
+| <a href = "/OtherWorks/efficiencyTest.cpp">efficiencyTest.cpp</a>| <a href = "/OtherWorks/explorer.cpp">explorer.cpp</a>| <a href = "/OtherWorks/file_explorer.cpp">file_explorer.cpp</a>| <a href = "/OtherWorks/output.md">output.md</a>| <a href = "/OtherWorks/output.txt">output.txt</a>| <a href = "/OtherWorks/pause.cpp">pause.cpp</a> |                 
+| <a href = "/OtherWorks/pause.h">pause.h</a>| <a href = "/OtherWorks/precedence.md">precedence.md</a>| <a href = "/OtherWorks/pvtdelete.cpp">pvtdelete.cpp</a>| <a href = "/OtherWorks/pvtmemory.cpp">pvtmemory.cpp</a>| <a href = "/OtherWorks/pvtshared_ptr.cpp">pvtshared_ptr.cpp</a>| <a href = "/OtherWorks/pvtsmart_ptr.cpp">pvtsmart_ptr.cpp</a> | 
+
+| <a href = "/OtherWorks/pvtstring.cpp">pvtstring.cpp</a>| <a href = "/OtherWorks/pvtunique_ptr.cpp">pvtunique_ptr.cpp</a>| <a href = "/OtherWorks/pvtvector.cpp">pvtvector.cpp</a>| <a href = "/OtherWorks/readme.md">readme.md</a>| <a href = "/OtherWorks/readme1.md">readme1.md</a>| <a href = "/OtherWorks/singly_linked_lst.cpp">singly_linked_lst.cpp</a> |        
+| <a href = "/OtherWorks/stack.cpp">stack.cpp</a>| <a href = "/OtherWorks/temp.txt">temp.txt</a>| <a href = "/OtherWorks/test.cpp">test.cpp</a>| <a href = "/OtherWorks/tools.cpp">tools.cpp</a> |       |       |         
+
+>>>>>>> 173614d2ac2b6a9511002e57fab8222346f6d977
 </details>
 
 --------------------------------------------------------------------------------------
